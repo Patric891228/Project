@@ -40,5 +40,11 @@
             android:gravity="center_horizontal|center_vertical"
             android:inputType="textPersonName"
             android:text="Password" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="login" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
