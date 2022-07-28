@@ -34,7 +34,7 @@ public class EnterScene extends AppCompatActivity {
                 String s1 = editTextA.getText().toString();
                 String s2 = editTextB.getText().toString();
                 contentValues.put("MAIL",s1);
-                contentValues.put("PASSWORD",s1);
+                contentValues.put("PASSWORD",s2);
 
 
             }

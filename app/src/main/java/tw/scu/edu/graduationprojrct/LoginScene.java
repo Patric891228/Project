@@ -16,25 +16,25 @@ import java.util.List;
 import java.util.Map;
 
 public class LoginScene extends AppCompatActivity {
-    public SQLite DH = null;
+    /*//public SQLite DH = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        DH = new SQLite(this);
+        //DH = new SQLite(this);
         add("123");//加入的資料
     }
 
     private void add(String s){
-        SQLiteDatabase db = DH.getWritableDatabase();
+        //SQLiteDatabase db = DH.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("_title",s.toString());//載入資料123
-        db.insert("Personal_Profile", null,values);//寫入123
+        //db.insert("Personal_Profile", null,values);//寫入123
         //ListView LV1 = (ListView)findViewById(R.id.LV);//讀取元件
 
         //查詢資料並載入
-        Cursor cursor = db.query("Personal_Profile", new String[]{"_id","_title"},null,null,null, null,null);
+        //Cursor cursor = db.query("Personal_Profile", new String[]{"_id","_title"},null,null,null, null,null);
         List<Map<String,Object>> items = new ArrayList<Map<String, Object>>();
         cursor.moveToFirst();//創建資料集後movetoFirst移動到第一筆
 
@@ -49,4 +49,6 @@ public class LoginScene extends AppCompatActivity {
         SimpleAdapter SA = new SimpleAdapter(this, items, android.R.layout.simple_expandable_list_item_2,new String[]{"_id","_title"}, new int[]{android.R.id.text1,android.R.id.text2});
         //LV1.setAdapter(SA);
     }
+
+     */
 }
