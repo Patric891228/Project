@@ -4,47 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#07C5DD"
-    tools:context=".EnterScene">
+    tools:context=".scene.EnterScene">
 
-    <FrameLayout
+    <Button
+        android:id="@+id/EnterButton"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#03A9F4"
+        android:text="點擊畫面以繼續進入"
+        app:backgroundTint="#4DE6D4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/Account"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="200dp"
-            android:background="@color/white"
-            android:ems="10"
-            android:gravity="center_horizontal|center_vertical"
-            android:inputType="textPersonName"
-            android:text="Account" />
-
-        <EditText
-            android:id="@+id/Password"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="250dp"
-            android:background="@color/white"
-            android:ems="10"
-            android:gravity="center_horizontal|center_vertical"
-            android:inputType="textPersonName"
-            android:text="Password" />
-
-        <Button
-            android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="login" />
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:textColor="#0E0E0E" />
 </androidx.constraintlayout.widget.ConstraintLayout>

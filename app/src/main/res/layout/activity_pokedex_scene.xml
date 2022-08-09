@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintPokedex"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".scene.PokedexScene">
+    <!--Frame of Pokedex -->
+    <Button
+        android:id="@+id/Select_Button_By_Part"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按照部位分類"
+        app:layout_constraintBottom_toBottomOf="@id/top_of_setting_line"
+        app:layout_constraintRight_toRightOf="@id/right_of_setting_line" />
+
+    <Button
+        android:id="@+id/Back_From_Pokedex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="回上頁"
+        app:layout_constraintBottom_toBottomOf="@id/top_of_setting_line"
+        app:layout_constraintLeft_toLeftOf="@id/left_of_setting_line"/>
+
+    <Button
+        android:id="@+id/Select_Button_By_Difficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="176dp"
+        android:text="按照難易度分類"
+        app:layout_constraintBottom_toBottomOf="@id/top_of_setting_line"
+        app:layout_constraintRight_toRightOf="@id/right_of_setting_line" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_of_setting_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_of_setting_lien"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_of_setting_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.84"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_of_setting_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.16"></androidx.constraintlayout.widget.Guideline>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#2196F3"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_lien"
+        app:layout_constraintLeft_toLeftOf="@id/left_of_setting_line"
+        app:layout_constraintRight_toRightOf="@id/right_of_setting_line"
+        app:layout_constraintTop_toTopOf="@id/top_of_setting_line">
+
+        <RelativeLayout
+            android:id="@+id/itemPlace"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="@id/left_of_setting_line"
+            app:layout_constraintRight_toRightOf="@id/right_of_setting_line">
+
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

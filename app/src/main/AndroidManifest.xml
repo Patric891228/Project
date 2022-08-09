@@ -8,19 +8,54 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GraduationProjrct">
-        <activity android:name=".LoginScene"></activity>
-        <activity android:name=".MainScene" />
+        android:theme="@style/Theme.GraduationProjrct.NoActionBar">
+        <activity android:name=".scene.AccountSetScene"></activity>
+        <activity android:name=".scene.AdminManagement" />
+        <activity android:name=".Setting.PythonTest" />
+        <activity android:name=".scene.TestSelfScene" />
         <activity
-            android:name=".EnterScene"
-            android:screenOrientation="landscape"
-            android:exported="true">
+            android:name=".scene.EnterScene"
+            android:exported="true"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".scene.PersonalScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.SettingScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.BGMScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.RemindScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.PokedexScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.ResultScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.SportScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.BasicSportScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.RegistScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.MainScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.LoginScene"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".scene.SettingScene">
+<!--    GuideLine-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_of_setting_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_of_setting_lien"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_of_setting_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle_of_setting_line1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.325"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle_of_setting_line2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle_of_setting_line3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.675"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_of_setting_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"></androidx.constraintlayout.widget.Guideline>
+<!--ImageButton-->
+    <ImageButton
+        android:id="@+id/toPersonalScene"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_lien"
+        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
+        app:layout_constraintRight_toRightOf="@id/middle_of_setting_line1"
+        app:layout_constraintLeft_toLeftOf="@id/left_of_setting_line"
+        tools:srcCompat="@tools:sample/avatars" />
+    <ImageButton
+        android:id="@+id/toShop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_lien"
+        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
+        app:layout_constraintRight_toRightOf="@id/middle_of_setting_line2"
+        app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line1"
+        tools:srcCompat="@tools:sample/avatars" />
+    <ImageButton
+        android:id="@+id/toExchange"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_lien"
+        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
+        app:layout_constraintRight_toRightOf="@id/middle_of_setting_line3"
+        app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line2"
+        tools:srcCompat="@tools:sample/avatars" />
+    <ImageButton
+        android:id="@+id/Back_From_Setting_Scene"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_lien"
+        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
+        app:layout_constraintRight_toRightOf="@id/right_of_setting_line"
+        app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line3"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
