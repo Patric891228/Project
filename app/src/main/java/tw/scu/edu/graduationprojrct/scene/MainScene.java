@@ -24,7 +24,7 @@ public class MainScene extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_scene);
-
+        //到此一遊
         ImageButton mirror = findViewById(R.id.mirror);
         ImageButton counter = findViewById(R.id.counter);
         ImageButton tiecabinet = findViewById(R.id.tiecabinet);
