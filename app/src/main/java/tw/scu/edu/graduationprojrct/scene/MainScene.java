@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,18 +21,20 @@ import tw.scu.edu.graduationprojrct.R;
 
 public class MainScene extends AppCompatActivity {
 
+    MediaPlayer mysong;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main_scene);
-        //到此一遊
-        //同上
         ImageButton mirror = findViewById(R.id.mirror);
         ImageButton counter = findViewById(R.id.counter);
         ImageButton tiecabinet = findViewById(R.id.tiecabinet);
         ImageButton magazine = findViewById(R.id.magazine);
 
-
+        mysong = MediaPlayer.create(MainScene.this, R.raw.donigen);
+        //mysong.start();
 
         mirror.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,5 +78,10 @@ public class MainScene extends AppCompatActivity {
         Animation animation=new AlphaAnimation(1.0f,0.0f);
         animation.setDuration(300);
         bt.startAnimation(animation);
+    }
+    protected void onPause(){
+        super.onPause();
+        mysong.release();
+        finish();
     }
 }

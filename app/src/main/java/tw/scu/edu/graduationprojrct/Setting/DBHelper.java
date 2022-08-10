@@ -23,7 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL("create Table users(username TEXT primary key, password TEXT,sexual TEXT,phonenumber TEXT)");
-        MyDB.execSQL("create Table RemindTime(username TEXT primary key,time TIME)");//HH:MM:SS
+        MyDB.execSQL("create Table RemindTime(username TEXT primary key,time String)");//HH:MM
     }
 
     @Override
@@ -40,6 +40,17 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("sexual", sexual);
         contentValues.put("phonenumber", phonenumber);
         long result = MyDB.insert("users", null, contentValues);
+        if(result == -1)
+            return false;
+        else
+            return true;
+    }
+    public Boolean insertTime(String username, String Time){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("username", username);
+        contentValues.put("time", Time);
+        long result = MyDB.insert("RemindTime", null, contentValues);
         if(result == -1)
             return false;
         else
@@ -65,15 +76,5 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public Boolean changeRemindTime(String username, Time time){
-        SQLiteDatabase MyDB = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("username", username);
-        contentValues.put("time", String.valueOf(time));
-        long result = MyDB.insert("users", null, contentValues);
-        if(result == -1)
-            return false;
-        else
-            return true;
-    }
+
 }
