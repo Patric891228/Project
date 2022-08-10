@@ -5,16 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".scene.RemindScene">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/Time"
-            android:layout_width="match_parent"
-            android:text="选择时间"
-            android:gravity="center_horizontal|center_vertical"
-            android:layout_height="50dp"/>
-    </LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/remind_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/remind_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/remind_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/remind_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/remind_middle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/Time"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="20:00"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@id/remind_left"
+        app:layout_constraintRight_toRightOf="@id/remind_right"
+        app:layout_constraintTop_toTopOf="@id/remind_middle" />
+
+    <TextView
+        android:id="@+id/time2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="設置運動提醒時間"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@id/remind_left"
+        app:layout_constraintRight_toRightOf="@id/remind_right"
+        app:layout_constraintBottom_toBottomOf="@id/remind_middle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

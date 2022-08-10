@@ -11,11 +11,13 @@ import android.widget.TimePicker;
 
 
 import tw.scu.edu.graduationprojrct.R;
+import tw.scu.edu.graduationprojrct.Setting.DBHelper;
 
 public class RemindScene extends Activity implements View.OnClickListener {
 
     TextView time;
     String str;
+    DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,10 @@ public class RemindScene extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_remind_scene);
         time = findViewById(R.id.Time);
         time.setOnClickListener(RemindScene.this);
+        DB = new DBHelper(this);
+
+
+
     }
 
     @Override
@@ -33,6 +39,7 @@ public class RemindScene extends Activity implements View.OnClickListener {
                 str = hour+":"+minute;//将时间表示为我们想要的字符串格式
                 time.setText(str);//文本框设置时间
             }
+//            Boolean isEnter = DB.insertTime(,str);
 
         };
         new TimePickerDialog(RemindScene.this,3,onTimeSetListener,15,30,true).show();
