@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
@@ -15,18 +17,20 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import tw.scu.edu.graduationprojrct.GlobalVariable;
 import tw.scu.edu.graduationprojrct.R;
 
 
 
 public class MainScene extends AppCompatActivity {
-
+    SharedPreferences shared;
     MediaPlayer mysong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        shared = getSharedPreferences("data",MODE_PRIVATE);
+        Log.d("Info",shared.getString("UserName","Nan"));
         setContentView(R.layout.activity_main_scene);
         ImageButton mirror = findViewById(R.id.mirror);
         ImageButton counter = findViewById(R.id.counter);

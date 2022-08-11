@@ -75,6 +75,12 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
 
     }
+    public String getRemindTime(String username){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select * from RemindTime where username = ? ", new String[] {username});
+        return cursor.getString(4);
+
+    }
 
 
 }

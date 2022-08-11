@@ -10,26 +10,30 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import tw.scu.edu.graduationprojrct.GlobalVariable;
 import tw.scu.edu.graduationprojrct.R;
 import tw.scu.edu.graduationprojrct.Setting.DBHelper;
 
 
 public class LoginScene extends AppCompatActivity {
     DBHelper DB;
+    GlobalVariable gv ;
+    SharedPreferences shared;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        EditText username = findViewById(R.id.userName);
-        EditText password = findViewById(R.id.Password);
-        DB = new DBHelper(this);
-
         Button login = findViewById(R.id.Back);
         Button Regist = findViewById(R.id.finish);
+        EditText username = findViewById(R.id.userName);
+        EditText password = findViewById(R.id.Password);
 
-        SharedPreferences shared = getSharedPreferences("isRegist",MODE_PRIVATE);
+        DB = new DBHelper(this);
+        gv = (GlobalVariable)getApplicationContext();
+
+        shared = getSharedPreferences("data",MODE_PRIVATE);
         Regist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,20 +50,29 @@ public class LoginScene extends AppCompatActivity {
 
                 if(user.equals("") || pass.equals("")) {
                     Toast.makeText(LoginScene.this, "Please enter all this fields", Toast.LENGTH_SHORT).show();
+                    // 有沒填寫的表格
                 }else if (user.equals("admin") || pass.equals("admin")){
+                    // 登入官方帳號
+                    SharedPreferences.Editor editor = shared.edit();
+                    editor.putBoolean("isRegist",true);
+                    editor.putString("UserName","admin");
+                    editor.commit();
+                    DB.insertTime("admin","00:00");
                     Toast.makeText(LoginScene.this, "Already use Admin Account", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), AdminManagement.class);
-                    startActivity(intent);
+                    startActivity(new Intent(getApplicationContext(), AdminManagement.class));
                     finish();
+
                 }else{
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     if(checkuserpass){
                         Toast.makeText(LoginScene.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), MainScene.class);
-                        startActivity(intent);
+                        startActivity(new Intent(getApplicationContext(), MainScene.class));
                         finish();
+
+
                         SharedPreferences.Editor editor = shared.edit();
                         editor.putBoolean("isRegist",true);
+                        editor.putString("UserName",user);
                         editor.commit();
                     }else {
                         Toast.makeText(LoginScene.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();

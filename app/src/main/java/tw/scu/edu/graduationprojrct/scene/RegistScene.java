@@ -43,6 +43,7 @@ public class RegistScene extends AppCompatActivity {
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String user = userName.getText().toString();
                 String pass = Password.getText().toString();
                 String sex = Sexual.getText().toString();
@@ -50,14 +51,15 @@ public class RegistScene extends AppCompatActivity {
 
                 if(user.equals("") || pass.equals("") || sex.equals("")||phone.equals("")) {
                     Toast.makeText(RegistScene.this, "Please re-enter all the fields", Toast.LENGTH_SHORT).show();
+                    //有輸入框沒有輸入東西
                 }else{
                     Boolean checkuser = DB.checkusername(user);
+                    //有無帳號
                     if(checkuser == false){
                         Boolean insert = DB.insertData(user,pass,sex,phone);
                         if(insert){
                             Toast.makeText(RegistScene.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), LoginScene.class);
-                            startActivity(intent);
+                            startActivity( new Intent(getApplicationContext(), LoginScene.class));
                             finish();
                         }
                         else{
