@@ -57,9 +57,9 @@ public class LoginScene extends AppCompatActivity {
                     editor.putBoolean("isRegist",true);
                     editor.putString("UserName","admin");
                     editor.commit();
-                    DB.insertTime("admin","00:00");
+//                    DB.insertTime("admin","00:00");
                     Toast.makeText(LoginScene.this, "Already use Admin Account", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), AdminManagement.class));
+                    startActivity(new Intent(LoginScene.this, AdminManagement.class));
                     finish();
 
                 }else{

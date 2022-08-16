@@ -66,7 +66,7 @@ public class MainScene extends AppCompatActivity {
         tiecabinet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainScene.this,BasicSportScene.class);
+                Intent intent = new Intent(MainScene.this,LoginScene.class);
                 startActivity(intent);
             }
         });
