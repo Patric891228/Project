@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/ConstraintPokedex"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".scene.PokedexSelectedScene">
+<!--    GuildLine  -->
+    <androidx.constraintlayout.widget.Guideline
+       android:id="@+id/Top"
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       android:orientation="horizontal"
+       app:layout_constraintGuide_percent="0.1"
+    />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"
+        />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/Bottom"
+        app:layout_constraintEnd_toEndOf="@id/Right"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/Left"
+        app:layout_constraintTop_toTopOf="@id/Top"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="請輸入信箱"
+                android:inputType="textPersonName"></EditText>
+
+            <EditText
+                android:id="@+id/Password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="請輸入密碼"
+                android:inputType="textPersonName"></EditText>
+
+            <EditText
+                android:id="@+id/Sexual"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="請輸入性別"
+                android:inputType="textPersonName"></EditText>
+
+            <EditText
+                android:id="@+id/PhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="請輸入手機號碼"
+                android:inputType="textPersonName"></EditText>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
