@@ -1,97 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/ConstraintPokedex"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".scene.PokedexSelectedScene">
-<!--    GuildLine  -->
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintPokedex"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".scene.PokedexSelectedScene">
+    <!--    GuildLine  -->
     <androidx.constraintlayout.widget.Guideline
-       android:id="@+id/Top"
-       android:layout_width="0dp"
-       android:layout_height="0dp"
-       android:orientation="horizontal"
-       app:layout_constraintGuide_percent="0.1"
-    />
+        android:id="@+id/Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9"
-        />
+        app:layout_constraintGuide_percent="0.9" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05"
-        />
+        app:layout_constraintGuide_percent="0.15" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Right"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95"
-        />
-<!--magazineposition-->
+        app:layout_constraintGuide_percent="0.85" />
+
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/MagazineTop"
+        android:id="@+id/Mid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+    <!--    TextViewPosition-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/TextView_Top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15"
-        />
+        app:layout_constraintGuide_percent="0.2" />
+
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/MagazineBottom"
+        android:id="@+id/TextView_Bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85"
-        />
+        app:layout_constraintGuide_percent="0.81" />
 
-    <HorizontalScrollView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/TextView_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/Bottom"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@id/Left"
-        app:layout_constraintRight_toRightOf="@id/Right"
-        app:layout_constraintTop_toTopOf="@id/Top"
-        app:layout_constraintVertical_bias="0.0">
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.54" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" >
-        <ImageButton
-            android:id="@+id/abdominal_exercise"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"></ImageButton>
-        <ImageButton
-            android:id="@+id/improve_rounded_shoulders"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"></ImageButton>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/TextView_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.82" />
+    <!--    TextView-->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/TextView_Bottom"
+        app:layout_constraintLeft_toLeftOf="@id/TextView_Left"
+        app:layout_constraintRight_toRightOf="@id/TextView_Right"
+        app:layout_constraintTop_toTopOf="@id/TextView_Top"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/A"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="收腹運動"
+            android:textSize="37sp"
+            />
 
-        <ImageButton
-            android:id="@+id/anterior_pelvic_tilt"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"></ImageButton>
-        <ImageButton
-            android:id="@+id/false_span"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"></ImageButton>
-        <ImageButton
-            android:id="@+id/leg_shape_correction"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"></ImageButton>
-        </LinearLayout>
-    </HorizontalScrollView>
+        <TextView
+            android:id="@+id/B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="改善圓肩駝背"
+            android:textSize="37sp"
+            />
+
+        <TextView
+            android:id="@+id/C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="骨盆前傾"
+            android:textSize="37sp"
+             />
+
+        <TextView
+            android:id="@+id/D"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="假跨寬"
+            android:textSize="37sp"
+            />
+
+        <TextView
+            android:id="@+id/E"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="腿型校正"
+            android:textSize="37sp"
+            />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

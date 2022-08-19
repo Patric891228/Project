@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".scene.EnterScene">
 
-    <Button
+    <ImageButton
         android:id="@+id/EnterButton"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/start"
         android:text="點擊畫面以繼續進入"
-        app:backgroundTint="#4DE6D4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:textColor="#0E0E0E" />
+        tools:textColor="#000000" />
 </androidx.constraintlayout.widget.ConstraintLayout>

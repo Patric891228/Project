@@ -3,14 +3,19 @@ package tw.scu.edu.graduationprojrct.scene;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.transition.Explode;
+import android.transition.Fade;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -20,6 +25,7 @@ import android.widget.ImageButton;
 import tw.scu.edu.graduationprojrct.GlobalVariable;
 import tw.scu.edu.graduationprojrct.R;
 
+import static tw.scu.edu.graduationprojrct.R.anim.fade_in;
 
 
 public class MainScene extends AppCompatActivity {
@@ -29,8 +35,10 @@ public class MainScene extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         shared = getSharedPreferences("data",MODE_PRIVATE);
         Log.d("Info",shared.getString("UserName","Nan"));
+
         setContentView(R.layout.activity_main_scene);
         ImageButton mirror = findViewById(R.id.mirror);
         ImageButton counter = findViewById(R.id.counter);
@@ -43,16 +51,9 @@ public class MainScene extends AppCompatActivity {
         mirror.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mirror.setAnimation(AnimationUtils.loadAnimation(mirror.getContext(), R.anim.fade_in));
-                try{
-                    Thread.sleep(1000);
-                    Intent intent = new Intent(MainScene.this,TestSelfScene.class);
-                    startActivity(intent);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-
+                Intent intent = new Intent(MainScene.this,TestSelfScene.class);
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainScene.this);
+                startActivity(intent,options.toBundle());
             }
         });
 
@@ -73,7 +74,7 @@ public class MainScene extends AppCompatActivity {
         magazine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainScene.this,PokedexScene.class);
+                Intent intent = new Intent(MainScene.this,PokedexSelectedScene.class);
                 startActivity(intent);
             }
         });
