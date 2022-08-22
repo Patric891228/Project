@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import tw.scu.edu.graduationprojrct.GlobalVariable;
@@ -19,14 +19,15 @@ public class LoginScene extends AppCompatActivity {
     DBHelper DB;
     GlobalVariable gv ;
     SharedPreferences shared;
+    ImageButton Start_Login , Back_check;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button login = findViewById(R.id.Back);
-        Button Regist = findViewById(R.id.finish);
+        Start_Login = findViewById(R.id.finish_regist);
+        Back_check = findViewById(R.id.Back_Check);
         EditText username = findViewById(R.id.userName);
         EditText password = findViewById(R.id.Password);
 
@@ -34,15 +35,15 @@ public class LoginScene extends AppCompatActivity {
         gv = (GlobalVariable)getApplicationContext();
 
         shared = getSharedPreferences("data",MODE_PRIVATE);
-        Regist.setOnClickListener(new View.OnClickListener() {
+        Back_check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginScene.this,RegistScene.class);
+                Intent intent = new Intent(LoginScene.this,CheckAccountScene.class);
                 startActivity(intent);
             }
         });
 
-        login.setOnClickListener(new View.OnClickListener() {
+        Start_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String user = username.getText().toString();
@@ -69,7 +70,6 @@ public class LoginScene extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), MainScene.class));
                         finish();
 
-
                         SharedPreferences.Editor editor = shared.edit();
                         editor.putBoolean("isRegist",true);
                         editor.putString("UserName",user);
@@ -82,4 +82,5 @@ public class LoginScene extends AppCompatActivity {
         });
 
     }
+
 }

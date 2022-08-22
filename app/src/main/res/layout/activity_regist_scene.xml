@@ -4,139 +4,237 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7ED1C0"
-    tools:context=".scene.RegistScene">
-
-    <Button
-        android:id="@+id/finish"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="註冊"
-        app:layout_constraintStart_toStartOf="@+id/scroll_guideline_left"
-        app:layout_constraintTop_toTopOf="@id/scroll_guideline_bottom"
-        app:layout_goneMarginLeft="80dp"
-        app:layout_goneMarginTop="20dp" />
-
-    <Button
-        android:id="@+id/Back"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="回上頁"
-        app:layout_constraintEnd_toEndOf="@id/scroll_guideline_right"
-        app:layout_constraintTop_toTopOf="@id/scroll_guideline_bottom"
-        app:layout_goneMarginRight="80dp"
-        app:layout_goneMarginTop="20dp" />
-
-
-
-
+    android:background="@drawable/bgdown"
+    tools:context=".scene.LoginScene">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bgup"/>
+<!--書-->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/book_for_regist"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_Book"
+        app:layout_constraintLeft_toLeftOf="@id/title_guideline_Left_for_Book"
+        app:layout_constraintRight_toRightOf="@id/title_guideline_Right_for_Book"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_Book"></ImageView>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/scroll_guideline_left"
+        android:id="@+id/title_guideline_Left_for_Book"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.23" />
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/scroll_guideline_right"
+        android:id="@+id/title_guideline_Right_for_Book"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.8" />
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/scroll_guideline_top"
+        android:id="@+id/title_guideline_Top_for_Book"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.18" />
+        app:layout_constraintGuide_percent="0" />
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/scroll_guideline_bottom"
+        android:id="@+id/title_guideline_Bottom_for_Book"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.74" />
+        app:layout_constraintGuide_percent="1" />
+<!--完成註冊-->
+    <ImageButton
+        android:id="@+id/finish_regist"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/start_for_sgin"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_Start"
+        app:layout_constraintLeft_toLeftOf="@id/title_guideline_Left_for_Start"
+        app:layout_constraintRight_toRightOf="@id/title_guideline_Right_for_Start"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_Start"
+        />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/answer_guideline_left"
+        android:id="@+id/title_guideline_Left_for_Start"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
-
+        app:layout_constraintGuide_percent="0.44" />
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/answer_guideline_right"
+        android:id="@+id/title_guideline_Right_for_Start"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="1.0" />
-
-    <ScrollView
-        android:id="@+id/scrollView2"
+        app:layout_constraintGuide_percent="0.69" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_Start"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/scroll_guideline_bottom"
-        app:layout_constraintEnd_toEndOf="@id/scroll_guideline_right"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/scroll_guideline_left"
-        app:layout_constraintTop_toTopOf="@id/scroll_guideline_top"
-        app:layout_constraintVertical_bias="1.0">
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.68" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_Start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+<!--回上頁-->
+    <ImageButton
+        android:id="@+id/Back_Check"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/back"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_BTN"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right_for_BTN"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left_for_BTN"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_BTN" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
 
-            <EditText
-                android:id="@+id/userName"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="50dp"
-                android:background="@color/white"
-                android:ems="10"
-                android:gravity="center_horizontal|center_vertical"
-                android:hint="請輸入信箱"
-                android:inputType="textPersonName">
-            </EditText>
+<!--輸入框-->
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/inputbox_account"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:rotation="-1"
+        android:textColor = "@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom1"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right1"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left1"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top1"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <EditText
-            android:id="@+id/Password"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginLeft="50dp"
-            android:background="@color/white"
-            android:ems="10"
-            android:gravity="center_horizontal|center_vertical"
-            android:hint="請輸入密碼"
-            android:inputType="textPersonName"></EditText>
-        <EditText
-            android:id="@+id/Sexual"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginLeft="50dp"
-            android:background="@color/white"
-            android:ems="10"
-            android:gravity="center_horizontal|center_vertical"
-            android:hint="請輸入性別"
-            android:inputType="textPersonName"></EditText>
-        <EditText
-            android:id="@+id/PhoneNumber"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="50dp"
-            android:background="@color/white"
-            android:ems="10"
-            android:gravity="center_horizontal|center_vertical"
-            android:hint="請輸入手機號碼"
-            android:inputType="textPersonName">
-            </EditText>
-        </LinearLayout>
-    </ScrollView>
+    <EditText
+        android:id="@+id/Account"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/inputbox_account"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:rotation="-1"
+        android:textColor = "@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom2"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right2"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left2"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top2" />
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/inputbox_account"
+        android:ems="10"
+        android:gravity="center"
+        android:textColor = "@color/white"
+        android:inputType="textPersonName"
+        android:rotation="-1"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom3"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right3"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left3"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.39" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.645" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.46" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.405" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.67" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.42" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

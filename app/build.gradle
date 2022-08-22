@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    compile 'com.agilie:rotatable-autofit-edittext:1.2'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'

@@ -4,82 +4,203 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7ED1C0"
+    android:background="@drawable/bgdown"
+
     tools:context=".scene.LoginScene">
 
-    <Button
-        android:id="@+id/finish"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:text="Regist"
-        app:layout_constraintBottom_toBottomOf="@id/title_guideline_bottom"
-        app:layout_constraintEnd_toEndOf="@id/title_guideline_left_for_mirror" />
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/book"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_Book"
+        app:layout_constraintLeft_toLeftOf="@id/title_guideline_Left_for_Book"
+        app:layout_constraintRight_toRightOf="@id/title_guideline_Right_for_Book"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_Book"></ImageView>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left_for_Book"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.23" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_Book"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_Book"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_Book"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1" />
 
-    <Button
-        android:id="@+id/Back"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:text="login"
-        app:layout_constraintBottom_toBottomOf="@id/title_guideline_bottom"
-        app:layout_constraintStart_toStartOf="@id/title_guideline_left" />
+    <ImageButton
+        android:id="@+id/finish_regist"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/start_for_sgin"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_Start"
+        app:layout_constraintLeft_toLeftOf="@id/title_guideline_Left_for_Start"
+        app:layout_constraintRight_toRightOf="@id/title_guideline_Right_for_Start"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_Start"
+         />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left_for_Start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_Start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.67" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_Start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_Start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.77" />
+
+    <ImageButton
+        android:id="@+id/Back_Check"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/back"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_BTN"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right_for_BTN"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left_for_BTN"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_BTN" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
 
     <EditText
         android:id="@+id/userName"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/white"
+        android:background="@drawable/inputbox_account"
         android:ems="10"
-        android:gravity="center_horizontal|center_vertical"
-        android:hint="請輸入帳號"
+        android:gravity="center"
         android:inputType="textPersonName"
-        app:layout_constraintDimensionRatio="h,1:0.15"
-        app:layout_constraintEnd_toEndOf="@id/title_guideline_left_for_mirror"
-        app:layout_constraintStart_toStartOf="@id/title_guideline_left"
-        app:layout_constraintTop_toTopOf="@id/title_guideline_bottom_for_mirror" />
+        android:rotation="-1"
+        android:textColor = "@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom1"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right1"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left1"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top1"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/Password"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/white"
+        android:background="@drawable/inputbox_account"
         android:ems="10"
-        android:gravity="center_horizontal|center_vertical"
-        android:hint="請輸入密碼"
+        android:gravity="center"
+        android:textColor = "@color/white"
         android:inputType="textPersonName"
-        app:layout_constraintDimensionRatio="h,1:0.15"
-        app:layout_constraintEnd_toEndOf="@id/title_guideline_left_for_mirror"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/title_guideline_left"
-        app:layout_constraintTop_toTopOf="@id/userName" />
+        android:rotation="-1"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom2"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right2"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left2"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top2" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/title_guideline_left"
+        android:id="@+id/title_guideline_Left1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.30" />
+        app:layout_constraintGuide_percent="0.39" />
+
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/title_guideline_left_for_mirror"
+        android:id="@+id/title_guideline_Right1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.70" />
+        app:layout_constraintGuide_percent="0.65" />
+
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/title_guideline_bottom_for_mirror"
+        android:id="@+id/title_guideline_Top1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.40" />
+        app:layout_constraintGuide_percent="0.3" />
+
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/title_guideline_bottom"
+        android:id="@+id/title_guideline_Bottom1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.80" />
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

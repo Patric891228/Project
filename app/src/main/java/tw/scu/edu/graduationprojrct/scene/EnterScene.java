@@ -49,7 +49,7 @@ public class EnterScene extends AppCompatActivity {
         shared = getSharedPreferences("data",MODE_PRIVATE); // 取得資料
         boolean isRegist = shared.getBoolean("isRegist",false); // 後方為，若沒有資料，預設值為false
         if(!isRegist){
-            startActivity(new Intent(EnterScene.this,LoginScene.class));
+            startActivity(new Intent(EnterScene.this,CheckAccountScene.class));
             finish();
             overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
             Log.d("Anim","Use");
