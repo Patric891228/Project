@@ -30,6 +30,7 @@ public class AdminManagement extends AppCompatActivity {
 
     DBHelper MyDB;
     ArrayList<String> username = new ArrayList<>();
+    ArrayList<String> account = new ArrayList<>();
     ArrayList<String> password = new ArrayList<>();
     ArrayList<TextView> AccountInfo = new ArrayList<>();
     CustomAdapter customAdapter;
@@ -66,7 +67,7 @@ public class AdminManagement extends AppCompatActivity {
         int DataSize = cursor.getCount(); // ==4
        for(int i =0;i<DataSize;i++){
            TextView TV = new TextView(  this);
-           TV.setText(username.get(i)+" "+password.get(i));
+           TV.setText(username.get(i)+" "+account.get(i)+" "+password.get(i));
           AccountInfo.add(TV);
           RelativeLayout.LayoutParams btParams = new RelativeLayout.LayoutParams((int)blankWidth,(int)blankHeight);
           btParams.topMargin = (int)((i-1)*blankHeight); //縱座標定位
@@ -91,6 +92,7 @@ public class AdminManagement extends AppCompatActivity {
     private void PrintAccountInfo() {
         for (int i = 0; i < username.size(); i++){
             Log.d("AccountInfo", username.get(i));
+            Log.d("AccountInfo",account.get(i));
             Log.d("AccountInfo", password.get(i));
         }
     }
@@ -104,7 +106,8 @@ public class AdminManagement extends AppCompatActivity {
 
             while (cursor.moveToNext()) {
                 username.add(cursor.getString(0));
-                password.add(cursor.getString(1));
+                account.add(cursor.getString(1));
+                password.add(cursor.getString(2));
             }
         }
     }

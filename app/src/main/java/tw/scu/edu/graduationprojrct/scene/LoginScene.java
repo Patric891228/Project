@@ -28,7 +28,7 @@ public class LoginScene extends AppCompatActivity {
 
         Start_Login = findViewById(R.id.finish_regist);
         Back_check = findViewById(R.id.Back_Check);
-        EditText username = findViewById(R.id.userName);
+        EditText account = findViewById(R.id.userName);
         EditText password = findViewById(R.id.Password);
 
         DB = new DBHelper(this);
@@ -46,13 +46,13 @@ public class LoginScene extends AppCompatActivity {
         Start_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = username.getText().toString();
+                String ac = account.getText().toString();
                 String pass = password.getText().toString();
 
-                if(user.equals("") || pass.equals("")) {
+                if(ac.equals("") || pass.equals("")) {
                     Toast.makeText(LoginScene.this, "Please enter all this fields", Toast.LENGTH_SHORT).show();
                     // 有沒填寫的表格
-                }else if (user.equals("admin") || pass.equals("admin")){
+                }else if (ac.equals("admin") || pass.equals("admin")){
                     // 登入官方帳號
                     SharedPreferences.Editor editor = shared.edit();
                     editor.putBoolean("isRegist",true);
@@ -64,7 +64,7 @@ public class LoginScene extends AppCompatActivity {
                     finish();
 
                 }else{
-                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
+                    Boolean checkuserpass = DB.checkusernamepassword(ac, pass);
                     if(checkuserpass){
                         Toast.makeText(LoginScene.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), MainScene.class));
@@ -72,7 +72,7 @@ public class LoginScene extends AppCompatActivity {
 
                         SharedPreferences.Editor editor = shared.edit();
                         editor.putBoolean("isRegist",true);
-                        editor.putString("UserName",user);
+                        editor.putString("UserName",ac);
                         editor.commit();
                     }else {
                         Toast.makeText(LoginScene.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
