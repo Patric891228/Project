@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DownloadManager;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -21,7 +23,7 @@ import tw.scu.edu.graduationprojrct.R;
 import tw.scu.edu.graduationprojrct.Setting.CustomAdapter;
 import tw.scu.edu.graduationprojrct.Setting.DBHelper;
 
-public class AdminManagement extends AppCompatActivity {
+public class AdminManagement extends AppCompatActivity implements View.OnClickListener {
     RecyclerView recyclerView;
     FloatingActionButton add_button;
     public int scrollWidth, scrollHeight;
@@ -46,8 +48,7 @@ public class AdminManagement extends AppCompatActivity {
         storeDataArrays();
         PrintAccountInfo();
         createPokedexFrame();
-//        TextView Account = findViewById(R.id.UN);
-//        TextView Password = findViewById(R.id.PS);
+        BTNEvent();
     }
 
     private void checkScrollSize() {
@@ -66,29 +67,16 @@ public class AdminManagement extends AppCompatActivity {
         Cursor cursor = MyDB.readAllData();
         int DataSize = cursor.getCount(); // ==4
        for(int i =0;i<DataSize;i++){
-           TextView TV = new TextView(  this);
-           TV.setText(username.get(i)+" "+account.get(i)+" "+password.get(i));
+          TextView TV = new TextView(  this);
+          TV.setText(username.get(i)+" "+account.get(i)+" "+password.get(i));
+          TV.setId(i);
           AccountInfo.add(TV);
           RelativeLayout.LayoutParams btParams = new RelativeLayout.LayoutParams((int)blankWidth,(int)blankHeight);
           btParams.topMargin = (int)((i-1)*blankHeight); //縱座標定位
           blankPlace.addView(AccountInfo.get(i),btParams); //將按鈕放入layout元件
       }
     } // 動態建立表格
-////        recyclerView = findViewById(R.id.RecyclerView);
-//        MyDB = new DBHelper(this);
-//        username = new ArrayList<>();
-//        password = new ArrayList<>();
-//
-//
-//
-//        storeDataArrays();
-//        Account.setText(username.get(1));
-//        Password.setText(password.get(1));
-////        customAdapter = new CustomAdapter(AdminManagement.this, username, password);
-////        recyclerView.setAdapter(customAdapter);
-////        recyclerView.setLayoutManager(new LinearLayoutManager(AdminManagement.this));
-//
-//    }
+
     private void PrintAccountInfo() {
         for (int i = 0; i < username.size(); i++){
             Log.d("AccountInfo", username.get(i));
@@ -96,6 +84,7 @@ public class AdminManagement extends AppCompatActivity {
             Log.d("AccountInfo", password.get(i));
         }
     }
+
     void storeDataArrays() {
         Cursor cursor = MyDB.readAllData();
         if (cursor.getCount() == 0) {
@@ -110,5 +99,24 @@ public class AdminManagement extends AppCompatActivity {
                 password.add(cursor.getString(2));
             }
         }
+    }
+
+    void BTNEvent(){
+        for(int i =0;i<AccountInfo.size();i++){
+            AccountInfo.get(i).setOnClickListener(this);
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(AdminManagement.this,AccountSetScene.class);
+        intent.putExtra("username",username.get(view.getId()));
+        intent.putExtra("account",username.get(view.getId()));
+        intent.putExtra("password",username.get(view.getId()));
+        Log.d("username",username.get(view.getId()));
+        Log.d("account",account.get(view.getId()));
+        Log.d("password",password.get(view.getId()));
+        startActivity(intent);
+        Log.d("資訊",username.get(view.getId()));
     }
 }

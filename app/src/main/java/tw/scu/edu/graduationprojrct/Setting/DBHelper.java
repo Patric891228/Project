@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -12,11 +14,16 @@ import java.sql.Time;
 
 
 public class DBHelper extends SQLiteOpenHelper {
-
+    private Context context;
     public static final String DBNAME = "Login.db";
+    private static final String TABLE_NAME = "users";
+    private static final String COLUMN_USERNAME = "username";
+    private static final String COLUMN_ACCOUNT = "account";
+    private static final String COLUMN_PASSWORD = "password";
 
     public DBHelper(Context context) {
         super(context, "Login.db", null, 1);
+        this.context = context;
     }
 
 
@@ -92,6 +99,35 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return cursor;
     }
-
-
+    public void updateData(String username, String account,String password){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_USERNAME, username);
+        cv.put(COLUMN_ACCOUNT, account);
+        cv.put(COLUMN_PASSWORD, password);
+        Log.d("NewUserName",username);
+        Log.d("NewAccount",account);
+        Log.d("NewPassWord",password);
+        long result = MyDB.update(TABLE_NAME, cv, "username=?", new String[]{username});
+        if(result == -1){
+            Toast.makeText(context, "Fail to Update", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(context, "Update Successfully", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void deleteOneRow(String username){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, "username=?", new String[]{username});
+        if(result == -1){
+            Toast.makeText(context, "Fail to Delete.", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    void deleteAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME);
+    }
 }
