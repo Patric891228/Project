@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -229,7 +227,7 @@ public class TestSelfScene extends AppCompatActivity {
         button_pelvic.setVisibility(View.GONE);
         button_belly.setVisibility(View.GONE);
 
-        Back_Test = findViewById(R.id.Back_Main);
+        Back_Test = findViewById(R.id.Back_From_Magazine);
         MirrorBG = findViewById(R.id.MirrorBG);
     }
     public void Gone(ImageView obj){

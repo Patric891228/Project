@@ -6,124 +6,263 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".scene.PokedexSelectedScene">
-    <!--    GuildLine  -->
+<!--    背景    -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bgdown"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bgup"
+        />
+<!--    左雜誌-->
+    <ImageView
+        android:id="@+id/Left_Magazine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/left_original"
+        app:layout_constraintTop_toTopOf="@id/Magazine_Position_Top"
+        app:layout_constraintBottom_toBottomOf="@id/Magazine_Position_Buttom"
+        app:layout_constraintLeft_toLeftOf="@id/Magazine_Position_Left_Left"
+        app:layout_constraintRight_toRightOf="@id/Magazine_Position_Right_Left"/>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Top"
+        android:id="@+id/Magazine_Position_Top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
-
+        app:layout_constraintGuide_percent="0.25"/>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Bottom"
+        android:id="@+id/Magazine_Position_Buttom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
-
+        app:layout_constraintGuide_percent="0.92"/>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Left"
+        android:id="@+id/Magazine_Position_Left_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15" />
-
+        app:layout_constraintGuide_percent="0.102" />
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Right"
+        android:id="@+id/Magazine_Position_Right_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Mid"
+        app:layout_constraintGuide_percent="0.41" />
+<!--左雜誌拿起    -->
+    <ImageView
+        android:id="@+id/Left_Magazine_Move"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-    <!--    TextViewPosition-->
+        android:background="@drawable/left_moved"
+        app:layout_constraintTop_toTopOf="@id/Magazine_Move_Position_Top"
+        app:layout_constraintBottom_toBottomOf="@id/Magazine_Move_Position_Buttom"
+        app:layout_constraintLeft_toLeftOf="@id/Magazine_Move_Position_Left_Left"
+        app:layout_constraintRight_toRightOf="@id/Magazine_Move_Position_Right_Left"/>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/TextView_Top"
+        android:id="@+id/Magazine_Move_Position_Top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
-
+        app:layout_constraintGuide_percent="0.2"/>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/TextView_Bottom"
+        android:id="@+id/Magazine_Move_Position_Buttom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.81" />
-
+        app:layout_constraintGuide_percent="0.85"/>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/TextView_Left"
+        android:id="@+id/Magazine_Move_Position_Left_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.54" />
-
+        app:layout_constraintGuide_percent="0.102" />
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/TextView_Right"
+        android:id="@+id/Magazine_Move_Position_Right_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.82" />
-    <!--    TextView-->
-    <LinearLayout
+        app:layout_constraintGuide_percent="0.41" />
+<!--    中雜誌-->
+    <ImageView
+        android:id="@+id/Center_Magazine"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/TextView_Bottom"
-        app:layout_constraintLeft_toLeftOf="@id/TextView_Left"
-        app:layout_constraintRight_toRightOf="@id/TextView_Right"
-        app:layout_constraintTop_toTopOf="@id/TextView_Top"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/A"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="收腹運動"
-            android:textSize="37sp"
-            />
-
-        <TextView
-            android:id="@+id/B"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="改善圓肩駝背"
-            android:textSize="37sp"
-            />
-
-        <TextView
-            android:id="@+id/C"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="骨盆前傾"
-            android:textSize="37sp"
-             />
-
-        <TextView
-            android:id="@+id/D"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="假跨寬"
-            android:textSize="37sp"
-            />
-
-        <TextView
-            android:id="@+id/E"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:gravity="center"
-            android:text="腿型校正"
-            android:textSize="37sp"
-            />
-    </LinearLayout>
-
-
+        android:background="@drawable/center_original"
+        app:layout_constraintTop_toTopOf="@id/Magazine_Position_Top"
+        app:layout_constraintBottom_toBottomOf="@id/Magazine_Position_Buttom"
+        app:layout_constraintLeft_toLeftOf="@id/Magazine_Position_Left_Mid"
+        app:layout_constraintRight_toRightOf="@id/Magazine_Position_Right_Mid"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Magazine_Position_Left_Mid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.356" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Magazine_Position_Right_Mid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.666" />
+<!--    中雜誌拿起    -->
+    <ImageView
+        android:id="@+id/Center_Magazine_Move"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/center_moved"
+        app:layout_constraintTop_toTopOf="@id/Magazine_Move_Position_Top_Mid"
+        app:layout_constraintBottom_toBottomOf="@id/Magazine_Move_Position_Buttom_Mid"
+        app:layout_constraintLeft_toLeftOf="@id/Magazine_Move_Position_Left_Mid"
+        app:layout_constraintRight_toRightOf="@id/Magazine_Move_Position_Right_Mid"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Magazine_Move_Position_Top_Mid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Magazine_Move_Position_Buttom_Mid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.83"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Magazine_Move_Position_Left_Mid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.36" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Magazine_Move_Position_Right_Mid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.676" />
+<!--    右雜誌-->
+    <ImageView
+        android:id="@+id/Right_Magazine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/right_original"
+        app:layout_constraintBottom_toBottomOf="@id/Magazine_Position_Buttom"
+        app:layout_constraintLeft_toLeftOf="@id/Magazine_Position_Left_Right"
+        app:layout_constraintRight_toRightOf="@id/Magazine_Position_Right_Right"
+        app:layout_constraintTop_toTopOf="@id/Magazine_Position_Top" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Magazine_Position_Left_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.62" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Magazine_Position_Right_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.925" />
+<!--    右雜誌拿起    -->
+    <ImageView
+        android:id="@+id/Right_Magazine_Move"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/right_moved"
+        app:layout_constraintTop_toTopOf="@id/Magazine_Move_Position_Top_Right"
+        app:layout_constraintBottom_toBottomOf="@id/Magazine_Move_Position_Buttom_Right"
+        app:layout_constraintLeft_toLeftOf="@id/Magazine_Move_Position_Left_Right"
+        app:layout_constraintRight_toRightOf="@id/Magazine_Move_Position_Right_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Magazine_Move_Position_Top_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.19"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Magazine_Move_Position_Buttom_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Magazine_Move_Position_Left_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.61" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Magazine_Move_Position_Right_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+<!--    雜誌架-->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shelf"
+        app:layout_constraintTop_toTopOf="@id/Shelf_Position_Top"
+        app:layout_constraintBottom_toBottomOf="@id/Shelf_Position_Buttom"
+        app:layout_constraintLeft_toLeftOf="@id/Shelf_Position_Left"
+        app:layout_constraintRight_toRightOf="@id/Shelf_Position_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Shelf_Position_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.43"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Shelf_Position_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.895"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Shelf_Position_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Shelf_Position_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.951" />
+<!--返回按鈕    -->
+    <ImageButton
+        android:id="@+id/Back_From_Magazine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/backmagazine"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_BTN"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right_for_BTN"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left_for_BTN"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_BTN" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.11" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+

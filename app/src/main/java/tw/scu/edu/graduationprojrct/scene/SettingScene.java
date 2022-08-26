@@ -25,7 +25,7 @@ public class SettingScene extends AppCompatActivity {
         toPersonalScene.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SettingScene.this, PersonalScene.class));
+                startActivity(new Intent(SettingScene.this, AccountEditScene.class));
             }
         });
         toRemindScene.setOnClickListener(new View.OnClickListener() {

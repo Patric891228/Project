@@ -6,37 +6,48 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".scene.AccountSetScene">
-
-    <EditText
-        android:id="@+id/username2"
+    <TextView
+        android:id="@+id/UserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="User Name"
-        android:layout_marginTop="50dp"/>
+        android:textSize="35dp"/>
 
     <EditText
-        android:id="@+id/password2"
+        android:id="@+id/EditAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="Account"
+        android:layout_below="@+id/UserName"/>
+
+    <EditText
+        android:id="@+id/EditPassWord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/username2"/>
+        android:layout_below="@+id/EditAccount"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="110dp" />
 
     <Button
         android:id="@+id/update_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/EditPassWord"
+        android:layout_marginTop="71dp"
         android:text="Update"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/password2"/>
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="210dp" />
 
     <Button
         android:id="@+id/delete_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/update_button"
+        android:layout_marginTop="21dp"
         android:text="Delete"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/update_button"/>
+        tools:layout_editor_absoluteX="-7dp"
+        tools:layout_editor_absoluteY="278dp" />
 
 
 </RelativeLayout>

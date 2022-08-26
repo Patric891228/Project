@@ -541,7 +541,7 @@
 
 <!--返回按鈕-->
     <ImageButton
-        android:id="@+id/Back_Main"
+        android:id="@+id/Back_From_Magazine"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/backtest"

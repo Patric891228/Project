@@ -117,6 +117,6 @@ public class AdminManagement extends AppCompatActivity implements View.OnClickLi
         Log.d("account",account.get(view.getId()));
         Log.d("password",password.get(view.getId()));
         startActivity(intent);
-        Log.d("資訊",username.get(view.getId()));
+
     }
 }

@@ -5,32 +5,42 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import tw.scu.edu.graduationprojrct.R;
 import tw.scu.edu.graduationprojrct.Setting.DBHelper;
 
 public class AccountSetScene extends AppCompatActivity {
-    EditText username_input, password_input;
+    EditText account_input, password_input;
     Button update_button, delete_button;
-
+    TextView UserName;
     String username,account ,password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_set_scene);
-        username_input = findViewById(R.id.username2);
-        password_input = findViewById(R.id.password2);
+        account_input = findViewById(R.id.EditAccount);
+        password_input = findViewById(R.id.EditPassWord);
         update_button = findViewById(R.id.update_button);
         delete_button = findViewById(R.id.delete_button);
 
+        username = getIntent().getStringExtra("username");
+        account = getIntent().getStringExtra("account");
+        password = getIntent().getStringExtra("password");
+
+        UserName = findViewById(R.id.UserName);
+        UserName.setText(username);
         //呼叫method
-        getAndSetIntentData();
+        //getAndSetIntentData();
+
+
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setTitle(username);
@@ -39,13 +49,13 @@ public class AccountSetScene extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DBHelper DB = new DBHelper(AccountSetScene.this);
-                username = username_input.getText().toString().trim();
+                account = account_input.getText().toString().trim();
                 password = password_input.getText().toString().trim();
-                account = password_input.getText().toString().trim();
-                Log.d("UpdateUserName",username);
-                Log.d("UpdateAccount",password);
-                Log.d("UpdatePassWord",account);
+//                Log.d("UpdateUserName",username);
+//                Log.d("UpdateAccount",password);
+//                Log.d("UpdatePassWord",account);
                 DB.updateData(username,account ,password);
+                startActivity(new Intent(AccountSetScene.this, AdminManagement.class));
             }
         });
         delete_button.setOnClickListener(new View.OnClickListener() {
@@ -54,19 +64,15 @@ public class AccountSetScene extends AppCompatActivity {
                 confirmDialog();
             }
         });
+
     }
 
 
     void getAndSetIntentData(){
-        if(getIntent().hasExtra("username") && getIntent().hasExtra("password")){
+        if(getIntent().hasExtra("username")){
             //先取得帳號密碼資料
-            username = getIntent().getStringExtra("username");
-            account = getIntent().getStringExtra("account");
-            password = getIntent().getStringExtra("password");
-
             //設定帳號密碼資料
-            username_input.setText(username);
-//            account_input.setText(account);
+            account_input.setText(account);
             password_input.setText(password);
             Log.d("", username + " " + password);
         }

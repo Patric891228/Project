@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgdown"
+    android:background="@drawable/bgdownr"
     tools:context=".scene.LoginScene">
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bgup"/>
+        android:background="@drawable/bgupr"/>
 <!--書-->
     <ImageView
         android:layout_width="0dp"
@@ -54,7 +54,6 @@
         app:layout_constraintRight_toRightOf="@id/title_guideline_Right_for_Start"
         app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_Start"
         />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_Left_for_Start"
         android:layout_width="0dp"
@@ -89,7 +88,6 @@
         app:layout_constraintEnd_toEndOf="@id/title_guideline_Right_for_BTN"
         app:layout_constraintStart_toStartOf="@id/title_guideline_Left_for_BTN"
         app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_BTN" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_Left_for_BTN"
         android:layout_width="0dp"
@@ -131,7 +129,6 @@
         app:layout_constraintStart_toStartOf="@id/title_guideline_Left1"
         app:layout_constraintTop_toTopOf="@id/title_guideline_Top1"
         app:layout_constraintVertical_bias="1.0" />
-
     <EditText
         android:id="@+id/Account"
         android:layout_width="0dp"
@@ -146,7 +143,6 @@
         app:layout_constraintEnd_toEndOf="@id/title_guideline_Right2"
         app:layout_constraintStart_toStartOf="@id/title_guideline_Left2"
         app:layout_constraintTop_toTopOf="@id/title_guideline_Top2" />
-
     <EditText
         android:id="@+id/Password"
         android:layout_width="0dp"
@@ -211,7 +207,6 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.405" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_Bottom3"
         android:layout_width="0dp"

@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.sql.Time;
@@ -21,7 +22,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String COLUMN_ACCOUNT = "account";
     private static final String COLUMN_PASSWORD = "password";
 
-    public DBHelper(Context context) {
+    public DBHelper(@Nullable Context context) {
         super(context, "Login.db", null, 1);
         this.context = context;
     }
@@ -36,6 +37,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
         MyDB.execSQL("drop Table if exists users");
+        onCreate(MyDB);
 
     }
 
