@@ -46,7 +46,7 @@
             android:name=".scene.ResultScene"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".scene.SportScene"
+            android:name=".scene.SportSelectScene"
             android:screenOrientation="landscape" />
         <activity
             android:name=".scene.BasicSportScene"

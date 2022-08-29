@@ -60,14 +60,14 @@ public class MainScene extends AppCompatActivity {
         counter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainScene.this, SettingScene.class);
+                Intent intent = new Intent(MainScene.this,LoginScene.class);
                 startActivity(intent);
             }
         });
         tiecabinet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainScene.this,LoginScene.class);
+                Intent intent = new Intent(MainScene.this,SportSelectScene.class);
                 startActivity(intent);
             }
         });

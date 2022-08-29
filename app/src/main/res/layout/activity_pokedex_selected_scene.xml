@@ -201,7 +201,7 @@
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/shelf"
+        android:background="@drawable/shelf_mag"
         app:layout_constraintTop_toTopOf="@id/Shelf_Position_Top"
         app:layout_constraintBottom_toBottomOf="@id/Shelf_Position_Buttom"
         app:layout_constraintLeft_toLeftOf="@id/Shelf_Position_Left"

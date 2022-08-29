@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shelf_bg"
+    tools:context=".scene.SportSelectScene">
+<!--    領帶1-->
+    <ImageView
+        android:id="@+id/Tie1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie1"
+        app:layout_constraintBottom_toBottomOf="@id/Tie1_Buttom"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@id/Tie1_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie1_Right"
+        app:layout_constraintTop_toTopOf="@id/Tie1_Top"
+        app:layout_constraintVertical_bias="0.0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie1_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.138" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie1_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie1_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.333" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie1_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.395" />
+ <!--    領帶2-->
+    <ImageView
+        android:id="@+id/Tie2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie2"
+        app:layout_constraintBottom_toBottomOf="@id/Tie2_Buttom"
+        app:layout_constraintTop_toTopOf="@id/Tie2_Top"
+        app:layout_constraintLeft_toLeftOf="@id/Tie2_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie2_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie2_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.138" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie2_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie2_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.389" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie2_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.456" />
+<!--    領帶3-->
+    <ImageView
+        android:id="@+id/Tie3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie3"
+        app:layout_constraintBottom_toBottomOf="@id/Tie3_Buttom"
+        app:layout_constraintTop_toTopOf="@id/Tie3_Top"
+        app:layout_constraintLeft_toLeftOf="@id/Tie3_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie3_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie3_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.136" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie3_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55 "/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie3_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.458" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie3_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.519" />
+<!--    領帶4-->
+    <ImageView
+        android:id="@+id/Tie4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie4"
+        app:layout_constraintBottom_toBottomOf="@id/Tie4_Buttom"
+        app:layout_constraintTop_toTopOf="@id/Tie4_Top"
+        app:layout_constraintLeft_toLeftOf="@id/Tie4_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie4_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie4_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.136" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie4_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55 "/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie4_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.524" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie4_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.583" />
+<!--    領帶5-->
+    <ImageView
+        android:id="@+id/Tie5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie5"
+        app:layout_constraintBottom_toBottomOf="@id/Tie5_Buttom"
+        app:layout_constraintTop_toTopOf="@id/Tie5_Top"
+        app:layout_constraintLeft_toLeftOf="@id/Tie5_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie5_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie5_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.187" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie5_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.248" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie5_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.594" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie5_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.67" />
+<!--    領帶6-->
+    <ImageView
+        android:id="@+id/Tie6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie6"
+        app:layout_constraintBottom_toBottomOf="@id/Tie6_Buttom"
+        app:layout_constraintTop_toTopOf="@id/Tie6_Top"
+        app:layout_constraintLeft_toLeftOf="@id/Tie6_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie6_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie6_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.275" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie6_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.335" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie6_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.594" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie6_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.67" />
+<!--    領帶7-->
+    <ImageView
+        android:id="@+id/Tie7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie7"
+        app:layout_constraintBottom_toBottomOf="@id/Tie7_Buttom"
+        app:layout_constraintTop_toTopOf="@id/Tie7_Top"
+        app:layout_constraintLeft_toLeftOf="@id/Tie7_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie7_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie7_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.355" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie7_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.425 " />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie7_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.594" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie7_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.67" />
+<!--    領帶8-->
+    <ImageView
+        android:id="@+id/Tie8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie8"
+        app:layout_constraintBottom_toBottomOf="@id/Tie8_Buttom"
+        app:layout_constraintTop_toTopOf="@id/Tie8_Top"
+        app:layout_constraintLeft_toLeftOf="@id/Tie8_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie8_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie8_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.445" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie8_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.51" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie8_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.594" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie8_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.67" />
+<!--    領帶點擊1-->
+    <ImageView
+            android:id="@+id/Tie_Click1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/tie1_clicked"
+            app:layout_constraintBottom_toBottomOf="@id/Tie_Click1_Buttom"
+            app:layout_constraintLeft_toLeftOf="@id/Tie_Click1_Left"
+            app:layout_constraintRight_toRightOf="@id/Tie_Click1_Right"
+            app:layout_constraintTop_toTopOf="@id/Tie_Click1_Top"
+            app:layout_constraintVertical_bias="0.0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click1_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click1_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click1_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click1_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.421" />
+<!--    領帶點擊2-->
+    <ImageView
+        android:id="@+id/Tie_Click2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie2_clicked"
+        app:layout_constraintBottom_toBottomOf="@id/Tie_Click2_Buttom"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@id/Tie_Click2_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie_Click2_Right"
+        app:layout_constraintTop_toTopOf="@id/Tie_Click2_Top"
+        app:layout_constraintVertical_bias="1.0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click2_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.125" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click2_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click2_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.393" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click2_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.482" />
+<!--    領帶點擊3-->
+    <ImageView
+        android:id="@+id/Tie_Click3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie3_clicked"
+        app:layout_constraintBottom_toBottomOf="@id/Tie_Click3_Buttom"
+        app:layout_constraintTop_toTopOf="@id/Tie_Click3_Top"
+        app:layout_constraintLeft_toLeftOf="@id/Tie_Click3_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie_Click3_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click3_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click3_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55 "/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click3_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.459" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click3_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.548" />
+<!--    領帶點擊4-->
+    <ImageView
+        android:id="@+id/Tie_Click4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie4_clicked"
+        app:layout_constraintBottom_toBottomOf="@id/Tie_Click4_Buttom"
+        app:layout_constraintTop_toTopOf="@id/Tie_Click4_Top"
+        app:layout_constraintLeft_toLeftOf="@id/Tie_Click4_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie_Click4_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click4_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.125" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click4_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55 "/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click4_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.529" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click4_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.605" />
+<!--    領帶點擊5-->
+    <ImageView
+            android:id="@+id/Tie_Click5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/tie5_clicked"
+            app:layout_constraintBottom_toBottomOf="@id/Tie_Click5_Buttom"
+            app:layout_constraintTop_toTopOf="@id/Tie_Click5_Top"
+            app:layout_constraintLeft_toLeftOf="@id/Tie_Click5_Left"
+            app:layout_constraintRight_toRightOf="@id/Tie_Click5_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click5_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.135" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click5_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2961" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click5_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.589" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click5_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.695" />
+<!--    領帶點擊6-->
+    <ImageView
+    android:id="@+id/Tie_Click6"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:background="@drawable/tie6_clicked"
+    app:layout_constraintBottom_toBottomOf="@id/Tie_Click6_Buttom"
+    app:layout_constraintTop_toTopOf="@id/Tie_Click6_Top"
+    app:layout_constraintLeft_toLeftOf="@id/Tie_Click6_Left"
+    app:layout_constraintRight_toRightOf="@id/Tie_Click6_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click6_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click6_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click6_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.594" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click6_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.67" />
+<!--    領帶點擊7-->
+    <ImageView
+        android:id="@+id/Tie_Click7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie7_clicked"
+        app:layout_constraintBottom_toBottomOf="@id/Tie_Click7_Buttom"
+        app:layout_constraintTop_toTopOf="@id/Tie_Click7_Top"
+        app:layout_constraintLeft_toLeftOf="@id/Tie_Click7_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie_Click7_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click7_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click7_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.432" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click7_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.594" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click7_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.67" />
+<!--    領帶點擊8-->
+    <ImageView
+        android:id="@+id/Tie_Click8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tie8_clicked"
+        app:layout_constraintBottom_toBottomOf="@id/Tie_Click8_Buttom"
+        app:layout_constraintTop_toTopOf="@id/Tie_Click8_Top"
+        app:layout_constraintLeft_toLeftOf="@id/Tie_Click8_Left"
+        app:layout_constraintRight_toRightOf="@id/Tie_Click8_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click8_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.43" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click8_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.51" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click8_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.594" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Tie_Click8_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.67" />
+    <!--返回按鈕-->
+    <ImageButton
+        android:id="@+id/Back_From_SportSelect"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shelf_back"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_BTN"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right_for_BTN"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left_for_BTN"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_BTN" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.022" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.142" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.005" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.19" />
+</androidx.constraintlayout.widget.ConstraintLayout>
