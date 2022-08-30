@@ -3,14 +3,12 @@ package tw.scu.edu.graduationprojrct.scene;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.DownloadManager;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,7 +18,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 import tw.scu.edu.graduationprojrct.R;
-import tw.scu.edu.graduationprojrct.Setting.CustomAdapter;
 import tw.scu.edu.graduationprojrct.Setting.DBHelper;
 
 public class AdminManagement extends AppCompatActivity implements View.OnClickListener {
@@ -35,7 +32,7 @@ public class AdminManagement extends AppCompatActivity implements View.OnClickLi
     ArrayList<String> account = new ArrayList<>();
     ArrayList<String> password = new ArrayList<>();
     ArrayList<TextView> AccountInfo = new ArrayList<>();
-    CustomAdapter customAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

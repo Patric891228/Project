@@ -17,7 +17,6 @@ import tw.scu.edu.graduationprojrct.Setting.DBHelper;
 
 public class LoginScene extends AppCompatActivity {
     DBHelper DB;
-    GlobalVariable gv ;
     SharedPreferences shared;
     ImageButton Start_Login , Back_check;
 
@@ -32,7 +31,6 @@ public class LoginScene extends AppCompatActivity {
         EditText password = findViewById(R.id.Password);
 
         DB = new DBHelper(this);
-        gv = (GlobalVariable)getApplicationContext();
 
         shared = getSharedPreferences("data",MODE_PRIVATE);
         Back_check.setOnClickListener(new View.OnClickListener() {

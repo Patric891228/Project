@@ -51,21 +51,11 @@ public class AccountEditScene extends AppCompatActivity {
                 DBHelper DB = new DBHelper(AccountEditScene.this);
                 account = account_input.getText().toString().trim();
                 password = password_input.getText().toString().trim();
-//                Log.d("UpdateUserName",username);
-//                Log.d("UpdateAccount",password);
-//                Log.d("UpdatePassWord",account);
                 DB.updateData(username, account, password);
                 Log.d("更新資訊","成功");
-//                startActivity(new Intent(AccountEditScene.this, AdminManagement.class));
+                startActivity(new Intent(AccountEditScene.this,PersonalScene.class));
             }
         });
-//        delete_button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                confirmDialog();
-//            }
-//        });
-
     }
 
 
@@ -80,7 +70,6 @@ public class AccountEditScene extends AppCompatActivity {
             Toast.makeText(this, "No Data.", Toast.LENGTH_SHORT).show();
         }
     }
-
     void confirmDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete " + username + " ?");

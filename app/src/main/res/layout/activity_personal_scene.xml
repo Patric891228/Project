@@ -29,25 +29,31 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.1"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/middle_of_setting_line1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.325"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.25"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/middle_of_setting_line2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.4"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/middle_of_setting_line3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.675"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.55"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle_of_setting_line4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7"></androidx.constraintlayout.widget.Guideline>
     <!--ImageButton-->
     <ImageButton
         android:id="@+id/toAccountSetScene"
@@ -82,8 +88,18 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_lien"
         app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
-        app:layout_constraintRight_toRightOf="@id/right_of_setting_line"
+        app:layout_constraintRight_toRightOf="@id/middle_of_setting_line4"
         app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line3"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/LogOutButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="LogOut"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_lien"
+        app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line4"
+        app:layout_constraintRight_toRightOf="@id/right_of_setting_line"
+        app:layout_constraintTop_toTopOf="@id/top_of_setting_line" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,7 +15,6 @@
         <activity android:name=".scene.PokedexSelectedScene" />
         <activity android:name=".scene.AccountSetScene" />
         <activity android:name=".scene.AdminManagement" />
-        <activity android:name=".Setting.PythonTest" />
         <activity android:name=".scene.TestSelfScene" />
         <activity
             android:name=".scene.EnterScene"

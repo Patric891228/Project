@@ -8,7 +8,7 @@
     android:tint="#85FFFFFF"
     tools:context=".scene.MainScene">
 <!--    background-->
-    <ImageView
+    <ImageButton
     android:id="@+id/imageView"
     android:layout_width="0dp"
     android:layout_height="0dp"
@@ -151,7 +151,7 @@
         app:layout_constraintGuide_percent="0.17" />
 <!--tiecabinet-->
 
-    <ImageButton
+    <ImageView
         android:id="@+id/tiecabinet"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -171,18 +171,20 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.0" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_right_for_tiecabinet"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.27" />
+        app:layout_constraintGuide_percent="0.29" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_bottom_for_tiecabinet"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="1.0" />
+        app:layout_constraintGuide_percent="1" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_top_for_tiecabinet"
         android:layout_width="0dp"

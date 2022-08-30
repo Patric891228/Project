@@ -18,29 +18,27 @@ public class DBHelper extends SQLiteOpenHelper {
     private Context context;
     public static final String DBNAME = "Login.db";
     private static final String TABLE_NAME = "users";
+    private static final String TABLE_NAME_TIME = "RemindTime";
     private static final String COLUMN_USERNAME = "username";
     private static final String COLUMN_ACCOUNT = "account";
     private static final String COLUMN_PASSWORD = "password";
+    private static final String COLUMN_TIME = "time";
 
     public DBHelper(@Nullable Context context) {
         super(context, "Login.db", null, 1);
         this.context = context;
     }
-
-
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL("create Table users(username TEXT primary key, account TEXT,password TEXT)");
-        MyDB.execSQL("create Table RemindTime(username TEXT primary key,time String)");//HH:MM
+        MyDB.execSQL("create Table RemindTime(username TEXT primary key,time TEXT)");//HH:MM
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
         MyDB.execSQL("drop Table if exists users");
         onCreate(MyDB);
 
     }
-
     public Boolean insertData(String username,String account, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -53,18 +51,17 @@ public class DBHelper extends SQLiteOpenHelper {
         else
             return true;
     }
-    public Boolean insertTime(String username, String Time){
+    public Boolean EditTime(String username, String Time){
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("username", username);
-        contentValues.put("time", Time);
-        long result = MyDB.insert("RemindTime", null, contentValues);
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_USERNAME, username);
+        cv.put(COLUMN_TIME, Time);
+        long result = MyDB.update(TABLE_NAME_TIME, cv, "username=?", new String[]{username});
         if(result == -1)
             return false;
         else
             return true;
     }
-
     public Boolean checkusername(String username){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from users where username = ?", new String[] {username});
@@ -73,7 +70,6 @@ public class DBHelper extends SQLiteOpenHelper {
         else
             return false;
     }
-
     public Boolean checkusernamepassword(String username, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from users where account = ? and password = ?", new String[] {username, password});
@@ -83,13 +79,18 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
 
     }
-    public String getRemindTime(String username){
+    public String getRemindTime(String username) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("Select * from RemindTime where username = ? ", new String[] {username});
-        return cursor.getString(4);
+        Cursor cursor = MyDB.rawQuery("Select * from RemindTime where username = ? ", new String[]{username});
+        Log.d("TimeInfo", String.valueOf(cursor.getCount()));
+        if (cursor.getCount() >= 1) {
+            while (cursor.moveToNext()) {
+                return cursor.getString(1);
+            }
+        }
+        return cursor.getString(1);
 
     }
-
     public Cursor readAllData(){
         String query = "SELECT * FROM users";
         SQLiteDatabase MyDB = this.getWritableDatabase();
@@ -107,9 +108,6 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_USERNAME, username);
         cv.put(COLUMN_ACCOUNT, account);
         cv.put(COLUMN_PASSWORD, password);
-        Log.d("NewUserName",username);
-        Log.d("NewAccount",account);
-        Log.d("NewPassWord",password);
         long result = MyDB.update(TABLE_NAME, cv, "username=?", new String[]{username});
         if(result == -1){
             Toast.makeText(context, "Fail to Update", Toast.LENGTH_SHORT).show();
