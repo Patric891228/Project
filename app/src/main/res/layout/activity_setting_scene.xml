@@ -4,86 +4,358 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".scene.SettingScene">
-<!--    GuideLine-->
+    tools:context=".scene.SettingScene"
+    >
+<!--BG-->
+    <ImageView
+        android:id="@+id/BG"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_line"
+        app:layout_constraintLeft_toLeftOf="@id/left_of_setting_line"
+        app:layout_constraintRight_toRightOf="@id/right_of_setting_line"
+        android:background="@drawable/account_computer"/>
+<!--BG_GuideLine-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/top_of_setting_line"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.30"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.0"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottom_of_setting_lien"
+        android:id="@+id/bottom_of_setting_line"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.70"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="1.0"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/right_of_setting_line"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85"></androidx.constraintlayout.widget.Guideline>
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/middle_of_setting_line1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.325"></androidx.constraintlayout.widget.Guideline>
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/middle_of_setting_line2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"></androidx.constraintlayout.widget.Guideline>
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/middle_of_setting_line3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.675"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="1.0"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/left_of_setting_line"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15"></androidx.constraintlayout.widget.Guideline>
-<!--ImageButton-->
-    <ImageButton
-        android:id="@+id/toPersonalScene"
+        app:layout_constraintGuide_percent="0.0"></androidx.constraintlayout.widget.Guideline>
+<!--Name-->
+    <TextView
+        android:id="@+id/Name"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_lien"
-        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
-        app:layout_constraintRight_toRightOf="@id/middle_of_setting_line1"
-        app:layout_constraintLeft_toLeftOf="@id/left_of_setting_line"
-        tools:srcCompat="@tools:sample/avatars" />
-    <ImageButton
-        android:id="@+id/toShop"
+        android:ems="10"
+        android:gravity="center"
+        android:background="@drawable/account_inputbox_name"
+        app:layout_constraintTop_toTopOf="@id/top_of_Name"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_of_Name"
+        app:layout_constraintLeft_toLeftOf="@id/left_of_Name"
+        app:layout_constraintRight_toRightOf="@id/right_of_Name"/>
+<!--    Name_GuideLine-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_of_Name"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_lien"
-        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
-        app:layout_constraintRight_toRightOf="@id/middle_of_setting_line2"
-        app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line1"
-        tools:srcCompat="@tools:sample/avatars" />
-    <ImageButton
-        android:id="@+id/toExchange"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_of_Name"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_lien"
-        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
-        app:layout_constraintRight_toRightOf="@id/middle_of_setting_line3"
-        app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line2"
-        tools:srcCompat="@tools:sample/avatars" />
-    <ImageButton
-        android:id="@+id/Back_From_Setting_Scene"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_of_Name"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_lien"
-        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
-        app:layout_constraintRight_toRightOf="@id/right_of_setting_line"
-        app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line3"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.639"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_of_Name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.526 "></androidx.constraintlayout.widget.Guideline>
+<!--Birthday-->
+    <EditText
+        android:id="@+id/Birthday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:gravity="center"
+        android:background="@drawable/account_inputbox_name"
+        app:layout_constraintTop_toTopOf="@id/top_of_Birthday"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_of_Birthday"
+        app:layout_constraintLeft_toLeftOf="@id/left_of_Birthday"
+        app:layout_constraintRight_toRightOf="@id/right_of_Birthday"/>
+<!--Birthday_GuideLine-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_of_Birthday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.515"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_of_Birthday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.56"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_of_Birthday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.673"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_of_Birthday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.526 "></androidx.constraintlayout.widget.Guideline>
+<!--Email-->
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:gravity="center"
+        android:background="@drawable/account_inputbox_name"
+        app:layout_constraintTop_toTopOf="@id/top_of_Email"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_of_Email"
+        app:layout_constraintLeft_toLeftOf="@id/left_of_Email"
+        app:layout_constraintRight_toRightOf="@id/right_of_Email"/>
+<!--Email_GuideLine-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_of_Email"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.655"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_of_Email"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.701"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_of_Email"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.82"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_of_Email"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.523 "></androidx.constraintlayout.widget.Guideline>
+<!--Back_Button-->
+    <ImageButton
+        android:id="@+id/Back_From_Setting"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/account_back"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_BTN"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right_for_BTN"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left_for_BTN"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_BTN" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.01" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.095" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.142" />
+<!--Male-->
+    <ImageView
+        android:id="@+id/Male"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/account_inputbox_male"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_Male"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right_for_Male"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left_for_Male"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_Male" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_Male"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.372" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_Male"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.549" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_Male"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.419" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left_for_Male"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.525" />
+<!--Male_Click-->
+    <ImageView
+        android:id="@+id/Male_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/account_inputbox_male"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_Male"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right_for_Male"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left_for_Male"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_Male" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_Male_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.372" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_Male_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.549" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_Male_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.419" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left_for_Male_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.525" />
+<!--Female-->
+    <ImageView
+        android:id="@+id/Female"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/account_inputbox_female"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_Female"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right_for_Female"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left_for_Female"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_Female" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_Female"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.372" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_Female"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.616" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_Female"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.419" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left_for_Female"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.591" />
+<!--Female_Click-->
+    <ImageView
+        android:id="@+id/Female_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/account_inputbox_male"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_Female_Click"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right_for_Female_Click"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left_for_Female_Click"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_Female_Click" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_Female_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.372" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_Female_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.616" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_Female_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.419" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left_for_Female_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.591" />
+<!--UpdateButton-->
+    <Button
+        android:id="@+id/Update_BTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="確認修改"
+        app:layout_constraintLeft_toLeftOf="@id/title_guideline_Left_for_UpdateBTN"
+        app:layout_constraintRight_toRightOf="@id/title_guideline_Right_for_UpdateBTN"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_UpdateBTN"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_UpdateBTN"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_UpdateBTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_UpdateBTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_UpdateBTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.419" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Left_for_UpdateBTN"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
 </androidx.constraintlayout.widget.ConstraintLayout>

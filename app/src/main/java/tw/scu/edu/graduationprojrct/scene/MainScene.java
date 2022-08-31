@@ -43,7 +43,7 @@ public class MainScene extends AppCompatActivity {
         setContentView(R.layout.activity_main_scene);
         ImageButton mirror = findViewById(R.id.mirror);
         ImageButton counter = findViewById(R.id.counter);
-        ImageButton tiecabinet = findViewById(R.id.tiecabinet);
+        ImageView tiecabinet = findViewById(R.id.tiecabinet);
         ImageButton magazine = findViewById(R.id.magazine);
 
         mysong = MediaPlayer.create(MainScene.this, R.raw.donigen);

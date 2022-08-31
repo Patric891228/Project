@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,7 +23,7 @@ public class AccountEditScene extends AppCompatActivity {
     Button update_button, delete_button;
     TextView UserName;
     String username, account, password;
-
+    SharedPreferences shared;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,16 +31,14 @@ public class AccountEditScene extends AppCompatActivity {
         account_input = findViewById(R.id.EditAccount);
         password_input = findViewById(R.id.EditPassWord);
         update_button = findViewById(R.id.update_button);
-
-        username = getIntent().getStringExtra("username");
-        account = getIntent().getStringExtra("account");
-        password = getIntent().getStringExtra("password");
+        shared = getSharedPreferences("data", MODE_PRIVATE);
+        username = shared.getString("UserName", "Nan");
+        DBHelper DB = new DBHelper(AccountEditScene.this);
+        account = DB.getAccount(username);
+        password = DB.getPassWord(username);
 
         UserName = findViewById(R.id.UserName);
         UserName.setText(username);
-        //呼叫method
-        //getAndSetIntentData();
-
 
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
@@ -58,18 +57,6 @@ public class AccountEditScene extends AppCompatActivity {
         });
     }
 
-
-    void getAndSetIntentData() {
-        if (getIntent().hasExtra("username")) {
-            //先取得帳號密碼資料
-            //設定帳號密碼資料
-            account_input.setText(account);
-            password_input.setText(password);
-            Log.d("", username + " " + password);
-        } else {
-            Toast.makeText(this, "No Data.", Toast.LENGTH_SHORT).show();
-        }
-    }
     void confirmDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete " + username + " ?");

@@ -27,7 +27,7 @@ public class LoginScene extends AppCompatActivity {
 
         Start_Login = findViewById(R.id.finish_regist);
         Back_check = findViewById(R.id.Back_Check);
-        EditText account = findViewById(R.id.userName);
+        EditText username = findViewById(R.id.userName);
         EditText password = findViewById(R.id.Password);
 
         DB = new DBHelper(this);
@@ -44,25 +44,24 @@ public class LoginScene extends AppCompatActivity {
         Start_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String ac = account.getText().toString();
+                String un = username.getText().toString();
                 String pass = password.getText().toString();
 
-                if(ac.equals("") || pass.equals("")) {
+                if(un.equals("") || pass.equals("")) {
                     Toast.makeText(LoginScene.this, "Please enter all this fields", Toast.LENGTH_SHORT).show();
                     // 有沒填寫的表格
-                }else if (ac.equals("admin") || pass.equals("admin")){
+                }else if (un.equals("admin") && pass.equals("admin")){
                     // 登入官方帳號
                     SharedPreferences.Editor editor = shared.edit();
-                    editor.putBoolean("isRegist",true);
+//                    editor.putBoolean("isRegist",true);
                     editor.putString("UserName","admin");
                     editor.commit();
-//                    DB.insertTime("admin","00:00");
                     Toast.makeText(LoginScene.this, "Already use Admin Account", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(LoginScene.this, AdminManagement.class));
                     finish();
 
                 }else{
-                    Boolean checkuserpass = DB.checkusernamepassword(ac, pass);
+                    Boolean checkuserpass = DB.checkusernamepassword(un, pass);
                     if(checkuserpass){
                         Toast.makeText(LoginScene.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), MainScene.class));
@@ -70,7 +69,7 @@ public class LoginScene extends AppCompatActivity {
 
                         SharedPreferences.Editor editor = shared.edit();
                         editor.putBoolean("isRegist",true);
-                        editor.putString("UserName",ac);
+                        editor.putString("UserName",un);
                         editor.commit();
                     }else {
                         Toast.makeText(LoginScene.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();

@@ -32,12 +32,16 @@ public class RemindScene extends Activity implements View.OnClickListener {
 
         time = findViewById(R.id.Time);
         shared = getSharedPreferences("data",MODE_PRIVATE);
+
         isEnter = shared.getBoolean("isEnter",false);
         UserName = shared.getString("UserName","admin");
+
         if(isEnter){
             time.setText(DB.getRemindTime(shared.getString("UserName","Nan")));
         }else{
+            DB.insertTime(UserName);
             time.setText("08:00");
+            Log.d("初次灌入時間",DB.insertTime(UserName).toString());
         }
         time.setOnClickListener(RemindScene.this);
 

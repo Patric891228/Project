@@ -93,7 +93,6 @@
         app:layout_constraintEnd_toEndOf="@id/title_guideline_Right_for_BTN"
         app:layout_constraintStart_toStartOf="@id/title_guideline_Left_for_BTN"
         app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_BTN" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_Left_for_BTN"
         android:layout_width="0dp"

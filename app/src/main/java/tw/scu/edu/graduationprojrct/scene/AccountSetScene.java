@@ -51,9 +51,6 @@ public class AccountSetScene extends AppCompatActivity {
                 DBHelper DB = new DBHelper(AccountSetScene.this);
                 account = account_input.getText().toString().trim();
                 password = password_input.getText().toString().trim();
-//                Log.d("UpdateUserName",username);
-//                Log.d("UpdateAccount",password);
-//                Log.d("UpdatePassWord",account);
                 DB.updateData(username,account ,password);
                 startActivity(new Intent(AccountSetScene.this, AdminManagement.class));
             }

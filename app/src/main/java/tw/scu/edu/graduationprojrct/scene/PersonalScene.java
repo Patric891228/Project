@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 import tw.scu.edu.graduationprojrct.R;
 
 public class PersonalScene extends AppCompatActivity {
-    ImageButton Back,toAccountSet,toRemind,toBGM;
+    ImageButton Back,toAccountSet,toRemind,toBGM,toSetting;
     Button LogOutButton;
     SharedPreferences shared;
     @Override
@@ -25,10 +25,10 @@ public class PersonalScene extends AppCompatActivity {
         toAccountSet = findViewById(R.id.toAccountSetScene);
         toRemind = findViewById(R.id.toRemind);
         toBGM = findViewById(R.id.toBGM);
+        toSetting = findViewById(R.id.toSetting);
         LogOutButton = findViewById(R.id.LogOutButton);
 
         shared = getSharedPreferences("data",MODE_PRIVATE);
-
 
         Back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,12 +54,19 @@ public class PersonalScene extends AppCompatActivity {
                 startActivity(new Intent(PersonalScene.this,BGMScene.class));
             }
         });
+        toSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PersonalScene.this,SettingScene.class));
+            }
+        });
         LogOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SharedPreferences.Editor editor = shared.edit();
                 editor.putBoolean("isRegist",false);
-                editor.putString("UserName","");
+                editor.putBoolean("isEnter",false);
+                editor.putString("UserName","Nan");
                 editor.commit();
                 startActivity(new Intent(PersonalScene.this,LoginScene.class));
             }
