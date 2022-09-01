@@ -7,40 +7,7 @@
     android:background="@drawable/background"
     android:tint="#85FFFFFF"
     tools:context=".scene.MainScene">
-<!--    background-->
-    <ImageButton
-    android:id="@+id/imageView"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    app:layout_constraintBottom_toBottomOf="@id/title_guideline_bottom_for_bg"
-    app:layout_constraintLeft_toLeftOf="@id/title_guideline_left_for_bg"
-    app:layout_constraintRight_toRightOf="@id/title_guideline_right_for_bg"
-    app:layout_constraintTop_toTopOf="@id/title_guideline_top_for_bg"
-    app:srcCompat="@drawable/background" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/title_guideline_left_for_bg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.0" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/title_guideline_right_for_bg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="1.0" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/title_guideline_bottom_for_bg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.0" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/title_guideline_top_for_bg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="1.0" />
+
 <!--mirror-->
     <ImageButton
         android:id="@+id/mirror"
@@ -150,7 +117,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.17" />
 <!--tiecabinet-->
-
     <ImageView
         android:id="@+id/tiecabinet"
         android:layout_width="0dp"
@@ -164,21 +130,18 @@
         app:layout_constraintTop_toTopOf="@id/title_guideline_top_for_tiecabinet"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/tiecabinet" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_left_for_tiecabinet"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.0" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_right_for_tiecabinet"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.29" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_bottom_for_tiecabinet"
         android:layout_width="0dp"
@@ -191,7 +154,142 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.0" />
-
+<!--setting-->
+    <ImageView
+        android:id="@+id/Setting_original"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/Bottom_Of_Setting_Button"
+        app:layout_constraintLeft_toLeftOf="@id/Left_Of_Setting_Button"
+        app:layout_constraintRight_toRightOf="@id/Right_Of_Setting_Button"
+        app:layout_constraintTop_toTopOf="@id/Top_Of_Setting_Button"
+        android:background="@drawable/setting_original"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Left_Of_Setting_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Right_Of_Setting_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.14" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Top_Of_Setting_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Bottom_Of_Setting_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0" />
+<!--setting_click-->
+    <ImageView
+        android:id="@+id/Setting_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/Bottom_Of_Setting_Click_Button"
+        app:layout_constraintLeft_toLeftOf="@id/Left_Of_Setting_Click_Button"
+        app:layout_constraintRight_toRightOf="@id/Right_Of_Setting_Click_Button"
+        app:layout_constraintTop_toTopOf="@id/Top_Of_Setting_Click_Button"
+        android:background="@drawable/setting_clicked"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Left_Of_Setting_Click_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Right_Of_Setting_Click_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.23" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Top_Of_Setting_Click_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Bottom_Of_Setting_Click_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0" />
+<!--Logout-->
+    <ImageView
+        android:id="@+id/Logout_original"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/Bottom_Of_Logout_Button"
+        app:layout_constraintLeft_toLeftOf="@id/Left_Of_Logout_Button"
+        app:layout_constraintRight_toRightOf="@id/Right_Of_Logout_Button"
+        app:layout_constraintTop_toTopOf="@id/Top_Of_Logout_Button"
+        android:background="@drawable/logout_original"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Left_Of_Logout_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.86" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Right_Of_Logout_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Top_Of_Logout_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Bottom_Of_Logout_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0" />
+<!--Logout_Click-->
+    <ImageView
+        android:id="@+id/Logout_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/Bottom_Of_Logout_Click_Button"
+        app:layout_constraintLeft_toLeftOf="@id/Left_Of_Logout_Click_Button"
+        app:layout_constraintRight_toRightOf="@id/Right_Of_Logout_Click_Button"
+        app:layout_constraintTop_toTopOf="@id/Top_Of_Logout_Click_Button"
+        android:background="@drawable/logout_clicked"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Left_Of_Logout_Click_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.77" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Right_Of_Logout_Click_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Top_Of_Logout_Click_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Bottom_Of_Logout_Click_Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0" />
 
 
 

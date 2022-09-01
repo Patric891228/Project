@@ -1,9 +1,12 @@
 package tw.scu.edu.graduationprojrct.Setting;
 
+import android.widget.ImageView;
+
 public class SportType {
     public Boolean Belly,Oxleg,Pelvic,Saddlebag,Slouch = false;
     public String SportContent[];
     public int SportContentTime[];
+    ImageView CurrentImage;
     public final int BlankTime = 10000;
     public SportType(String Type){
         switch(Type){
@@ -50,5 +53,11 @@ public class SportType {
             this.SportContentTime = new int[]{30000,30000,30000,45000,45000,45000,45000,45000,45000,30000,
                                               30000,30000,30000,30000};
         }
+    }
+    public void ShowImage(int i){
+
+    }
+    public void TieUpImage(){
+        
     }
 }

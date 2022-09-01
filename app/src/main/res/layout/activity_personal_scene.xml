@@ -71,24 +71,6 @@
         app:layout_constraintLeft_toLeftOf="@id/left_of_setting_line"
         tools:srcCompat="@tools:sample/avatars" />
     <ImageButton
-        android:id="@+id/toRemind"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_line"
-        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
-        app:layout_constraintRight_toRightOf="@id/middle_of_setting_line2"
-        app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line1"
-        tools:srcCompat="@tools:sample/avatars" />
-    <ImageButton
-        android:id="@+id/toBGM"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_line"
-        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
-        app:layout_constraintRight_toRightOf="@id/middle_of_setting_line3"
-        app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line2"
-        tools:srcCompat="@tools:sample/avatars" />
-    <ImageButton
         android:id="@+id/Back_From_Personal_Scene"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -107,14 +89,6 @@
         app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line4"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/LogOutButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="LogOut"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_line"
-        app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line5"
-        app:layout_constraintRight_toRightOf="@id/right_of_setting_line"
-        app:layout_constraintTop_toTopOf="@id/top_of_setting_line" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

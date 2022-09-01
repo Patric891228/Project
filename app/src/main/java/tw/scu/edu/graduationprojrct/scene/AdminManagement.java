@@ -31,6 +31,9 @@ public class AdminManagement extends AppCompatActivity implements View.OnClickLi
     ArrayList<String> username = new ArrayList<>();
     ArrayList<String> account = new ArrayList<>();
     ArrayList<String> password = new ArrayList<>();
+    ArrayList<String> sexual = new ArrayList<>();
+    ArrayList<String> birthday = new ArrayList<>();
+    ArrayList<String> email = new ArrayList<>();
     ArrayList<TextView> AccountInfo = new ArrayList<>();
 
 
@@ -65,7 +68,7 @@ public class AdminManagement extends AppCompatActivity implements View.OnClickLi
         int DataSize = cursor.getCount(); // ==4
        for(int i =0;i<DataSize;i++){
           TextView TV = new TextView(  this);
-          TV.setText(username.get(i)+" "+account.get(i)+" "+password.get(i));
+          TV.setText(username.get(i)+" "+account.get(i)+" "+password.get(i)+" "+sexual.get(i)+" "+birthday.get(i)+" "+email.get(i));
           TV.setId(i);
           AccountInfo.add(TV);
           RelativeLayout.LayoutParams btParams = new RelativeLayout.LayoutParams((int)blankWidth,(int)blankHeight);
@@ -84,6 +87,7 @@ public class AdminManagement extends AppCompatActivity implements View.OnClickLi
 
     void storeDataArrays() {
         Cursor cursor = MyDB.readAllData();
+        Cursor cursor1 = MyDB.readAllPIData();
         if (cursor.getCount() == 0) {
             Toast.makeText(this, "NO DATA!!", Toast.LENGTH_SHORT).show();
             Log.d("Account", "Not have");
@@ -94,6 +98,18 @@ public class AdminManagement extends AppCompatActivity implements View.OnClickLi
                 username.add(cursor.getString(0));
                 account.add(cursor.getString(1));
                 password.add(cursor.getString(2));
+            }
+        }
+        if (cursor1.getCount() == 0) {
+            Toast.makeText(this, "NO DATA!!", Toast.LENGTH_SHORT).show();
+            Log.d("PI", "Not have");
+        } else {
+            Log.d("PI", "have");
+
+            while (cursor1.moveToNext()) {
+                sexual.add(cursor1.getString(0));
+                birthday.add(cursor1.getString(1));
+                email.add(cursor1.getString(2));
             }
         }
     }

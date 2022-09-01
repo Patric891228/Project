@@ -23,10 +23,10 @@ public class PersonalScene extends AppCompatActivity {
 
         Back = findViewById(R.id.Back_From_Personal_Scene);
         toAccountSet = findViewById(R.id.toAccountSetScene);
-        toRemind = findViewById(R.id.toRemind);
-        toBGM = findViewById(R.id.toBGM);
+
+
         toSetting = findViewById(R.id.toSetting);
-        LogOutButton = findViewById(R.id.LogOutButton);
+
 
         shared = getSharedPreferences("data",MODE_PRIVATE);
 
@@ -42,34 +42,14 @@ public class PersonalScene extends AppCompatActivity {
                 startActivity(new Intent(PersonalScene.this,AccountEditScene.class));
             }
         });
-        toRemind.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(PersonalScene.this,RemindScene.class));
-            }
-        });
-        toBGM.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(PersonalScene.this,BGMScene.class));
-            }
-        });
+
+
         toSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(PersonalScene.this,SettingScene.class));
             }
         });
-        LogOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = shared.edit();
-                editor.putBoolean("isRegist",false);
-                editor.putBoolean("isEnter",false);
-                editor.putString("UserName","Nan");
-                editor.commit();
-                startActivity(new Intent(PersonalScene.this,LoginScene.class));
-            }
-        });
+
     }
 }

@@ -32,23 +32,29 @@ import static tw.scu.edu.graduationprojrct.R.anim.fade_in;
 public class MainScene extends AppCompatActivity {
     SharedPreferences shared;
     MediaPlayer mysong;
-
+    ImageView tiecabinet,Setting,Logout,Setting_Click,Logout_Click;
+    ImageButton mirror,counter,magazine;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_scene);
+
 
         shared = getSharedPreferences("data",MODE_PRIVATE);
-        Log.d("Info",shared.getString("UserName","Nan"));
 
-        setContentView(R.layout.activity_main_scene);
-        ImageButton mirror = findViewById(R.id.mirror);
-        ImageButton counter = findViewById(R.id.counter);
-        ImageView tiecabinet = findViewById(R.id.tiecabinet);
-        ImageButton magazine = findViewById(R.id.magazine);
+        mirror = findViewById(R.id.mirror);
+        counter = findViewById(R.id.counter);
+        tiecabinet = findViewById(R.id.tiecabinet);
+        magazine = findViewById(R.id.magazine);
+
+        Setting = findViewById(R.id.Setting_original);
+        Logout = findViewById(R.id.Logout_original);
+        Setting_Click = findViewById(R.id.Setting_Click);
+        Logout_Click = findViewById(R.id.Logout_Click);
 
         mysong = MediaPlayer.create(MainScene.this, R.raw.donigen);
         //mysong.start();
-
+        initButton();
         mirror.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +63,6 @@ public class MainScene extends AppCompatActivity {
                 startActivity(intent,options.toBundle());
             }
         });
-
         counter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,11 +84,35 @@ public class MainScene extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Setting.setVisibility(View.GONE);
+                Setting_Click.setVisibility(View.VISIBLE);
+                startActivity(new Intent(MainScene.this,OtherSettingScene.class));
+            }
+        });
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Logout.setVisibility(View.GONE);
+                Logout_Click.setVisibility(View.VISIBLE);
+                SharedPreferences.Editor editor = shared.edit();
+                editor.putBoolean("isRegist",false);
+                editor.putBoolean("isEnter",false);
+                editor.putString("UserName","Nan");
+                editor.putBoolean("isFirstSetting",false);
+                editor.commit();
+                startActivity(new Intent(MainScene.this,LoginScene.class));
+            }
+        });
     }
-    private void initButton(ImageButton bt){
-        Animation animation=new AlphaAnimation(1.0f,0.0f);
-        animation.setDuration(300);
-        bt.startAnimation(animation);
+    private void initButton(){
+       Setting.setVisibility(View.VISIBLE);
+       Logout.setVisibility(View.VISIBLE);
+       Setting_Click.setVisibility(View.GONE);
+       Logout_Click.setVisibility(View.GONE);
     }
     protected void onPause(){
         super.onPause();

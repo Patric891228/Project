@@ -166,7 +166,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     public String getSexual(String username) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("Select * from PersonalInfo where username = ? ", new String[]{username});
+        Cursor cursor = MyDB.rawQuery("Select * from PI where username = ? ", new String[]{username});
         Log.d("PersonalInfo", String.valueOf(cursor.getCount()));
         if (cursor.getCount() >= 1) {
             while (cursor.moveToNext()) {
@@ -202,6 +202,17 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     public Cursor readAllData(){
         String query = "SELECT * FROM users";
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+
+        Cursor cursor = null;
+        if(MyDB != null){
+            cursor = MyDB.rawQuery(query, null);
+        }
+
+        return cursor;
+    }
+    public Cursor readAllPIData(){
+        String query = "SELECT * FROM PI";
         SQLiteDatabase MyDB = this.getWritableDatabase();
 
         Cursor cursor = null;

@@ -57,6 +57,7 @@ public class RegistScene extends AppCompatActivity {
                     //有無帳號
                     if(checkuser == false){
                         Boolean insert = DB.insertData(user,account,pass);
+                        DB.insertPersonalInfo(user,"男","1/1","Nan"); //寫進預設資料
                         if(insert){
                             Toast.makeText(RegistScene.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                             startActivity( new Intent(getApplicationContext(), LoginScene.class));

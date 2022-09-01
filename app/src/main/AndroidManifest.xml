@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GraduationProjrct.NoActionBar">
-        <activity android:name=".scene.AccountEditScene"></activity>
+        <activity android:name=".scene.OtherSettingScene"></activity>
+        <activity android:name=".scene.AccountEditScene" />
         <activity android:name=".scene.CheckAccountScene" />
         <activity android:name=".scene.PokedexSelectedScene" />
         <activity android:name=".scene.AccountSetScene" />
