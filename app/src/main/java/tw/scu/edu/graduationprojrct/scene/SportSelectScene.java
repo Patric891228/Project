@@ -3,6 +3,7 @@ package tw.scu.edu.graduationprojrct.scene;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -15,10 +16,14 @@ public class SportSelectScene extends AppCompatActivity {
     ImageView Tie_Click1,Tie_Click2,Tie_Click3,Tie_Click4,
               Tie_Click5,Tie_Click6,Tie_Click7,Tie_Click8;
     ImageButton Back_From_SportSelect;
+    SharedPreferences shared;
+    String SportType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sport_select_scene);
+        shared = getSharedPreferences("data",MODE_PRIVATE);
+        SportType = shared.getString("SportType","Belly");
 
         Tie1 = findViewById(R.id.Tie1);
         Tie2 = findViewById(R.id.Tie2);
@@ -52,46 +57,66 @@ public class SportSelectScene extends AppCompatActivity {
         Tie1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor editor = shared.edit();
+                editor.putString("SportType","Slouch");
+                editor.commit();
                 SetAllDown();
                 SetAllUp();
                 Tie1.setVisibility(View.GONE);
                 Tie_Click1.setVisibility(View.VISIBLE);
+                startActivity(new Intent(SportSelectScene.this,NavigationScene.class));
             }
         });
         Tie2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor editor = shared.edit();
+                editor.putString("SportType","Oxleg");
+                editor.commit();
                 SetAllDown();
                 SetAllUp();
                 Tie2.setVisibility(View.GONE);
                 Tie_Click2.setVisibility(View.VISIBLE);
+                startActivity(new Intent(SportSelectScene.this,NavigationScene.class));
             }
         });
         Tie3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor editor = shared.edit();
+                editor.putString("SportType","Pelvic");
+                editor.commit();
                 SetAllDown();
                 SetAllUp();
                 Tie3.setVisibility(View.GONE);
                 Tie_Click3.setVisibility(View.VISIBLE);
+                startActivity(new Intent(SportSelectScene.this,NavigationScene.class));
             }
         });
         Tie4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor editor = shared.edit();
+                editor.putString("SportType","Saddlebagc");
+                editor.commit();
                 SetAllDown();
                 SetAllUp();
                 Tie4.setVisibility(View.GONE);
                 Tie_Click4.setVisibility(View.VISIBLE);
+                startActivity(new Intent(SportSelectScene.this,NavigationScene.class));
             }
         });
         Tie5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor editor = shared.edit();
+                editor.putString("SportType","Belly");
+                editor.commit();
                 SetAllDown();
                 SetAllUp();
                 Tie5.setVisibility(View.GONE);
                 Tie_Click5.setVisibility(View.VISIBLE);
+                startActivity(new Intent(SportSelectScene.this,NavigationScene.class));
             }
         });
         Tie6.setOnClickListener(new View.OnClickListener() {

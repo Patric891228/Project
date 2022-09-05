@@ -4,90 +4,143 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".scene.PersonalScene">
-<!--    GuildLine-->
+    tools:context=".scene.PersonalScene"
+    android:background="@drawable/choose_bg">
+<!--    BG-->
+    <ImageView
+        android:id="@+id/Personal_BG"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/choose_computer"
+        app:layout_constraintTop_toTopOf="@id/BG_TOP"
+        app:layout_constraintBottom_toBottomOf="@id/BG_Bottom"
+        app:layout_constraintLeft_toLeftOf="@id/BG_Left"
+        app:layout_constraintRight_toRightOf="@id/BG_Right"/>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/top_of_setting_line"
+        android:id="@+id/BG_TOP"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.30"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.05"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottom_of_setting_line"
+        android:id="@+id/BG_Bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.70"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="1"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/right_of_setting_line"
+        android:id="@+id/BG_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.12"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/left_of_setting_line"
+        android:id="@+id/BG_Right"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.9"></androidx.constraintlayout.widget.Guideline>
+
+    <ImageView
+    android:id="@+id/Personal_Setting"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:background="@drawable/choose_username"
+    app:layout_constraintTop_toTopOf="@id/BG_username_TOP"
+    app:layout_constraintBottom_toBottomOf="@id/BG_username_Bottom"
+    app:layout_constraintLeft_toLeftOf="@id/BG_username_Left"
+    app:layout_constraintRight_toRightOf="@id/BG_username_Right"/>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/middle_of_setting_line1"
+        android:id="@+id/BG_username_TOP"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BG_username_Bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BG_username_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.21"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/middle_of_setting_line2"
+        android:id="@+id/BG_username_Right"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.49"></androidx.constraintlayout.widget.Guideline>
+
+    <ImageView
+    android:id="@+id/Personal_Account"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:background="@drawable/choose_account"
+    app:layout_constraintTop_toTopOf="@id/BG_setting_TOP"
+    app:layout_constraintBottom_toBottomOf="@id/BG_setting_Bottom"
+    app:layout_constraintLeft_toLeftOf="@id/BG_setting_Left"
+    app:layout_constraintRight_toRightOf="@id/BG_setting_Right"/>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/middle_of_setting_line3"
+        android:id="@+id/BG_setting_TOP"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BG_setting_Bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72"></androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BG_setting_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.54"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/middle_of_setting_line4"
+        android:id="@+id/BG_setting_Right"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.6"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.81"></androidx.constraintlayout.widget.Guideline>
+    <ImageView
+        android:id="@+id/Back_From_Personal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/choose_back"
+        app:layout_constraintBottom_toBottomOf="@id/title_guideline_Bottom_for_BTN"
+        app:layout_constraintEnd_toEndOf="@id/title_guideline_Right_for_BTN"
+        app:layout_constraintStart_toStartOf="@id/title_guideline_Left_for_BTN"
+        app:layout_constraintTop_toTopOf="@id/title_guideline_Top_for_BTN" />
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/middle_of_setting_line5"
+        android:id="@+id/title_guideline_Left_for_BTN"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.7"></androidx.constraintlayout.widget.Guideline>
-    <!--ImageButton-->
-    <ImageButton
-        android:id="@+id/toAccountSetScene"
+        app:layout_constraintGuide_percent="0.01" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Right_for_BTN"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_line"
-        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
-        app:layout_constraintRight_toRightOf="@id/middle_of_setting_line1"
-        app:layout_constraintLeft_toLeftOf="@id/left_of_setting_line"
-        tools:srcCompat="@tools:sample/avatars" />
-    <ImageButton
-        android:id="@+id/Back_From_Personal_Scene"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.098" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Top_for_BTN"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_line"
-        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
-        app:layout_constraintRight_toRightOf="@id/middle_of_setting_line4"
-        app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line3"
-        tools:srcCompat="@tools:sample/avatars" />
-    <ImageButton
-        android:id="@+id/toSetting"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/title_guideline_Bottom_for_BTN"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_of_setting_line"
-        app:layout_constraintTop_toTopOf="@id/top_of_setting_line"
-        app:layout_constraintRight_toRightOf="@id/middle_of_setting_line5"
-        app:layout_constraintLeft_toLeftOf="@id/middle_of_setting_line4"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16" />
 
 
 

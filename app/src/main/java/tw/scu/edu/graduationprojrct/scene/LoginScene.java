@@ -53,7 +53,6 @@ public class LoginScene extends AppCompatActivity {
                 }else if (un.equals("admin") && pass.equals("admin")){
                     // 登入官方帳號
                     SharedPreferences.Editor editor = shared.edit();
-//                    editor.putBoolean("isRegist",true);
                     editor.putString("UserName","admin");
                     editor.commit();
                     Toast.makeText(LoginScene.this, "Already use Admin Account", Toast.LENGTH_SHORT).show();
