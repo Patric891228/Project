@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Timer;
@@ -16,28 +18,46 @@ import tw.scu.edu.graduationprojrct.Setting.SportType;
 public class SportScene extends AppCompatActivity {
     String SportType_String;
     String Current_Sport;
-    TextView t1;
-    int CurrentTime;
-    int Current_SportTime;
+    TextView Time_Word;
+    int CurrentTime,Current_SportTime;
+    ImageView Time_BG;
+    ImageView Rest_Photo_BG,Rest_Next_Word,Rest_Sign,Rest_Word_Sign,Next_Sport_Word;
+    ImageView Now_Photo_BG,Now_Word,Now_Sport_Word;
     final int RestTime = 10;
     SharedPreferences shared;
     Timer timer;
     Boolean isSport = false;
-    int order=0;
+    int Order= -1;
+    int ImgOrder;
+    SportType ST;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sport);
         shared = getSharedPreferences("data", MODE_PRIVATE);
-
         SportType_String = shared.getString("SportType", "Belly");
-        t1 = findViewById(R.id.t1);
+//        綁定物件
+        Time_BG = findViewById(R.id.Time_BG);
+        Time_Word = findViewById(R.id.Time_Word);
+        Rest_Photo_BG = findViewById(R.id.Rest_Photo_BG);
+        Rest_Next_Word = findViewById(R.id.Rest_Next_Word);
+        Rest_Sign = findViewById(R.id.Rest_Sign);
+        Rest_Word_Sign = findViewById(R.id.Rest_Word_Sign);
+        Next_Sport_Word = findViewById(R.id.Next_Sport_Word);
+
+        Now_Photo_BG = findViewById(R.id.Now_Photo_BG);
+        Now_Word =findViewById(R.id.Now_Word);
+        Now_Sport_Word = findViewById(R.id.Now_Sport_Word);
+//        建立計時器
         timer = new Timer();
-        SportType ST = new SportType(SportType_String);
+//        建立物件
+        ST = new SportType(SportType_String);
         ST.LoadSportData();
 //        初始化
-        Current_SportTime = ST.SportContentTime[order];
+        Current_SportTime = ST.SportContentTime[0];
         CurrentTime = RestTime;
+//
+        InitalUI();
 
         final TimerTask timertask = new TimerTask() {
             @Override
@@ -46,20 +66,23 @@ public class SportScene extends AppCompatActivity {
                     @Override
                     public void run() {
                         CurrentTime--;//時間倒數
-                        t1.setText(CurrentTime+"second");//讓TextView元件顯示時間倒數情況
+                        Time_Word.setText(CurrentTime+"");
                         //if判斷示裡面放置在時間結束後想要完成的事件
                         if (CurrentTime < 1) {
-                            if(isSport) {
+                            if(isSport) {//進入休息狀態
                                 isSport = false;
-                                Log.d("Event","Strat Rest");
+                                Next_Sport_Word.setImageDrawable(null);
+                                Next_Sport_Word.setImageResource(ST.SportImgID[ImgOrder]);
+                                EnterRestState();
                                 CurrentTime = RestTime;
-                                Log.d("CurrentTimeNeedTo", String.valueOf(CurrentTime));
                             }else{
                                 isSport = true;
-                                order++; //讓時間執行緒保持輪迴
-                                Log.d("Event", "Start Sport");
-                                CurrentTime = ST.SportContentTime[order];
-                                Log.d("CurrentTimeNeedTo", String.valueOf(Current_SportTime));
+                                Now_Sport_Word.setImageDrawable(null);
+                                Now_Sport_Word.setImageResource(ST.SportImgID[ImgOrder]);
+                                EnterSportState();
+                                Order++; //讓時間執行緒保持輪迴
+                                ImgOrder++;
+                                CurrentTime = ST.SportContentTime[Order];
                             }
                         }
                     }
@@ -67,5 +90,45 @@ public class SportScene extends AppCompatActivity {
             }
         };
         timer.schedule(timertask, 1000, 1000);
+    }
+    private void InitalUI(){//一開始為休息狀態
+        Now_Sport_Word.setImageDrawable(null);
+        Next_Sport_Word.setImageDrawable(null);
+        Next_Sport_Word.setImageResource(ST.SportImgID[0]);
+        Time_BG.setVisibility(View.VISIBLE);
+        Time_Word.setVisibility(View.VISIBLE);
+        Rest_Word_Sign.setVisibility(View.VISIBLE);
+        Rest_Sign.setVisibility(View.VISIBLE);
+        Rest_Next_Word.setVisibility(View.VISIBLE);
+        Rest_Photo_BG.setVisibility(View.VISIBLE);
+        Next_Sport_Word.setVisibility(View.VISIBLE);
+        Now_Sport_Word.setVisibility(View.GONE);
+        Now_Photo_BG.setVisibility(View.GONE);
+        Now_Word.setVisibility(View.GONE);
+    }
+    private void EnterRestState(){
+        Time_BG.setVisibility(View.VISIBLE);
+        Time_Word.setVisibility(View.VISIBLE);
+        Rest_Word_Sign.setVisibility(View.VISIBLE);
+        Rest_Sign.setVisibility(View.VISIBLE);
+        Rest_Next_Word.setVisibility(View.VISIBLE);
+        Rest_Photo_BG.setVisibility(View.VISIBLE);
+        Next_Sport_Word.setVisibility(View.VISIBLE);
+        Now_Sport_Word.setVisibility(View.GONE);
+        Now_Photo_BG.setVisibility(View.GONE);
+        Now_Word.setVisibility(View.GONE);
+    }
+    private void EnterSportState(){
+        Time_BG.setVisibility(View.VISIBLE);
+        Time_Word.setVisibility(View.VISIBLE);
+        Rest_Word_Sign.setVisibility(View.GONE);
+        Rest_Sign.setVisibility(View.GONE);
+        Rest_Next_Word.setVisibility(View.GONE);
+        Rest_Photo_BG.setVisibility(View.GONE);
+        Next_Sport_Word.setVisibility(View.GONE);
+        Now_Sport_Word.setVisibility(View.VISIBLE);
+        Now_Photo_BG.setVisibility(View.VISIBLE);
+        Now_Word.setVisibility(View.VISIBLE);
+
     }
 }
