@@ -2,6 +2,7 @@ package tw.scu.edu.graduationprojrct.scene;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,7 +21,7 @@ public class SportScene extends AppCompatActivity {
     String Current_Sport;
     TextView Time_Word;
     int CurrentTime,Current_SportTime;
-    ImageView Time_BG;
+    ImageView Time_BG,White_BG;
     ImageView Rest_Photo_BG,Rest_Next_Word,Rest_Sign,Rest_Word_Sign,Next_Sport_Word;
     ImageView Now_Photo_BG,Now_Word,Now_Sport_Word;
     final int RestTime = 10;
@@ -48,6 +49,7 @@ public class SportScene extends AppCompatActivity {
         Now_Photo_BG = findViewById(R.id.Now_Photo_BG);
         Now_Word =findViewById(R.id.Now_Word);
         Now_Sport_Word = findViewById(R.id.Now_Sport_Word);
+        White_BG = findViewById(R.id.white_BG);
 //        建立計時器
         timer = new Timer();
 //        建立物件
@@ -69,20 +71,25 @@ public class SportScene extends AppCompatActivity {
                         Time_Word.setText(CurrentTime+"");
                         //if判斷示裡面放置在時間結束後想要完成的事件
                         if (CurrentTime < 1) {
-                            if(isSport) {//進入休息狀態
-                                isSport = false;
-                                Next_Sport_Word.setImageDrawable(null);
-                                Next_Sport_Word.setImageResource(ST.SportImgID[ImgOrder]);
-                                EnterRestState();
-                                CurrentTime = RestTime;
+                            if(Order<ST.SportContentTime.length-1){
+                                if(isSport) {//進入休息狀態
+                                    isSport = false;
+                                    Next_Sport_Word.setImageDrawable(null);
+                                    Next_Sport_Word.setImageResource(ST.SportImgID[ImgOrder]);
+                                    EnterRestState();
+                                    CurrentTime = RestTime;
+                                }else {
+                                    isSport = true;
+                                    Now_Sport_Word.setImageDrawable(null);
+                                    Now_Sport_Word.setImageResource(ST.SportImgID[ImgOrder]);
+                                    EnterSportState();
+                                    Order++; //讓時間執行緒保持輪迴
+                                    ImgOrder++;
+                                    CurrentTime = ST.SportContentTime[Order];
+                                }
                             }else{
-                                isSport = true;
-                                Now_Sport_Word.setImageDrawable(null);
-                                Now_Sport_Word.setImageResource(ST.SportImgID[ImgOrder]);
-                                EnterSportState();
-                                Order++; //讓時間執行緒保持輪迴
-                                ImgOrder++;
-                                CurrentTime = ST.SportContentTime[Order];
+                                timer.cancel();
+                                startActivity(new Intent(SportScene.this,SportResultScene.class));
                             }
                         }
                     }
@@ -95,6 +102,7 @@ public class SportScene extends AppCompatActivity {
         Now_Sport_Word.setImageDrawable(null);
         Next_Sport_Word.setImageDrawable(null);
         Next_Sport_Word.setImageResource(ST.SportImgID[0]);
+        White_BG.setVisibility(View.VISIBLE);
         Time_BG.setVisibility(View.VISIBLE);
         Time_Word.setVisibility(View.VISIBLE);
         Rest_Word_Sign.setVisibility(View.VISIBLE);
@@ -107,6 +115,7 @@ public class SportScene extends AppCompatActivity {
         Now_Word.setVisibility(View.GONE);
     }
     private void EnterRestState(){
+        White_BG.setVisibility(View.VISIBLE);
         Time_BG.setVisibility(View.VISIBLE);
         Time_Word.setVisibility(View.VISIBLE);
         Rest_Word_Sign.setVisibility(View.VISIBLE);
@@ -119,6 +128,7 @@ public class SportScene extends AppCompatActivity {
         Now_Word.setVisibility(View.GONE);
     }
     private void EnterSportState(){
+        White_BG.setVisibility(View.GONE);
         Time_BG.setVisibility(View.VISIBLE);
         Time_Word.setVisibility(View.VISIBLE);
         Rest_Word_Sign.setVisibility(View.GONE);

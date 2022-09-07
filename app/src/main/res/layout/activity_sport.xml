@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".scene.SportScene">
 <!--    休息狀態 -->
+<!--    白背景-->
+    <ImageView
+        android:id="@+id/white_BG"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/exercise_bg"/>
 <!--    顯示圖片-->
     <ImageView
         android:id="@+id/Rest_Photo_BG"
@@ -291,7 +297,7 @@
             android:id="@+id/Now_Word"
             android:layout_width="0dp"
             android:layout_height="0dp"
-
+            android:background="@drawable/now_word"
             app:layout_constraintLeft_toLeftOf="@id/Now_Word_Left"
             app:layout_constraintRight_toRightOf="@id/Now_Word_Right"
             app:layout_constraintTop_toTopOf="@id/Now_Word_Top"
@@ -301,25 +307,25 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.22"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.05"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Now_Word_Bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.31"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.11"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Now_Word_Right"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.2"></androidx.constraintlayout.widget.Guideline>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Now_Word_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.086"></androidx.constraintlayout.widget.Guideline>
+        app:layout_constraintGuide_percent="0.04"></androidx.constraintlayout.widget.Guideline>
 <!--    現在運動內容-->
     <ImageView
         android:id="@+id/Now_Sport_Word"
