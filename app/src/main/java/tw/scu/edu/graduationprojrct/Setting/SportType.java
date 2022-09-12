@@ -11,7 +11,6 @@ public class SportType {
     public int SportContentTime[];
     public int SportImgID[];
     ImageView CurrentImage;
-    public final int BlankTime = 10000;
     public SportType(String Type){
         switch(Type){
             case"Belly":this.ST = "Belly";break;
