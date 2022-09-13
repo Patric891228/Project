@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GraduationProjrct.NoActionBar">
-        <activity android:name=".scene.SportResultScene"></activity>
+        <activity android:name=".scene.PokedexPartScene"></activity>
+        <activity android:name=".scene.SportResultScene" />
         <activity android:name=".scene.SportScene" />
         <activity android:name=".scene.NavigationScene" />
         <activity android:name=".scene.OtherSettingScene" />

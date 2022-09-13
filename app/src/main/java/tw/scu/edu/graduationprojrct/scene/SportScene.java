@@ -54,6 +54,7 @@ public class SportScene extends AppCompatActivity {
         timer = new Timer();
 //        建立物件
         ST = new SportType(SportType_String);
+        Log.d("ChooseSport",SportType_String);
         ST.LoadSportData();
 //        初始化
         Current_SportTime = ST.SportContentTime[0];
