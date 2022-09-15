@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".scene.PokedexPartScene"
-    android:background="@drawable/part">
+    android:background="@drawable/part_bg">
 <!--    背景-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/BG_Top"
