@@ -73,6 +73,7 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
                 ImageVisibilitySet();
                 Log.d("SelectPokedexPart","Belly");
                 Log.d("Number", String.valueOf(ImageNumber));
+                reset();
             }
         });
         B2.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +83,7 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
                 ImageVisibilitySet();
                 Log.d("SelectPokedexPart","Oxleg");
                 Log.d("Number", String.valueOf(ImageNumber));
+                reset();
             }
         });
         B3.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +93,7 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
                 ImageVisibilitySet();
                 Log.d("SelectPokedexPart","Pelvic");
                 Log.d("Number", String.valueOf(ImageNumber));
+                reset();
             }
         });
         B4.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +103,7 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
                 ImageVisibilitySet();
                 Log.d("SelectPokedexPart","Saddlebag");
                 Log.d("Number", String.valueOf(ImageNumber));
+                reset();
             }
         });
         B5.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +113,7 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
                 ImageVisibilitySet();
                 Log.d("SelectPokedexPart","Slouch");
                 Log.d("Number", String.valueOf(ImageNumber));
+                reset();
             }
         });
         image1.setOnClickListener(this);
@@ -134,6 +139,15 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
     private void init(){
         PO = new PokedexObject("Belly");//預設為小腹
         SetPart("Belly");
+        SelectButton.setVisibility(View.VISIBLE);
+        SelectButton_Clicked.setVisibility(View.GONE);
+        B1.setVisibility(View.GONE);
+        B2.setVisibility(View.GONE);
+        B3.setVisibility(View.GONE);
+        B4.setVisibility(View.GONE);
+        B5.setVisibility(View.GONE);
+    }
+    private void reset(){
         SelectButton.setVisibility(View.VISIBLE);
         SelectButton_Clicked.setVisibility(View.GONE);
         B1.setVisibility(View.GONE);
