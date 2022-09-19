@@ -1,24 +1,16 @@
 package tw.scu.edu.graduationprojrct.scene;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.transition.Transition;
-import android.transition.TransitionInflater;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import tw.scu.edu.graduationprojrct.GlobalVariable;
 import tw.scu.edu.graduationprojrct.R;
 import tw.scu.edu.graduationprojrct.R.drawable;
 

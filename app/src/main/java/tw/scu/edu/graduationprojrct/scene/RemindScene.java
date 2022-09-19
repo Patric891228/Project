@@ -1,7 +1,5 @@
 package tw.scu.edu.graduationprojrct.scene;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.TimePickerDialog;
 import android.content.SharedPreferences;
@@ -13,7 +11,6 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 
-import tw.scu.edu.graduationprojrct.GlobalVariable;
 import tw.scu.edu.graduationprojrct.R;
 import tw.scu.edu.graduationprojrct.Setting.DBHelper;
 

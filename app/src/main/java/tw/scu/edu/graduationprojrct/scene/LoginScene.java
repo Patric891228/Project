@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import tw.scu.edu.graduationprojrct.GlobalVariable;
 import tw.scu.edu.graduationprojrct.R;
 import tw.scu.edu.graduationprojrct.Setting.DBHelper;
 
