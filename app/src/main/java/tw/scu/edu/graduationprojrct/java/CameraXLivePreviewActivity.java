@@ -47,6 +47,11 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory;
 
 import com.google.android.gms.common.annotation.KeepName;
 import com.google.mlkit.common.MlKitException;
+import com.google.mlkit.vision.pose.PoseDetectorOptionsBase;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
 import tw.scu.edu.graduationprojrct.CameraXViewModel;
 import tw.scu.edu.graduationprojrct.GraphicOverlay;
 import tw.scu.edu.graduationprojrct.R;
@@ -54,13 +59,7 @@ import tw.scu.edu.graduationprojrct.Setting.SportType;
 import tw.scu.edu.graduationprojrct.VisionImageProcessor;
 import tw.scu.edu.graduationprojrct.java.posedetector.PoseDetectorProcessor;
 import tw.scu.edu.graduationprojrct.preference.PreferenceUtils;
-import tw.scu.edu.graduationprojrct.preference.SettingsActivity;
 import tw.scu.edu.graduationprojrct.scene.SportResultScene;
-
-import com.google.mlkit.vision.pose.PoseDetectorOptionsBase;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Live preview demo app for ML Kit APIs using CameraX.
