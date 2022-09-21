@@ -10,7 +10,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import tw.scu.edu.graduationprojrct.CameraXViewModel;
 import tw.scu.edu.graduationprojrct.R;
+import tw.scu.edu.graduationprojrct.java.CameraXLivePreviewActivity;
 
 public class PokedexSelectedScene extends AppCompatActivity {
     ImageView Left_Magazine,Center_Magazine,Right_Magazine;
@@ -71,6 +73,12 @@ public class PokedexSelectedScene extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(PokedexSelectedScene.this,PokedexPartScene.class));
+            }
+        });
+        Center_Magazine_Move.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PokedexSelectedScene.this, CameraXLivePreviewActivity.class));
             }
         });
         Back_From_Magazine.setOnClickListener(new View.OnClickListener() {
