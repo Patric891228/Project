@@ -1,16 +1,13 @@
 package tw.scu.edu.graduationprojrct.scene;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import tw.scu.edu.graduationprojrct.CameraXViewModel;
+import androidx.appcompat.app.AppCompatActivity;
+
 import tw.scu.edu.graduationprojrct.R;
 import tw.scu.edu.graduationprojrct.java.CameraXLivePreviewActivity;
 
@@ -67,6 +64,12 @@ public class PokedexSelectedScene extends AppCompatActivity {
                 Magazine_Appear(Right_Magazine_Move);
                 Magazine_Appear(Left_Magazine);
                 Magazine_Appear(Center_Magazine);
+            }
+        });
+        Left_Magazine_Move.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PokedexSelectedScene.this,PokedexProveScene.class));
             }
         });
         Right_Magazine_Move.setOnClickListener(new View.OnClickListener() {

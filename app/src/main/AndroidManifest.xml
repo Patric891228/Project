@@ -2,23 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="tw.scu.edu.graduationprojrct">
-
-    <!-- CameraX libraries require minSdkVersion 21, while this quickstart app
+    <!--
+ CameraX libraries require minSdkVersion 21, while this quickstart app
   supports low to 19. Needs to use overrideLibrary to make the merger tool
   ignore this conflict and import the libraries while keeping the app's lower
   minSdkVersion value. In code, will check SDK version, before calling CameraX
-  APIs. -->
-    <uses-sdk
-        tools:overrideLibrary="
-          androidx.camera.camera2, androidx.camera.core,
-          androidx.camera.view, androidx.camera.lifecycle" />
+  APIs.
+    -->
+    <uses-sdk tools:overrideLibrary="           androidx.camera.camera2, androidx.camera.core,           androidx.camera.view, androidx.camera.lifecycle" />
 
-    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera" />
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,7 +25,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GraduationProjrct.NoActionBar">
-        <activity android:name=".scene.PokedexPartScene"></activity>
+        <activity android:name=".scene.PokedexProveScene"></activity>
+        <activity android:name=".scene.PokedexPartScene" />
         <activity android:name=".scene.SportResultScene" />
         <activity android:name=".scene.SportScene" />
         <activity android:name=".scene.NavigationScene" />
