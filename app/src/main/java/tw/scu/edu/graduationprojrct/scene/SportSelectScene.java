@@ -1,14 +1,21 @@
 package tw.scu.edu.graduationprojrct.scene;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.jetbrains.annotations.NotNull;
 
 import tw.scu.edu.graduationprojrct.R;
 
@@ -20,6 +27,38 @@ public class SportSelectScene extends AppCompatActivity {
     int t1,t2,t3,t4,t5;
     SharedPreferences shared;
     String SportType;
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull @NotNull String[] permissions, @NonNull @NotNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        StringBuffer word = new StringBuffer();
+        switch (permissions.length) {
+            case 1:
+                if (permissions[0].equals(Manifest.permission.CAMERA)) word.append("相機權限");
+                else word.append("儲存權限");
+                if (grantResults[0] == 0) word.append("已取得");
+                else word.append("未取得");
+                word.append("\n");
+                if (permissions[0].equals(Manifest.permission.CAMERA)) word.append("儲存權限");
+                else word.append("相機權限");
+                word.append("已取得");
+
+                break;
+            case 2:
+                for (int i = 0; i < permissions.length; i++) {
+                    if (permissions[i].equals(Manifest.permission.CAMERA)) word.append("相機權限");
+                    else word.append("儲存權限");
+                    if (grantResults[i] == 0) word.append("已取得");
+                    else word.append("未取得");
+                    if (i < permissions.length - 1) word.append("\n");
+                }
+                break;
+        }
+        Log.d("使用者權限取得結果",word.toString());
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +94,7 @@ public class SportSelectScene extends AppCompatActivity {
         Tie_Click6.setVisibility(View.GONE);
         Tie_Click7.setVisibility(View.GONE);
         Tie_Click8.setVisibility(View.GONE);
+
 
         Tie1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,6 +222,32 @@ public class SportSelectScene extends AppCompatActivity {
                 startActivity(new Intent(SportSelectScene.this,MainScene.class));
             }
         });
+        boolean cameraHasGone = checkSelfPermission(Manifest.permission.CAMERA)
+                == PackageManager.PERMISSION_GRANTED;
+        boolean externalHasGone = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                == PackageManager.PERMISSION_GRANTED;
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
+            String[] permissions;
+            if (!cameraHasGone && !externalHasGone) {
+                permissions = new String[2];
+                permissions[0] = Manifest.permission.CAMERA;
+                permissions[1] = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+                Log.d("權限取得", "兩者權限未取得");
+            } else if (!cameraHasGone) {
+                permissions = new String[1];
+                permissions[0] = Manifest.permission.CAMERA;
+                Log.d("權限取得", "相機權限未取得");
+            } else if (!externalHasGone) {
+                permissions = new String[1];
+                permissions[0] = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+                Log.d("權限取得", "存取權限未取得");
+            } else {
+                Log.d("權限取得", "皆完成");
+                return;
+            }
+            requestPermissions(permissions, 100);
+        }
+
     }
     private void SetAllDown(){
         Tie_Click1.setVisibility(View.GONE);

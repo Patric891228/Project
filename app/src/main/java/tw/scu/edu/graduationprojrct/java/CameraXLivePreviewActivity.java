@@ -106,11 +106,12 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
     SportType ST;
 
 
-
+    @RequiresApi(api = VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate");
+
 
         if (savedInstanceState != null) {
             selectedModel = savedInstanceState.getString(STATE_SELECTED_MODEL, POSE_DETECTION);
@@ -400,7 +401,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
         cameraProvider.bindToLifecycle(/* lifecycleOwner= */ this, cameraSelector, analysisUseCase);
     }
     private void InitalUI(){//一開始為休息狀態
-        Now_Sport_Word.setImageDrawable(null);
+        //Now_Sport_Word.setImageDrawable(null);
         Next_Sport_Word.setImageDrawable(null);
         Next_Sport_Word.setImageResource(ST.SportImgID[0]);
         White_BG.setVisibility(View.VISIBLE);

@@ -5,10 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".scene.NavigationScene">
-<Button
-    android:id="@+id/GO"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:backgroundTint="@color/white"
-    />
+<!--<Button-->
+<!--    android:id="@+id/GO"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="50dp"-->
+<!--    android:backgroundTint="@color/white"-->
+<!--    />-->
+    <ListView
+        android:id="@+id/test_activity_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
