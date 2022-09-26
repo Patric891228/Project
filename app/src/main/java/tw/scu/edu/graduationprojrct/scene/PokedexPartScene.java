@@ -1,12 +1,12 @@
 package tw.scu.edu.graduationprojrct.scene;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import tw.scu.edu.graduationprojrct.R;
 import tw.scu.edu.graduationprojrct.Setting.PokedexObject;
@@ -69,9 +69,9 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         B1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SetPart("Belly");
+                SetPart("Hand");
                 ImageVisibilitySet();
-                Log.d("SelectPokedexPart","Belly");
+                Log.d("SelectPokedexPart","Hand");
                 Log.d("Number", String.valueOf(ImageNumber));
                 reset();
             }
@@ -79,9 +79,9 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         B2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SetPart("Oxleg");
+                SetPart("Back");
                 ImageVisibilitySet();
-                Log.d("SelectPokedexPart","Oxleg");
+                Log.d("SelectPokedexPart","Back");
                 Log.d("Number", String.valueOf(ImageNumber));
                 reset();
             }
@@ -89,9 +89,9 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         B3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SetPart("Pelvic");
+                SetPart("Abdomen");
                 ImageVisibilitySet();
-                Log.d("SelectPokedexPart","Pelvic");
+                Log.d("SelectPokedexPart","Abdomen");
                 Log.d("Number", String.valueOf(ImageNumber));
                 reset();
             }
@@ -99,9 +99,9 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         B4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SetPart("Saddlebag");
+                SetPart("Buttocks");
                 ImageVisibilitySet();
-                Log.d("SelectPokedexPart","Saddlebag");
+                Log.d("SelectPokedexPart","Buttocks");
                 Log.d("Number", String.valueOf(ImageNumber));
                 reset();
             }
@@ -109,9 +109,9 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         B5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SetPart("Slouch");
+                SetPart("Leg");
                 ImageVisibilitySet();
-                Log.d("SelectPokedexPart","Slouch");
+                Log.d("SelectPokedexPart","Leg");
                 Log.d("Number", String.valueOf(ImageNumber));
                 reset();
             }
@@ -137,8 +137,8 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
 
     }
     private void init(){
-        PO = new PokedexObject("Belly");//預設為小腹
-        SetPart("Belly");
+        PO = new PokedexObject("Hand");//預設為小腹
+        SetPart("Hand");
         SelectButton.setVisibility(View.VISIBLE);
         SelectButton_Clicked.setVisibility(View.GONE);
         B1.setVisibility(View.GONE);
