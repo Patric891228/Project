@@ -7,8 +7,11 @@
         <entry key="..\:/Android/app/src/main/res/layout-land/activity_vision_cameraxsource_demo.xml" value="0.15873015873015872" />
         <entry key="..\:/Android/app/src/main/res/layout-land/activity_vision_live_preview.xml" value="0.15873015873015872" />
         <entry key="..\:/Android/app/src/main/res/layout/activity_main_scene.xml" value="0.1875" />
+        <entry key="..\:/Android/app/src/main/res/layout/activity_other_setting_scene.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/app/src/main/res/layout/activity_setting_scene.xml" value="0.358695652173913" />
         <entry key="..\:/Android/app/src/main/res/layout/activity_settings.xml" value="0.1875" />
         <entry key="..\:/Android/app/src/main/res/layout/activity_sport.xml" value="0.1890625" />
+        <entry key="..\:/Android/app/src/main/res/layout/activity_test_self_scene.xml" value="0.25" />
         <entry key="..\:/Android/app/src/main/res/layout/activity_vision_camerax_live_preview.xml" value="0.1875" />
         <entry key="..\:/Android/app/src/main/res/layout/activity_vision_cameraxsource_demo.xml" value="0.1875" />
         <entry key="..\:/Android/app/src/main/res/layout/activity_vision_entry_choice.xml" value="0.1875" />

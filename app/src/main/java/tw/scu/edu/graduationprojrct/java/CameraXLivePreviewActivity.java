@@ -59,6 +59,7 @@ import tw.scu.edu.graduationprojrct.Setting.SportType;
 import tw.scu.edu.graduationprojrct.VisionImageProcessor;
 import tw.scu.edu.graduationprojrct.java.posedetector.PoseDetectorProcessor;
 import tw.scu.edu.graduationprojrct.preference.PreferenceUtils;
+import tw.scu.edu.graduationprojrct.preference.SettingsActivity;
 import tw.scu.edu.graduationprojrct.scene.SportResultScene;
 
 /**
@@ -206,15 +207,15 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
         timer.schedule(timertask, 1000, 1000);
 
 
-//        ImageView settingsButton = findViewById(R.id.settings_button);
-//        settingsButton.setOnClickListener(
-//                v -> {
-//                    Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
-//                    intent.putExtra(
-//                            SettingsActivity.EXTRA_LAUNCH_SOURCE,
-//                            SettingsActivity.LaunchSource.CAMERAX_LIVE_PREVIEW);
-//                    startActivity(intent);
-//                });
+        ImageView settingsButton = findViewById(R.id.settings_button_land);
+        settingsButton.setOnClickListener(
+                v -> {
+                    Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                    intent.putExtra(
+                            SettingsActivity.EXTRA_LAUNCH_SOURCE,
+                            SettingsActivity.LaunchSource.CAMERAX_LIVE_PREVIEW);
+                    startActivity(intent);
+                });
     }
 
     @Override
