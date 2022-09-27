@@ -2,10 +2,12 @@ package tw.scu.edu.graduationprojrct.Setting;
 
 import android.util.Log;
 
+import tw.scu.edu.graduationprojrct.R;
+
 public class PokedexObject {
     public String PokedexAll;
     public int PokedexContent[];
-    public String PokedexPart;
+//    public String PokedexPart;
     public int PokedexID[];
     public String ChineseName[];
     public String EnglishName[];
@@ -41,6 +43,13 @@ public class PokedexObject {
                 "Bridge","Lunge","Pigeon Pose","Frog Pose","Bicycle Crunch",
                 "Clamshell Exercise","Inner Thigh Lift","Bound Angle Pose","Standing Forward Bend","Squat"
                 ,"Lying Leg Raises","Lying Leg Raises10°","Lying Leg Raises30°","Lying Leg Raises60°","Lying Leg Raises90°","Boat Pose"};
+        this.SportImgID = new int[]{R.drawable.p1,R.drawable.p2,R.drawable.p3,R.drawable.p4,R.drawable.p7,
+                R.drawable.p8,R.drawable.p9,R.drawable.p10,R.drawable.p11,R.drawable.p12,
+                R.drawable.p13,R.drawable.p14,R.drawable.p15,R.drawable.p16,R.drawable.p17,
+                R.drawable.p18,R.drawable.p19,R.drawable.p20,R.drawable.p21,R.drawable.p22,
+                R.drawable.p23,R.drawable.p24,R.drawable.p25,R.drawable.p26,R.drawable.p27,
+                R.drawable.p28,R.drawable.p29,R.drawable.p30,R.drawable.p31,R.drawable.p32,
+                R.drawable.p33,R.drawable.p34,R.drawable.p35,R.drawable.p36};
         this.ImprovePart = new String[]{"手","手","手","手,臀","手,臀",
                                         "腹,臀","腹,臀","手,腹,臀,腿","臀","臀",
                                         "臀","臀","腹,臀","腹,臀","腹,臀",
@@ -120,9 +129,9 @@ public class PokedexObject {
     }
     public void CreativePokedex(){
         if(PokedexAll.equals("Belly")){
-            this.PokedexContent = new int[]{32,33,34,35,25,18,36,21,20,19,10,11,8,9};
+            this.PokedexContent = new int[]{8,9,10,11,18,19,20,21,25,32,33,34,35,36};
         }else if (PokedexAll.equals("Oxleg")){
-            this.PokedexContent = new int[]{28,24,29,30,26,27,21,15,23,9};
+            this.PokedexContent = new int[]{9,15,21,23,24,26,27,28,29,30};
         }else if (PokedexAll.equals("Pelvic")){
             this.PokedexContent = new int[]{15,16,9,17,18,19,20,21,22,15,23,9};
         }else if (PokedexAll.equals("Saddlebag")){
@@ -132,7 +141,7 @@ public class PokedexObject {
         }else if(PokedexAll.equals("Hand")){ //手
             this.PokedexContent = new int[]{1,2,3,4,7,10,19,20};
         }else if(PokedexAll.equals("Back")){ //背
-            this.PokedexContent = new int[]{};
+            this.PokedexContent = new int[]{7,8,10,11,12,20};
         }else if(PokedexAll.equals("Abdomen")){ //腹
             this.PokedexContent = new int[]{8,9,10,15,16,17,18,19,20,21,24,25,31,32,33,34,35,36};
         }else if(PokedexAll.equals("Buttocks")){ //臀

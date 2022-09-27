@@ -34,7 +34,7 @@ public class SportType {
                     R.drawable.belly_11,R.drawable.belly_12,R.drawable.belly_13,R.drawable.belly_14,R.drawable.belly_15,R.drawable.belly_16_17,
                     R.drawable.belly_16_17,R.drawable.belly_18,R.drawable.belly_19,R.drawable.belly_20,R.drawable.belly_21,R.drawable.belly_22 };
             Log.d("LoadSportData","Belly");
-        }else if(ST=="Slouch"){
+        }else if(ST.equals("Slouch")){
             this.SportContent = new String[]{"Upper Trapezius Stretch","Upper Trapezius Stretch","Deltoid Muscle Stretch","Deltoid Muscle Stretch","Triceps Stretch",
                                              "Triceps Stretch","Reverse Prayer Pose","Cat Cow Pose","Cobra Pose","Child Pose",
                                              "Locust Pose","Superman Pose","Camel Pose","Seated Side Bend","Seated Side Bend",
@@ -46,7 +46,7 @@ public class SportType {
                     R.drawable.slouch_11,R.drawable.slouch_13,R.drawable.slouch_12,R.drawable.slouch_14,R.drawable.slouch_15,R.drawable.slouch_16_17,
                     R.drawable.slouch_16_17,R.drawable.slouch_18_19,R.drawable.slouch_18_19};
             Log.d("LoadSportData","Slouch");
-        }else if (ST=="Pelvic"){
+        }else if (ST.equals("Pelvic")){
             this.SportContent = new String[]{"Iliopsoas Muscle Stretch","Downward-Facing Dog Pose","Child Pose","Bent Knee Crunch",
                                              "Raise Leg Crunch","Side Plank","Plank","Side Plank","Plank",
                                              "Bridge","Lunge","Lunge","Iliopsoas Muscle Stretch","Iliopsoas Muscle Stretch",
@@ -58,7 +58,7 @@ public class SportType {
                     R.drawable.pelvic_10,R.drawable.pelvic_11,R.drawable.pelvic_12_13,R.drawable.pelvic_12_13,
                     R.drawable.pelvic_14,R.drawable.pelvic_15,R.drawable.pelvic_16,R.drawable.pelvic_17,R.drawable.pelvic_18};
             Log.d("LoadSportData","Pelvic");
-        }else if(ST=="Saddlebag"){
+        }else if(ST.equals("Saddlebag")){
             this.SportContent = new String[]{"Iliopsoas Muscle Stretch","Iliopsoas Muscle Stretch","Cross Leg Forward Bend","Cross Leg Forward Bend","Frog Pose",
                                              "Raise Leg Crunch","Bicycle Crunch","Side Plank","Side Plank","Clamshell Exercise",
                                              "Clamshell Exercise","Inner Thigh Lift","Inner Thigh Lift","Bridge","Bound Angle Pose",
@@ -83,8 +83,4 @@ public class SportType {
             Log.d("LoadSportData","Oxleg");
         }
     }
-    public void ShowImage(int i){
-
-    }
-
 }

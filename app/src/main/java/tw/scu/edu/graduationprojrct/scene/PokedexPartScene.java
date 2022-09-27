@@ -33,8 +33,9 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         B4 = findViewById(R.id.B4);
         B5 = findViewById(R.id.B5);
 
-        init();
         ImageObjectSet();
+        init();
+
 
         Leave_BTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,8 +138,9 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
 
     }
     private void init(){
-        PO = new PokedexObject("Hand");//預設為小腹
+        PO = new PokedexObject("Hand");//預設為手
         SetPart("Hand");
+        ImageVisibilitySet();
         SelectButton.setVisibility(View.VISIBLE);
         SelectButton_Clicked.setVisibility(View.GONE);
         B1.setVisibility(View.GONE);
@@ -202,6 +204,12 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
     public void ImageVisibilitySet(){
         for(int i =0;i<ImageNumber;i++){
             ImageArray[i].setVisibility(View.VISIBLE);
+            int DataNum = PO.PokedexContent[i];
+            if(DataNum>4){ //沒有ID5 6
+                DataNum-=2;
+            }
+            Log.d("DefaultImageID", String.valueOf(PO.SportImgID[DataNum-1]));
+            ImageArray[i].setImageResource(PO.SportImgID[DataNum-1]);
         }
         for(int i=ImageNumber;i<18;i++){
             ImageArray[i].setVisibility(View.GONE);
@@ -217,8 +225,10 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         String EnglishName = PO.EnglishName[DataNum-1];
         String ImprovePart = PO.ImprovePart[DataNum-1];
         String Introduce = PO.Introduce[DataNum-1];
+        int ImageID = PO.SportImgID[DataNum-1];
         Log.d("ImageData",ChineseName+" "+EnglishName+" "+ImprovePart);
-        Log.d("ImageIntrduce",Introduce);
+        Log.d("ImageIntroduce",Introduce);
+        Log.d("ImageID", String.valueOf(ImageID));
     }
     @Override
     public void onClick(View view) {
@@ -241,7 +251,6 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
             case R.id.Image16:CatchData(16);break;
             case R.id.Image17:CatchData(17);break;
             case R.id.Image18:CatchData(18);
-
         }
     }
 }

@@ -103,13 +103,21 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
         Image_array_int[2] = initImageNum + 2;
         Image_array_int[3] = initImageNum + 3;
         Image_array_int[4] = initImageNum + 4;
+        Log.d("行為","SetIndex()");
         for (int i = 0; i < 5; i++) {
             if (Image_array_int[i] >= ImageNumber) {
                 Image_array_int[i] = -1;
                 Image_array[i].setVisibility(View.GONE);
             }else{
                 Image_array[i].setVisibility(View.VISIBLE);
+                int DataNum = PO.PokedexContent[Image_array_int[i]];
+                if(DataNum>4){ //沒有ID5 6
+                    DataNum-=2;
+                }
+                Image_array[i].setImageResource(PO.SportImgID[DataNum-1]);
+                Log.d("圖片載入","已載入");
             }
+//
         }
     }
     private void CatchData(int i) {
@@ -150,7 +158,11 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
         Select_Button.setImageResource(SelectProveImage[CurrentProve]);
         SetPart(ProveType[CurrentProve]);
         ImageNumber = PO.PokedexContent.length;
-        CurrentBarNum = (ImageNumber / 5);
+        CurrentBarNum = ImageNumber%5==0?ImageNumber/5-1:ImageNumber/5;
+        CurrentNum = 0;
+        initImageNum = 0;
+        SetIndex();
         Log.d("現在改善部位", ProveType[CurrentProve]);
+
     }
 }
