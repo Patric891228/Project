@@ -1,6 +1,7 @@
 package tw.scu.edu.graduationprojrct.scene;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +20,7 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
     public ImageView ImageArray[] = new ImageView[18];
     PokedexObject PO;
     int ImageNumber;
+    SharedPreferences SP;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -216,6 +218,7 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         }
     }
     private void CatchData(int i ){
+        SP = getSharedPreferences("data",MODE_PRIVATE);
         int DataNum = PO.PokedexContent[i-1];
         Log.d("DataNum", String.valueOf(DataNum));
         if(DataNum>4){ //沒有ID5 6
@@ -226,9 +229,23 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         String ImprovePart = PO.ImprovePart[DataNum-1];
         String Introduce = PO.Introduce[DataNum-1];
         int ImageID = PO.SportImgID[DataNum-1];
+
+        SharedPreferences.Editor editor = SP.edit();
+        editor.putString("ChineseName",ChineseName);
+        editor.putString("EnglishName",EnglishName);
+        editor.putString("Introduce",Introduce);
+        editor.putString("ImprovePart",ImprovePart);
+        editor.putInt("ImageID",ImageID);
+        editor.commit();
+//        String PassChineseName = SP.getString(ChineseName,"");
+//        String PassEnglishName = SP.getString(EnglishName,"");
+//        String PassIntroduce = SP.getString(Introduce,"");
+//        String PassImprovePart = SP.getString(ImprovePart,"");
+//        int PassImageID = SP.getInt(String.valueOf(ImageID),0);
         Log.d("ImageData",ChineseName+" "+EnglishName+" "+ImprovePart);
         Log.d("ImageIntroduce",Introduce);
         Log.d("ImageID", String.valueOf(ImageID));
+        startActivity(new Intent(PokedexPartScene.this,ProfileUI.class));
     }
     @Override
     public void onClick(View view) {
