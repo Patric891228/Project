@@ -25,10 +25,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GraduationProjrct.NoActionBar">
-<<<<<<< HEAD
-=======
         <activity android:name=".scene.ProfileUI"></activity>
->>>>>>> eb9003ad9f8442719ae93d56eaa4f31dcdd7742a
         <activity
             android:name=".scene.PokedexProveScene"
             android:screenOrientation="landscape" />
@@ -67,12 +64,9 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".java.CameraXLivePreviewActivity"
-<<<<<<< HEAD
             android:screenOrientation="landscape" />
         <activity
             android:name=".preference.SettingsActivity"
-=======
->>>>>>> eb9003ad9f8442719ae93d56eaa4f31dcdd7742a
             android:screenOrientation="landscape" />
         <activity
             android:name=".scene.EnterScene"
