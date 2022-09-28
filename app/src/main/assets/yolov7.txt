@@ -1,0 +1,34 @@
+Bent Knee Crunch 
+Bicycle Crunch 
+Boat Pose 
+BoundAnglePose 
+Bridge 
+Camel Pose 
+Cat Cow Pose 
+Child Pose 
+Clamshell Exercise 
+Cobra Pose 
+Cross Leg Forward Bend 
+Deltoid Muscle Stretch 
+Downward-Facing Dog Pose 
+Frog Pose 
+Iliopsoas Muscle Stretch 
+InnerThighLift 
+LegRaise0 
+LegRaise10 
+LegRaise30 
+LegRaise60 
+LegRaise90 
+Locust Pose 
+Lunge 
+Pigeon Pose 
+Plank 
+Raise Leg Crunch 
+Reverse Prayer Pose 
+Seated Side Bend 
+SidePlank 
+Squat 
+Standing Forward Bend 
+Super Men Pose 
+Triceps Stretch 
+Upper Trapezius Stretch
