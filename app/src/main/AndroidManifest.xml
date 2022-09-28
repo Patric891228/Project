@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="tw.scu.edu.graduationprojrct">
+    <uses-feature android:glEsVersion="0x00030001" android:required="true" />
     <!--
  CameraX libraries require minSdkVersion 21, while this quickstart app
   supports low to 19. Needs to use overrideLibrary to make the merger tool
@@ -68,6 +69,11 @@
         <activity
             android:name=".preference.SettingsActivity"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".DetectorActivity"
+            android:label="@string/tfe_od_app_name"
+            android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name=".scene.EnterScene"
             android:exported="true"
