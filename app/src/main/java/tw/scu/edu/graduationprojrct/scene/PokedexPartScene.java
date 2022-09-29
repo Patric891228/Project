@@ -74,9 +74,10 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
             public void onClick(View view) {
                 SetPart("Hand");
                 ImageVisibilitySet();
+                B5.setImageResource(R.drawable.part_button_clicked_arm);
                 Log.d("SelectPokedexPart","Hand");
                 Log.d("Number", String.valueOf(ImageNumber));
-                reset();
+                reset(0);
             }
         });
         B2.setOnClickListener(new View.OnClickListener() {
@@ -84,9 +85,10 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
             public void onClick(View view) {
                 SetPart("Back");
                 ImageVisibilitySet();
+                B5.setImageResource(R.drawable.part_button_clicked_shoulder);
                 Log.d("SelectPokedexPart","Back");
                 Log.d("Number", String.valueOf(ImageNumber));
-                reset();
+                reset(1);
             }
         });
         B3.setOnClickListener(new View.OnClickListener() {
@@ -94,9 +96,10 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
             public void onClick(View view) {
                 SetPart("Abdomen");
                 ImageVisibilitySet();
+                B3.setImageResource(R.drawable.part_button_clicked_belly);
                 Log.d("SelectPokedexPart","Abdomen");
                 Log.d("Number", String.valueOf(ImageNumber));
-                reset();
+                reset(2);
             }
         });
         B4.setOnClickListener(new View.OnClickListener() {
@@ -104,9 +107,10 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
             public void onClick(View view) {
                 SetPart("Buttocks");
                 ImageVisibilitySet();
+                B4.setImageResource(R.drawable.part_button_clicked_bottom);
                 Log.d("SelectPokedexPart","Buttocks");
                 Log.d("Number", String.valueOf(ImageNumber));
-                reset();
+                reset(3);
             }
         });
         B5.setOnClickListener(new View.OnClickListener() {
@@ -114,9 +118,10 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
             public void onClick(View view) {
                 SetPart("Leg");
                 ImageVisibilitySet();
+                B5.setImageResource(R.drawable.part_button_clicked_leg);
                 Log.d("SelectPokedexPart","Leg");
                 Log.d("Number", String.valueOf(ImageNumber));
-                reset();
+                reset(4);
             }
         });
         image1.setOnClickListener(this);
@@ -151,14 +156,24 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         B4.setVisibility(View.GONE);
         B5.setVisibility(View.GONE);
     }
-    private void reset(){
+    private void reset(int i ){
+        ImageView IV[] = {B1,B2,B3,B4,B5};
+        int ImageID [] = {R.drawable.part_button_clicked_arm,R.drawable.part_button_clicked_shoulder,R.drawable.part_button_clicked_belly,
+                R.drawable.part_button_clicked_bottom,R.drawable.part_button_clicked_leg};
         SelectButton.setVisibility(View.VISIBLE);
         SelectButton_Clicked.setVisibility(View.GONE);
+        B1.setImageResource(R.drawable.part_button_small_arm);
         B1.setVisibility(View.GONE);
+        B2.setImageResource(R.drawable.part_button_small_shoulder);
         B2.setVisibility(View.GONE);
+        B3.setImageResource(R.drawable.part_button_small_belly);
         B3.setVisibility(View.GONE);
+        B4.setImageResource(R.drawable.part_button_small_bottom);
         B4.setVisibility(View.GONE);
+        B5.setImageResource(R.drawable.part_button_small_leg);
         B5.setVisibility(View.GONE);
+        IV[i].setImageResource(ImageID[i]);
+
     }
     public void SetPart(String part){
         PO.PokedexAll = part;
@@ -237,14 +252,6 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         editor.putString("ImprovePart",ImprovePart);
         editor.putInt("ImageID",ImageID);
         editor.commit();
-//        String PassChineseName = SP.getString(ChineseName,"");
-//        String PassEnglishName = SP.getString(EnglishName,"");
-//        String PassIntroduce = SP.getString(Introduce,"");
-//        String PassImprovePart = SP.getString(ImprovePart,"");
-//        int PassImageID = SP.getInt(String.valueOf(ImageID),0);
-        Log.d("ImageData",ChineseName+" "+EnglishName+" "+ImprovePart);
-        Log.d("ImageIntroduce",Introduce);
-        Log.d("ImageID", String.valueOf(ImageID));
         startActivity(new Intent(PokedexPartScene.this,ProfileUI.class));
     }
     @Override
