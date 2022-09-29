@@ -246,7 +246,7 @@ public class PoseGraphic extends Graphic {
 //        }
         //String result = determine(posture);
         String result = determine();
-        canvas.drawText(result, POSE_CLASSIFICATION_TEXT_SIZE * 1.0f, POSE_CLASSIFICATION_TEXT_SIZE * 4.0f, classificationTextPaint);
+        canvas.drawText(result, POSE_CLASSIFICATION_TEXT_SIZE * 1.0f, POSE_CLASSIFICATION_TEXT_SIZE * 5.5f, classificationTextPaint);
         // Draw inFrameLikelihood for all points
         if (showInFrameLikelihood) {
             for (PoseLandmark landmark : landmarks) {

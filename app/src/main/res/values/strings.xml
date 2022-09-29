@@ -45,7 +45,7 @@
     <string name="pref_summary_camera_live_viewport" translatable="false">Do not block camera preview drawing on detection</string>
 
     <!-- Strings for info preference. -->
-    <string name="pref_title_info_hide" translatable="false">Hide detection info</string>
+    <string name="pref_title_info_hide" translatable="true">Hide detection info</string>
     <string name="pref_key_info_hide" translatable="false">ih</string>
 
     <!-- Strings for pose detector performance mode preference. -->

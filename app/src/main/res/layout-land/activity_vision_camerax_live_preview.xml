@@ -19,32 +19,54 @@
       app:layout_constraintStart_toStartOf="@id/preview_view"
       app:layout_constraintEnd_toEndOf="@id/preview_view" />
 
+  <ToggleButton
+      android:id="@+id/facing_switch"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:layout_gravity="bottom|start"
+      android:background="@layout/toggle_style"
+      android:checked="false"
+      android:textOff=""
+      android:textOn=""
+      app:layout_constraintLeft_toLeftOf="@id/Rest_Sign_Right"
+      app:layout_constraintRight_toRightOf="@id/Time_Word_Left"
+      app:layout_constraintBottom_toBottomOf="parent"/>
+
+  <ImageView
+      android:id="@+id/settings_button_land"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom|end"
+      android:contentDescription="@string/menu_item_settings"
+      android:padding="12dp"
+      android:src="@drawable/ic_settings_white_24dp"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"/>
+
   <FrameLayout
       android:id="@id/control"
-      android:layout_width="220dp"
+      android:layout_width="wrap_content"
       android:layout_height="match_parent"
-      app:layout_constraintStart_toEndOf="@id/preview_view"
+      android:background="#000"
       app:layout_constraintEnd_toEndOf="parent"
-      android:background="#000">
+      app:layout_constraintStart_toEndOf="@id/preview_view">
 
-    <ToggleButton
-        android:id="@+id/facing_switch"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_gravity="bottom|start"
-        android:background="@layout/toggle_style"
-        android:checked="false"
-        android:textOff=""
-        android:textOn=""/>
+<!--    <ToggleButton-->
+<!--        android:id="@+id/facing_switch"-->
+<!--        android:layout_width="48dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_gravity="bottom|start"-->
+<!--        android:background="@layout/toggle_style"-->
+<!--        android:checked="false" />-->
 
-    <ImageView
-        android:id="@+id/settings_button_land"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:padding="12dp"
-        android:contentDescription="@string/menu_item_settings"
-        android:src="@drawable/ic_settings_white_24dp"/>
+<!--    <ImageView-->
+<!--        android:id="@+id/settings_button_land"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        android:contentDescription="@string/menu_item_settings"-->
+<!--        android:padding="12dp"-->
+<!--        android:src="@drawable/ic_settings_white_24dp" />-->
   </FrameLayout>
   <!--    休息狀態 -->
   <!--    白背景-->
@@ -65,29 +87,37 @@
       app:layout_constraintRight_toRightOf="@id/Photo_Right"
       app:layout_constraintTop_toTopOf="@id/Photo_Top"
       app:layout_constraintVertical_bias="1.0" />
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Photo_Top"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.15"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Photo_Bottom"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.87"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Photo_Right"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.72"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Photo_Left"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.05"></androidx.constraintlayout.widget.Guideline>
   <!--    下一個動作字樣-->
   <ImageView
@@ -99,29 +129,37 @@
       app:layout_constraintRight_toRightOf="@id/Next_Word_Right"
       app:layout_constraintTop_toTopOf="@id/Next_Word_Top"
       app:layout_constraintBottom_toBottomOf="@id/Next_Word_Bottom"/>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Next_Word_Top"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.22"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Next_Word_Bottom"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.31"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Next_Word_Right"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.25"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Next_Word_Left"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.086"></androidx.constraintlayout.widget.Guideline>
   <!--    休息圖樣-->
   <ImageView
@@ -133,29 +171,37 @@
       app:layout_constraintRight_toRightOf="@id/Rest_Sign_Right"
       app:layout_constraintTop_toTopOf="@id/Rest_Sign_Top"
       app:layout_constraintBottom_toBottomOf="@id/Rest_Sign_Bottom"/>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Rest_Sign_Top"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.036"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Rest_Sign_Bottom"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.102"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Rest_Sign_Right"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.82"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Rest_Sign_Left"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.6915"></androidx.constraintlayout.widget.Guideline>
   <!--    休息字樣-->
   <ImageView
@@ -167,29 +213,37 @@
       app:layout_constraintRight_toRightOf="@id/Rest_Word_Sign_Right"
       app:layout_constraintTop_toTopOf="@id/Rest_Word_Sign_Top"
       app:layout_constraintBottom_toBottomOf="@id/Rest_Word_Sign_Bottom"/>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Rest_Word_Sign_Top"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.048"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Rest_Word_Sign_Bottom"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.0907"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Rest_Word_Sign_Right"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.7938"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Rest_Word_Sign_Left"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.705"></androidx.constraintlayout.widget.Guideline>
   <!--    下次運動內容-->
   <ImageView
@@ -200,17 +254,21 @@
       app:layout_constraintRight_toRightOf="@id/Next_Sport_Word_Right"
       app:layout_constraintTop_toTopOf="@id/Next_Sport_Word_Top"
       app:layout_constraintBottom_toBottomOf="@id/Next_Sport_Word_Bottom"/>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Next_Sport_Word_Top"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.31"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Next_Sport_Word_Bottom"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.45"></androidx.constraintlayout.widget.Guideline>
 
   <androidx.constraintlayout.widget.Guideline
@@ -218,12 +276,15 @@
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.66"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Next_Sport_Word_Left"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.076"></androidx.constraintlayout.widget.Guideline>
   <!--    通用-->
   <!--    時間背景-->
@@ -236,29 +297,37 @@
       app:layout_constraintRight_toRightOf="@id/Time_Right"
       app:layout_constraintTop_toTopOf="@id/Time_Top"
       app:layout_constraintBottom_toBottomOf="@id/Time_Bottom"/>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Time_Top"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="-0.01"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Time_Bottom"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.32"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Time_Right"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.992"></androidx.constraintlayout.widget.Guideline>
+
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Time_Left"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.813"></androidx.constraintlayout.widget.Guideline>
   <!--    時間字樣-->
   <TextView
@@ -278,24 +347,28 @@
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.069"></androidx.constraintlayout.widget.Guideline>
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Time_Word_Bottom"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.25"></androidx.constraintlayout.widget.Guideline>
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Time_Word_Right"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.958"></androidx.constraintlayout.widget.Guideline>
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Time_Word_Left"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.848"></androidx.constraintlayout.widget.Guideline>
 
   <!--    運動狀態-->
@@ -314,24 +387,28 @@
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0"></androidx.constraintlayout.widget.Guideline>
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Photo_Now_Bottom"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.35"></androidx.constraintlayout.widget.Guideline>
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Photo_Now_Right"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.375"></androidx.constraintlayout.widget.Guideline>
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Photo_Now_Left"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="vertical"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0"></androidx.constraintlayout.widget.Guideline>
   <!--    現在動作字樣-->
   <ImageView
@@ -348,12 +425,14 @@
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.05"></androidx.constraintlayout.widget.Guideline>
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Now_Word_Bottom"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:orientation="horizontal"
+      android:visibility="invisible"
       app:layout_constraintGuide_percent="0.11"></androidx.constraintlayout.widget.Guideline>
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/Now_Word_Right"
