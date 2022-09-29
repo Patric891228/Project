@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,7 +14,8 @@ import tw.scu.edu.graduationprojrct.Setting.PokedexObject;
 
 public class PokedexProveScene extends AppCompatActivity implements View.OnClickListener {
     ImageView Leave_Button, Left_Button, Right_Button;
-    ImageView Select_Button;
+    ImageView Select_Button,CenterImage;
+    TextView ChineseName,EnglishName,Prove,Introduce;
     ImageView Image_array[] = new ImageView[5];
     int Image_array_int[] = new int[5];
     String ProveType[] = {"Slouch", "Oxleg", "Pelvic", "Saddlebag", "Belly"};
@@ -32,6 +34,7 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
         Right_Button = findViewById(R.id.Right_Button);
 
         Select_Button = findViewById(R.id.Select_Button);
+        CenterImage = findViewById(R.id.Center_Iamge);
 
         Image_array[0] = findViewById(R.id.I1);
         Image_array[1] = findViewById(R.id.I2);
@@ -40,12 +43,18 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
         Image_array[4] = findViewById(R.id.I5);
 
         PO = new PokedexObject("Slouch");
-        init();
         Image_array[0].setOnClickListener(this);
         Image_array[1].setOnClickListener(this);
         Image_array[2].setOnClickListener(this);
         Image_array[3].setOnClickListener(this);
         Image_array[4].setOnClickListener(this);
+
+        ChineseName = findViewById(R.id.ChineseName2);
+        EnglishName = findViewById(R.id.EnglishName2);
+        Prove = findViewById(R.id.Prove2);
+        Introduce = findViewById(R.id.Introduce2);
+
+        init();
 
         Select_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +67,11 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
                 CurrentNum = 0;
                 initImageNum = 0;
                 SetIndex();
+                CenterImage.setImageResource(PO.SportImgID[PO.PokedexContent[initImageNum]-1]);
+                ChineseName.setText("中文名稱:"+PO.ChineseName[PO.PokedexContent[initImageNum]-1]);
+                EnglishName.setText("英文名稱:"+PO.EnglishName[PO.PokedexContent[initImageNum]-1]);
+                Prove.setText("改善部位:"+PO.ImprovePart[PO.PokedexContent[initImageNum]-1]);
+                Introduce.setText("改善部位:"+PO.Introduce[PO.PokedexContent[initImageNum]-1]);
                 Log.d("現在改善部位", ProveType[CurrentProve]);
                 Log.d("個數", String.valueOf(ImageNumber));
             }
@@ -96,6 +110,7 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
     public void SetPart(String prove) {
         PO.PokedexAll = prove;
         PO.CreativePokedex();
+        Log.d("狀態","已更改類型");
     }
     public void SetIndex() {
         Image_array_int[0] = initImageNum;
@@ -122,6 +137,16 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
     }
     private void CatchData(int i) {
         Log.d("現在點擊", String.valueOf(initImageNum + i));
+        Log.d("編號", String.valueOf(PO.PokedexContent[initImageNum+i]));
+        if(PO.PokedexContent[initImageNum+i]>4){
+            PO.PokedexContent[initImageNum+i]-=2;
+        }
+        Log.d("更改後編號", String.valueOf(PO.PokedexContent[initImageNum+i]));
+        CenterImage.setImageResource(PO.SportImgID[PO.PokedexContent[initImageNum+i]-1]);
+        ChineseName.setText("中文名稱:"+PO.ChineseName[PO.PokedexContent[initImageNum+i]-1]);
+        EnglishName.setText("英文名稱:"+PO.EnglishName[PO.PokedexContent[initImageNum+i]-1]);
+        Prove.setText("改善部位:"+PO.ImprovePart[PO.PokedexContent[initImageNum+i]-1]);
+        Introduce.setText("改善部位:"+PO.Introduce[PO.PokedexContent[initImageNum+i]-1]);
 //        int DataNum = PO.PokedexContent[i-1];
 //        Log.d("DataNum", String.valueOf(DataNum));
 //        if(DataNum>4){ //沒有ID5 6
@@ -162,6 +187,11 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
         CurrentNum = 0;
         initImageNum = 0;
         SetIndex();
+        CenterImage.setImageResource(PO.SportImgID[PO.PokedexContent[initImageNum]-1]);
+        ChineseName.setText("中文名稱:"+PO.ChineseName[PO.PokedexContent[initImageNum]-1]);
+        EnglishName.setText("英文名稱:"+PO.EnglishName[PO.PokedexContent[initImageNum]-1]);
+        Prove.setText("改善部位:"+PO.ImprovePart[PO.PokedexContent[initImageNum]-1]);
+        Introduce.setText("改善部位:"+PO.Introduce[PO.PokedexContent[initImageNum]-1]);
         Log.d("現在改善部位", ProveType[CurrentProve]);
 
     }
