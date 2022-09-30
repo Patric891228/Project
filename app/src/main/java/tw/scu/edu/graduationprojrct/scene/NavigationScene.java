@@ -14,8 +14,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,7 +25,7 @@ import tw.scu.edu.graduationprojrct.java.CameraXLivePreviewActivity;
 
 public class NavigationScene extends AppCompatActivity implements AdapterView.OnItemClickListener{
     private static final String TAG = "ChooserActivity";
-
+    ImageView BG;
     @SuppressWarnings("NewApi") // CameraX is only available on API 21+
     private static final Class<?>[] CLASSES =
             Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP
@@ -57,11 +57,26 @@ public class NavigationScene extends AppCompatActivity implements AdapterView.On
                             .penaltyLog()
                             .build());
         }
+
+
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate");
         setContentView(R.layout.activity_navigation_scene);
         shared = getSharedPreferences("data",MODE_PRIVATE);
         SportType = shared.getString("SportType","Belly");
+        BG = findViewById(R.id.view);
+        Log.d("SportType",SportType);
+        if(SportType.equals("Belly")){
+            BG.setImageResource(R.drawable.startexercise_belly);
+        }else if (SportType.equals("Oxleg")){
+            BG.setImageResource(R.drawable.startexercise_oxleg);
+        }else if (SportType.equals("Pelvic")){
+            BG.setImageResource(R.drawable.startexercise_pelvic);
+        }else if (SportType.equals("Saddlebags")){
+            BG.setImageResource(R.drawable.startexercise_saddlebags);
+        }else{
+            BG.setImageResource(R.drawable.startexercise_slouch);
+        }
         Log.d("EnterScene","NavigationScene");
         ListView listView = findViewById(R.id.test_activity_list_view);
 
@@ -100,8 +115,8 @@ public class NavigationScene extends AppCompatActivity implements AdapterView.On
             view = inflater.inflate(android.R.layout.simple_list_item_2, null);
 //      }
 
-            ((TextView) view.findViewById(android.R.id.text1)).setText(classes[position].getSimpleName());
-            ((TextView) view.findViewById(android.R.id.text2)).setText(descriptionIds[position]);
+//            ((TextView) view.findViewById(android.R.id.text1)).setText(classes[position].getSimpleName());
+//            ((TextView) view.findViewById(android.R.id.text2)).setText(descriptionIds[position]);
 
             return view;
         }
