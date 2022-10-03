@@ -91,7 +91,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
         tracker = new MultiBoxTracker(this);
 
         final int modelIndex = modelView.getCheckedItemPosition();
-        final String modelString = modelStrings.get(modelIndex);
+        final String modelString = "best-fp16s.tflite";
 
         try {
             detector = DetectorFactory.getDetector(getAssets(), modelString);
@@ -164,38 +164,38 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
             }
 
             // Lookup names of parameters.
-            String modelString = modelStrings.get(modelIndex);
-            String device = deviceStrings.get(deviceIndex);
+//            String modelString = modelStrings.get(modelIndex);
+//            String device = deviceStrings.get(deviceIndex);
 
-            LOGGER.i("Changing model to " + modelString + " device " + device);
+//            LOGGER.i("Changing model to " + modelString + " device " + device);
 
             // Try to load model.
 
-            try {
-                detector = DetectorFactory.getDetector(getAssets(), modelString);
-                // Customize the interpreter to the type of device we want to use.
-                if (detector == null) {
-                    return;
-                }
-            }
-            catch(IOException e) {
-                e.printStackTrace();
-                LOGGER.e(e, "Exception in updateActiveModel()");
-                Toast toast =
-                        Toast.makeText(
-                                getApplicationContext(), "Classifier could not be initialized", Toast.LENGTH_SHORT);
-                toast.show();
-                finish();
-            }
+//            try {
+//                detector = DetectorFactory.getDetector(getAssets(), modelString);
+//                // Customize the interpreter to the type of device we want to use.
+//                if (detector == null) {
+//                    return;
+//                }
+//            }
+//            catch(IOException e) {
+//                e.printStackTrace();
+//                LOGGER.e(e, "Exception in updateActiveModel()");
+//                Toast toast =
+//                        Toast.makeText(
+//                                getApplicationContext(), "Classifier could not be initialized", Toast.LENGTH_SHORT);
+//                toast.show();
+//                finish();
+//            }
 
-
-            if (device.equals("CPU")) {
-                detector.useCPU();
-            } else if (device.equals("GPU")) {
-                detector.useGpu();
-            } else if (device.equals("NNAPI")) {
-                detector.useNNAPI();
-            }
+            detector.useCPU();
+//            if (device.equals("CPU")) {
+//                detector.useCPU();
+//            } else if (device.equals("GPU")) {
+//                detector.useGpu();
+//            } else if (device.equals("NNAPI")) {
+//                detector.useNNAPI();
+//            }
             detector.setNumThreads(numThreads);
 
             int cropSize = detector.getInputSize();
