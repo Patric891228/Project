@@ -1,15 +1,16 @@
 package tw.scu.edu.graduationprojrct.scene;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import tw.scu.edu.graduationprojrct.R;
 
@@ -19,6 +20,8 @@ public class MainScene extends AppCompatActivity {
     MediaPlayer mysong;
     ImageView tiecabinet,Setting,Logout,Setting_Click,Logout_Click;
     ImageButton mirror,counter,magazine;
+    int BGMList[] = {R.raw.donigen,R.raw.donigen,R.raw.donigen,R.raw.donigen,R.raw.donigen};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +40,10 @@ public class MainScene extends AppCompatActivity {
         Setting_Click = findViewById(R.id.Setting_Click);
         Logout_Click = findViewById(R.id.Logout_Click);
 
-        mysong = MediaPlayer.create(MainScene.this, R.raw.donigen);
-        //mysong.start();
+        int BGMNumber = shared.getInt("BGMNumber",0);
+        Log.d("歌曲編號", String.valueOf(BGMNumber));
+        mysong = MediaPlayer.create(MainScene.this,BGMList[BGMNumber]);
+        mysong.start();
         initButton();
         mirror.setOnClickListener(new View.OnClickListener() {
             @Override

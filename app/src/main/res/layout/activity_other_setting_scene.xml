@@ -224,5 +224,41 @@
         app:layout_constraintBottom_toBottomOf="@id/Time_Text_Bottom"
         app:layout_constraintLeft_toLeftOf="@id/Time_Text_Left"
         app:layout_constraintRight_toRightOf="@id/Time_Text_Right"/>
-
+    <!--    text-->
+    <TextView
+        android:id="@+id/BGM_Text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@color/black"
+        android:textSize="36dp"
+        android:text="檔一根"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/BGM_Text_Top"
+        app:layout_constraintBottom_toBottomOf="@id/BGM_Text_Bottom"
+        app:layout_constraintLeft_toLeftOf="@id/BGM_Text_Left"
+        app:layout_constraintRight_toRightOf="@id/BGM_Text_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BGM_Text_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BGM_Text_Bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BGM_Text_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.64"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BGM_Text_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.84"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
