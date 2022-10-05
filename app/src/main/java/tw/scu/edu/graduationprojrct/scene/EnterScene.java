@@ -32,6 +32,9 @@ public class EnterScene extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EnterButton.setBackgroundResource(drawable.sdo);
+                SharedPreferences.Editor editor = shared.edit();
+                editor.putBoolean("isEdit",true);
+                editor.commit();
                 Check();
             }
         });

@@ -24,9 +24,10 @@ public class OtherSettingScene extends AppCompatActivity implements View.OnClick
     int BGMNumber;
     DBHelper DB;
     Boolean isEnter = false;
+    Boolean isEdit = false;
     SharedPreferences shared;
-    private Object OtherSettingScene;
-    String BGMName[] = {"擋一根","擋兩根","擋三根","擋四根","擋五根"};
+
+    String BGMName[] = {"擋一根","音樂1","音樂2","音樂3","音樂4"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,8 @@ public class OtherSettingScene extends AppCompatActivity implements View.OnClick
         shared = getSharedPreferences("data",MODE_PRIVATE);
         isEnter = shared.getBoolean("isEnter",false);
         UserName = shared.getString("UserName","admin");
-        BGMNumber = shared.getInt("BGMnumber",0);
+        isEdit = shared.getBoolean("isEdit",false);
+
 
         if(isEnter){
             time.setText(DB.getRemindTime(shared.getString("UserName","Nan")));
@@ -50,7 +52,7 @@ public class OtherSettingScene extends AppCompatActivity implements View.OnClick
             time.setText("08:00");
             Log.d("初次灌入時間",DB.insertTime(UserName).toString());
         }
-        bgm.setText(BGMName[0]);
+        bgm.setText(BGMName[BGMNumber]);
         time.setOnClickListener(OtherSettingScene.this);
         bgm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +60,7 @@ public class OtherSettingScene extends AppCompatActivity implements View.OnClick
                 BGMNumber=(BGMNumber+1)%5;
                 SharedPreferences.Editor editor = shared.edit();
                 editor.putInt("BGMNumber",BGMNumber);
+                editor.putBoolean("isEdit",true);
                 editor.commit();
                 bgm.setText(BGMName[BGMNumber]);
             }

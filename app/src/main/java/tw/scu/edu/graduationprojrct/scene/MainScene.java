@@ -18,9 +18,11 @@ import tw.scu.edu.graduationprojrct.R;
 public class MainScene extends AppCompatActivity {
     SharedPreferences shared;
     MediaPlayer mysong;
+    int BGMNumber;
     ImageView tiecabinet,Setting,Logout,Setting_Click,Logout_Click;
     ImageButton mirror,counter,magazine;
-    int BGMList[] = {R.raw.donigen,R.raw.donigen,R.raw.donigen,R.raw.donigen,R.raw.donigen};
+    int BGMList[] = {R.raw.donigen,R.raw.m1,R.raw.m2,R.raw.m3,R.raw.m4};
+    boolean isEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +42,15 @@ public class MainScene extends AppCompatActivity {
         Setting_Click = findViewById(R.id.Setting_Click);
         Logout_Click = findViewById(R.id.Logout_Click);
 
-        int BGMNumber = shared.getInt("BGMNumber",0);
-        Log.d("歌曲編號", String.valueOf(BGMNumber));
-        mysong = MediaPlayer.create(MainScene.this,BGMList[BGMNumber]);
-        mysong.start();
+        BGMNumber = shared.getInt("BGMNumber",0);
+        isEdit = shared.getBoolean("isEdit",true);
+        Log.d("撥放音樂", String.valueOf(isEdit));
+        if(isEdit) { //預設
+            mysong = MediaPlayer.create(MainScene.this, BGMList[BGMNumber]);
+            mysong.start();
+
+        }
+
         initButton();
         mirror.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +85,8 @@ public class MainScene extends AppCompatActivity {
         Setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mysong.pause();
+                mysong.release();
                 Setting.setVisibility(View.GONE);
                 Setting_Click.setVisibility(View.VISIBLE);
                 startActivity(new Intent(MainScene.this,OtherSettingScene.class));
@@ -104,9 +113,9 @@ public class MainScene extends AppCompatActivity {
        Setting_Click.setVisibility(View.GONE);
        Logout_Click.setVisibility(View.GONE);
     }
-    protected void onPause(){
-        super.onPause();
-        mysong.release();
-        finish();
-    }
+//    protected void onPause(){
+//        super.onPause();
+//        mysong.release();
+//        finish();
+//    }
 }
