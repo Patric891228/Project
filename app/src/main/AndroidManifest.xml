@@ -77,7 +77,15 @@
         <activity
             android:name=".DetectorActivity"
             android:label="@string/tfe_od_app_name"
+<<<<<<< HEAD
+            android:screenOrientation="landscape">
+
+        </activity>
+        <activity android:name=".CameraActivity"
+            android:screenOrientation="landscape"/>
+=======
             android:screenOrientation="portrait"></activity>
+>>>>>>> 7273193cd6e31917d2e162436ec0b7c8ca060ab3
         <activity
             android:name=".scene.EnterScene"
             android:exported="true"

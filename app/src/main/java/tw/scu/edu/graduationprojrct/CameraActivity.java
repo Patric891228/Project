@@ -113,9 +113,9 @@ public abstract class CameraActivity extends AppCompatActivity
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
     setContentView(R.layout.tfe_od_activity_camera);
-    Toolbar toolbar = findViewById(R.id.toolbar);
-    setSupportActionBar(toolbar);
-    getSupportActionBar().setDisplayShowTitleEnabled(false);
+//    Toolbar toolbar = findViewById(R.id.toolbar);
+//    setSupportActionBar(toolbar);
+//    getSupportActionBar().setDisplayShowTitleEnabled(false);
 
     if (hasPermission()) {
       setFragment();
@@ -269,8 +269,11 @@ public abstract class CameraActivity extends AppCompatActivity
       // Initialize the storage bitmaps once when the resolution is known.
       if (rgbBytes == null) {
         Camera.Size previewSize = camera.getParameters().getPreviewSize();
+
         previewHeight = previewSize.height;
         previewWidth = previewSize.width;
+        Log.d("相機寬度", String.valueOf(previewWidth));
+        Log.d("相機高度", String.valueOf(previewHeight));
         rgbBytes = new int[previewWidth * previewHeight];
         onPreviewSizeChosen(new Size(previewSize.width, previewSize.height), 90);
       }
