@@ -31,7 +31,8 @@
         <activity
             android:name=".scene.SelfDetection"
             android:screenOrientation="landscape" />
-        <activity android:name=".scene.ProfileUI" />
+        <activity android:name=".scene.ProfileUI"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".scene.PokedexProveScene"
             android:screenOrientation="landscape" />
