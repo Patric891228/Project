@@ -13,13 +13,11 @@
         android:id="@+id/mirror"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#00FFFFFF"
-        android:scaleType="centerCrop"
+        android:background="@drawable/mirror"
         app:layout_constraintBottom_toBottomOf="@id/title_guideline_bottom_for_mirror"
         app:layout_constraintLeft_toLeftOf="@id/title_guideline_left_for_mirror"
         app:layout_constraintRight_toRightOf="@id/title_guideline_right_for_mirror"
-        app:layout_constraintTop_toTopOf="@id/title_guideline_top_for_mirror"
-        app:srcCompat="@drawable/mirror" />
+        app:layout_constraintTop_toTopOf="@id/title_guideline_top_for_mirror" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_left_for_mirror"
         android:layout_width="0dp"
@@ -32,12 +30,13 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.62" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_bottom_for_mirror"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.76" />
+        app:layout_constraintGuide_percent="0.786" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_top_for_mirror"
         android:layout_width="0dp"
@@ -49,13 +48,11 @@
         android:id="@+id/counter"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#00FFFFFF"
-        android:scaleType="centerCrop"
+        android:background="@drawable/counter"
         app:layout_constraintBottom_toBottomOf="@id/title_guideline_bottom_for_counter"
         app:layout_constraintLeft_toLeftOf="@id/title_guideline_left_for_counter"
         app:layout_constraintRight_toRightOf="@id/title_guideline_right_for_counter"
-        app:layout_constraintTop_toTopOf="@id/title_guideline_top_for_counter"
-        app:srcCompat="@drawable/counter" />
+        app:layout_constraintTop_toTopOf="@id/title_guideline_top_for_counter" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_left_for_counter"
         android:layout_width="0dp"
@@ -73,7 +70,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.82" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_top_for_counter"
         android:layout_width="0dp"
@@ -85,9 +82,7 @@
         android:id="@+id/magazine"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#00FFFFFF"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/magazine"
+        android:background="@drawable/magazine"
         app:layout_constraintBottom_toBottomOf="@id/title_guideline_bottom_for_magazine"
         app:layout_constraintLeft_toLeftOf="@id/title_guideline_left_for_magazine"
         app:layout_constraintRight_toRightOf="@id/title_guideline_right_for_magazine"
@@ -121,15 +116,13 @@
         android:id="@+id/tiecabinet"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#00FFFFFF"
-        android:scaleType="centerCrop"
+        android:background="@drawable/tiecabinet"
         app:layout_constraintBottom_toBottomOf="@id/title_guideline_bottom_for_tiecabinet"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@id/title_guideline_left_for_tiecabinet"
         app:layout_constraintRight_toRightOf="@id/title_guideline_right_for_tiecabinet"
         app:layout_constraintTop_toTopOf="@id/title_guideline_top_for_tiecabinet"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/tiecabinet" />
+        app:layout_constraintVertical_bias="0.0" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_left_for_tiecabinet"
         android:layout_width="0dp"

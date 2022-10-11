@@ -184,7 +184,8 @@
         app:layout_constraintTop_toTopOf="@id/ChineseName2_Top"
         app:layout_constraintBottom_toBottomOf="@id/ChineseName2_Bottom"
         app:layout_constraintLeft_toLeftOf="@id/ChineseName2_Left"
-        app:layout_constraintRight_toRightOf="@id/ChineseName2_Right"/>
+        app:layout_constraintRight_toRightOf="@id/ChineseName2_Right"
+        android:textSize="14sp"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/ChineseName2_Top"
         android:layout_width="0dp"
@@ -217,7 +218,8 @@
         app:layout_constraintTop_toTopOf="@id/EnglishName2_Top"
         app:layout_constraintBottom_toBottomOf="@id/EnglishName2_Bottom"
         app:layout_constraintLeft_toLeftOf="@id/EnglishName2_Left"
-        app:layout_constraintRight_toRightOf="@id/EnglishName2_Right"/>
+        app:layout_constraintRight_toRightOf="@id/EnglishName2_Right"
+        android:textSize="14sp"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/EnglishName2_Top"
         android:layout_width="0dp"
@@ -250,7 +252,8 @@
         app:layout_constraintTop_toTopOf="@id/Prove2_Top"
         app:layout_constraintBottom_toBottomOf="@id/Prove2_Bottom"
         app:layout_constraintLeft_toLeftOf="@id/Prove2_Left"
-        app:layout_constraintRight_toRightOf="@id/Prove2_Right"/>
+        app:layout_constraintRight_toRightOf="@id/Prove2_Right"
+        android:textSize="14sp"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Prove2_Top"
         android:layout_width="0dp"
@@ -283,7 +286,8 @@
         app:layout_constraintTop_toTopOf="@id/Introduce2_Top"
         app:layout_constraintBottom_toBottomOf="@id/Introduce2_Bottom"
         app:layout_constraintLeft_toLeftOf="@id/Introduce2_Left"
-        app:layout_constraintRight_toRightOf="@id/Introduce2_Right"/>
+        app:layout_constraintRight_toRightOf="@id/Introduce2_Right"
+        android:textSize="14sp"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Introduce2_Top"
         android:layout_width="0dp"
