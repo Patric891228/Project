@@ -48,6 +48,7 @@ public class MainScene extends AppCompatActivity {
         if(isEdit) { //預設
             mysong = MediaPlayer.create(MainScene.this, BGMList[BGMNumber]);
             mysong.start();
+            mysong.setLooping(true);
 
         }
 
@@ -55,6 +56,8 @@ public class MainScene extends AppCompatActivity {
         mirror.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mysong.release();
+                mysong = null;
                 Intent intent = new Intent(MainScene.this,TestSelfScene.class);
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainScene.this);
                 startActivity(intent,options.toBundle());
@@ -63,6 +66,8 @@ public class MainScene extends AppCompatActivity {
         counter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mysong.release();
+                mysong = null;
                 Intent intent = new Intent(MainScene.this,PersonalScene.class);
                 startActivity(intent);
             }
@@ -70,6 +75,8 @@ public class MainScene extends AppCompatActivity {
         tiecabinet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mysong.release();
+                mysong = null;
                 Intent intent = new Intent(MainScene.this,SportSelectScene.class);
                 startActivity(intent);
             }
@@ -77,6 +84,11 @@ public class MainScene extends AppCompatActivity {
         magazine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                SharedPreferences.Editor editor = shared.edit();
+//                editor.putBoolean("isEdit",false);
+//                editor.commit();
+                mysong.release();
+                mysong = null;
                 Intent intent = new Intent(MainScene.this,PokedexSelectedScene.class);
                 startActivity(intent);
             }
@@ -85,8 +97,8 @@ public class MainScene extends AppCompatActivity {
         Setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mysong.pause();
                 mysong.release();
+                mysong = null;
                 Setting.setVisibility(View.GONE);
                 Setting_Click.setVisibility(View.VISIBLE);
                 startActivity(new Intent(MainScene.this,OtherSettingScene.class));
@@ -95,6 +107,8 @@ public class MainScene extends AppCompatActivity {
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mysong.release();
+                mysong = null;
                 Logout.setVisibility(View.GONE);
                 Logout_Click.setVisibility(View.VISIBLE);
                 SharedPreferences.Editor editor = shared.edit();

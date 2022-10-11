@@ -3,6 +3,7 @@ package tw.scu.edu.graduationprojrct.scene;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,9 +27,11 @@ public class OtherSettingScene extends AppCompatActivity implements View.OnClick
     Boolean isEnter = false;
     Boolean isEdit = false;
     SharedPreferences shared;
+    MediaPlayer mysong;
 
     String BGMName[] = {"擋一根","音樂1","音樂2","音樂3","音樂4"};
-
+    int BGMList[] = {R.raw.donigen,R.raw.m1,R.raw.m2,R.raw.m3,R.raw.m4};
+    int i = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,12 +65,28 @@ public class OtherSettingScene extends AppCompatActivity implements View.OnClick
                 editor.putInt("BGMNumber",BGMNumber);
                 editor.putBoolean("isEdit",true);
                 editor.commit();
+                if(i==0){
+                    mysong = MediaPlayer.create(OtherSettingScene.this, BGMList[BGMNumber]);
+                    mysong.start();
+                    mysong.setLooping(true);
+                    i++;
+                }else{
+                    mysong.pause();
+                    mysong.release();
+                    mysong = null;
+                    mysong = MediaPlayer.create(OtherSettingScene.this, BGMList[BGMNumber]);
+                    mysong.start();
+                    mysong.setLooping(true);
+                }
+
                 bgm.setText(BGMName[BGMNumber]);
             }
         });
         Back_Button_From_Other_Setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mysong.release();
+                mysong = null;
                 startActivity(new Intent(OtherSettingScene.this,MainScene.class));
             }
         });
