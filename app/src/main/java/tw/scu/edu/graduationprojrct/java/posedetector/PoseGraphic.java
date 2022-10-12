@@ -31,6 +31,7 @@ import java.util.Locale;
 
 import tw.scu.edu.graduationprojrct.GraphicOverlay;
 import tw.scu.edu.graduationprojrct.GraphicOverlay.Graphic;
+import tw.scu.edu.graduationprojrct.tflite.YoloV5Classifier;
 
 import static java.lang.Math.atan2;
 import static java.lang.Math.max;
@@ -245,8 +246,9 @@ public class PoseGraphic extends Graphic {
 //        } catch (IOException e) {
 //            // TODO Handle the exception
 //        }
-        //String result = determine(posture);
-        String result = determine();
+        String posture=YoloV5Classifier.result;
+        String result = determine(posture);
+//        String result = determine();
         canvas.drawText(result, POSE_CLASSIFICATION_TEXT_SIZE * 1.0f, POSE_CLASSIFICATION_TEXT_SIZE * 5.5f, classificationTextPaint);
         // Draw inFrameLikelihood for all points
         if (showInFrameLikelihood) {
@@ -262,7 +264,7 @@ public class PoseGraphic extends Graphic {
     public void TEST(){
         Log.d("測試訊息1","呦齁齁齁齁齁齁");
     }
-    String determine() {
+    String determine(String posture) {
         String result = "偵測中";
         PoseLandmark nose = pose.getPoseLandmark(PoseLandmark.NOSE);
 
@@ -279,225 +281,225 @@ public class PoseGraphic extends Graphic {
         PoseLandmark leftAnkle = pose.getPoseLandmark(PoseLandmark.LEFT_ANKLE);
         PoseLandmark rightAnkle = pose.getPoseLandmark(PoseLandmark.RIGHT_ANKLE);
 
-//        if (posture == "Upper Trapezius Stretch") {
-//            double utsl1 = getAngle(leftElbow, leftShoulder, leftWrist);//斜方肌拉伸左
-//            double utsl2 = getAngle(leftHip, leftShoulder, leftElbow);//斜方肌拉伸左
-//            double utsr1 = getAngle(rightElbow, rightShoulder, rightWrist);//斜方肌拉伸右
-//            double utsr2 = getAngle(rightHip, rightShoulder, rightElbow);//斜方肌拉伸右
-//            if ((utsl1 < 70 && utsl2 > 115 && utsl2 < 125) || (utsr1 < 70 && utsr2 > 115 && utsr2 < 125)) {
-//                result = "斜方肌拉伸";
-//            }
-//        } else if (posture == "Deltoid Muscle Stretch") {
-//            double dms1 = getAngle(leftElbow, leftShoulder, rightShoulder);//三角肌拉伸左
-//            double dms2 = getAngle(rightElbow, rightShoulder, leftShoulder);//三角肌拉伸右
-//            if (dms1 < 30 && dms2 < 30) {
-//                result = "三角肌拉伸";
-//            }
-//        } else if (posture == "Triceps Stretch") {
-//            double tsl = getAngle(leftShoulder, leftElbow, rightElbow);//肱三頭肌拉伸左
-//            double tsr = getAngle(rightShoulder, rightElbow, leftElbow);//肱三頭肌拉伸右
-//            if ((tsl < 100 && tsl > 80) || (tsr < 100 && tsr > 80)) {
-//                result = "肱三頭肌拉伸";
-//            }
-//        } else if (posture == "Reverse Prayer Pose") {
-//            double rpp1 = getAngle(leftHip, leftShoulder, leftElbow);//反向祈禱式
-//            double rpp2 = getAngle(rightHip, rightShoulder, rightElbow);//反向祈禱式
-//            if (rpp1 < 30 && rpp2 < 30) {
-//                result = "反向祈禱式";
-//            }
-//        } else if (posture == "Cat Cow Pose") {
-//            double ccpl = getAngle(leftHip, leftShoulder, nose);//貓牛式左
-//            double ccpr = getAngle(rightHip, rightShoulder, nose);//貓牛式右
-//            if (ccpl < 150 || ccpr < 150) {
-//                result = "貓牛式";
-//            }
-//        } else if (posture == "Cobra Pose") {
-//            double copl = getAngle(leftKnee, leftHip, leftShoulder);//眼鏡蛇式左
-//            double copr = getAngle(rightKnee, rightHip, rightShoulder);//眼鏡蛇式右
-//            if (copl > 60 || copr > 60) {
-//                result = "眼鏡蛇式";
-//            }
-//        } else if (posture == "Child Pose") {
-//            double chpl = getAngle(leftHip, leftShoulder, leftElbow);//嬰兒式左
-//            double chpr = getAngle(rightHip, rightShoulder, rightElbow);//嬰兒式右
-//            if (chpl > 160 || chpr > 160) {
-//                result = "嬰兒式";
-//            }
-//        } else if (posture == "Locust Pose") {
-//            double lpl = getAngle(leftWrist, leftShoulder, leftHip);//蝗蟲式左
-//            double lpr = getAngle(rightWrist, rightShoulder, rightHip);//蝗蟲式右
-//            if (lpl < 20 || lpr < 20) {
-//                result = "蝗蟲式";
-//            }
-//        } else if (posture == "Superman Pose") {
-//            double supl = getAngle(leftKnee, leftHip, leftShoulder);//超人式左
-//            double supr = getAngle(rightKnee, rightHip, rightShoulder);//超人式右
-//            if (supl < 170 || supr < 170) {
-//                result = "超人式";
-//            }
-//        } else if (posture == "Camel Pose") {
-//            double cpl1 = getAngle(leftWrist, leftShoulder, leftHip);//駱駝式左
-//            double cpl2 = getAngle(leftAnkle, leftKnee, leftHip);
-//            double cpr1 = getAngle(rightWrist, rightShoulder, rightHip);//駱駝式右
-//            double cpr2 = getAngle(rightAnkle, rightKnee, rightHip);
-//            if ((cpl1 < 80 && (cpl2 > 80 || cpl2 < 100)) || (cpr1 < 80 && (cpr2 > 80 || cpr2 < 100))) {
-//                result = "駱駝式";
-//            }
-//        } else if (posture == "Seated Side Bend") {
-//            double ssbl = getAngle(leftWrist, leftShoulder, leftHip);//盤腿側腰伸展左
-//            double ssbr = getAngle(rightWrist, rightShoulder, rightHip);//盤腿側腰伸展右
-//            if (ssbl < 100 || ssbr < 100) {
-//                result = "盤腿側腰伸展";
-//            }
-//        } else if (posture == "Cross Leg Forward Bend") {
-//            double clfl = getAngle(leftHip, leftShoulder, leftWrist);//盤腿前彎式左
-//            double clfr = getAngle(rightHip, rightShoulder, rightWrist);//盤腿前彎式右
-//            if (clfl > 150 || clfr > 150) {
-//                result = "盤腿前彎式";
-//            }
-//        } else if (posture == "Iliopsoas Muscle Stretch") {
-//            double lmsl1 = getAngle(leftHip, leftKnee, leftWrist);//髂腰肌伸展左
-//            double lmsl2 = getAngle(rightHip, rightKnee, rightAnkle);
-//            double lmsr1 = getAngle(rightHip, rightKnee, rightWrist);//髂腰肌伸展右
-//            double lmsr2 = getAngle(leftHip, leftKnee, leftAnkle);
-//            if (((lmsl1 > 85 && lmsl1 < 95) && lmsl2 > 120) || ((lmsr1 > 85 && lmsr1 < 95) && lmsr2 > 120)) {
-//                result = "髂腰肌伸展";
-//            }
-//        } else if (posture == "Downward-Facing Dog Pose") {
-//            double dfdpl = getAngle(leftAnkle, leftHip, leftWrist);//下犬式左
-//            double dfdpr = getAngle(rightAnkle, rightHip, rightWrist);//下犬式右
-//            if ((dfdpl > 75 && dfdpl < 85) || (dfdpr > 75 && dfdpr < 85)) {
-//                result = "下犬式";
-//            }
-//        } else if (posture == "Bent Knee Crunch") {
-//            double bkcl = getAngle(leftHip, leftKnee, leftAnkle);//屈膝捲腹左
-//            double bkcr = getAngle(rightHip, rightKnee, rightAnkle);//屈膝捲腹右
-//            if ((bkcl > 85 && bkcl < 95) || (bkcr > 85 && bkcr < 95)) {
-//                result = "屈膝捲腹";
-//            }
-//        } else if (posture == "Raise Leg Crunch") {
-//            double rlcl = getAngle(leftHip, leftKnee, leftAnkle);//抬腿捲腹左
-//            double rlcr = getAngle(rightHip, rightKnee, rightAnkle);//抬腿捲腹右
-//            if ((rlcl > 85 && rlcl < 95) || (rlcr > 85 && rlcr < 95)) {
-//                result = "抬腿捲腹";
-//            }
-//        } else if (posture == "Side Plank") {
-//            double sidepl = getAngle(leftAnkle, leftShoulder, leftElbow);//側平板左
-//            double sidepr = getAngle(rightAnkle, rightShoulder, rightElbow);//側平板右
-//            if ((sidepl > 85 && sidepl < 95) || (sidepr > 85 && sidepr < 95)) {
-//                result = "側平板";
-//            }
-//        } else if (posture == "Plank") {
-//            double pl = getAngle(leftShoulder, leftHip, leftKnee);//平板撐左
-//            double pr = getAngle(rightShoulder, rightHip, rightKnee);//平板撐右
-//            if ((pl > 170) || (pr > 170)) {
-//                result = "平板撐";
-//            }
-//        } else if (posture == "Bridge") {
-//            double b11l = getAngle(leftAnkle, leftKnee, leftHip);//臀橋左
-//            double b11r = getAngle(rightAnkle, rightKnee, rightHip);//臀橋右
-//            if ((b11l > 25 && b11l < 35) || (b11r > 85 && b11r < 95) || (b11l > 55 && b11l < 65) || (b11r > 55 && b11r < 65)) {
-//                result = "臀橋";
-//            }
-//        } else if (posture == "Lunge") {
-//            double l11l = getAngle(leftKnee, leftHip, rightKnee);//弓步蹲左
-//            double l11r = getAngle(rightKnee, rightHip, leftKnee);//弓步蹲右
-//            double l21 = getAngle(leftAnkle, leftKnee, leftHip);
-//            double l22 = getAngle(rightAnkle, rightKnee, rightHip);
-//            if ((l11l > 55 && l11l < 65) || (l11r > 55 && l11r < 65) || (l21 > 85 && l21 < 95 && l22 > 85 && l22 < 95)) {
-//                result = "弓步蹲";
-//            }
-//        } else if (posture == "Pigeon Pose") {
-//            double ppl = getAngle(leftKnee, leftShoulder, leftWrist);//鴿子式
-//            double ppr = getAngle(rightKnee, rightShoulder, rightWrist);
-//            if ((ppl > 85 && ppl < 95) || (ppr > 85 && ppr < 95)) {
-//                result = "鴿子式";
-//            }
-//        } else if (posture == "Frog Pose") {
-//            double fp1l = getAngle(leftKnee, leftHip, leftAnkle);//青蛙式左
-//            double fp2l = getAngle(leftShoulder, leftElbow, leftWrist);
-//            double fp1r = getAngle(rightKnee, rightHip, rightAnkle);//青蛙式右
-//            double fp2r = getAngle(rightShoulder, rightElbow, rightWrist);
-//            if ((fp1l > 115 && fp1l < 135 && fp2l > 115 && fp2l < 135) || (fp1r > 115 && fp1r < 135 && fp2r > 115 && fp2r < 135)) {
-//                result = "青蛙式";
-//            }
-//        } else if (posture == "Bicycle Crunch") {
-//            double bcl = getAngle(nose, leftShoulder, leftHip);//交叉捲腹左
-//            double bcr = getAngle(nose, rightShoulder, rightHip);//交叉捲腹右
-//            if ((bcl > 150 && bcl < 160) || (bcr > 150 && bcr < 160)) {
-//                result = "交叉捲腹";
-//            }
-//        } else if (posture == "Clamshell Exercise") {
-//            double cel = getAngle(leftHip, leftKnee, rightKnee);//蚌式開合左
-//            double cer = getAngle(rightHip, rightKnee, leftKnee);//蚌式開合右
-//            if ((cel > 25 && cel < 35) || (cer > 25 && cer < 35) || (cel > 40 && cel < 50) || (cer > 40 && cer < 50)) {
-//                result = "蚌式開合";
-//            }
-//        } else if (posture == "Inner Thigh Lift") {
-//            double itl1l = getAngle(leftHip, leftKnee, leftAnkle);//側臥內抬腿左
-//            double itl2l = getAngle(leftHip, leftKnee, leftWrist);
-//            double itl1r = getAngle(rightHip, rightKnee, rightAnkle);//側臥內抬腿右
-//            double itl2r = getAngle(rightHip, rightKnee, rightWrist);
-//            if ((itl1l > 40 && itl1l < 50) || (itl1r > 40 && itl1r < 50) || (itl2l > 170) || (itl2r > 170)) {
-//                result = "側臥內抬腿";
-//            }
-//        } else if (posture == "Bound Angle Pose") {
-//            double bap1 = getAngle(leftKnee, leftWrist, leftShoulder);//束角式
-//            double bap2 = getAngle(rightKnee, rightWrist, rightShoulder);
-//            if ((bap1 > 85 && bap1 < 95) || (bap2 > 85 && bap2 < 95)) {
-//                result = "束角式";
-//            }
-//        } else if (posture == "Standing Forward Bend") {
-//            double sfbl = getAngle(leftElbow, leftShoulder, leftHip);//立姿前彎式左
-//            double sfbr = getAngle(rightElbow, rightShoulder, rightHip);//立姿前彎式右
-//            if ((sfbl < 45) || (sfbr < 45)) {
-//                result = "立姿前彎式";
-//            }
-//        } else if (posture == "Squat") {
-//            double s1l = getAngle(leftShoulder, leftHip, leftKnee);//膝蓋夾書深蹲左
-//            double s2l = getAngle(leftHip, leftKnee, leftAnkle);
-//            double s1r = getAngle(rightShoulder, rightHip, rightKnee);//膝蓋夾書深蹲右
-//            double s2r = getAngle(rightHip, rightKnee, rightAnkle);
-//            if ((s1l > 85 && s1l < 95 && s2l > 115 && s2l < 125) || (s1r > 85 && s1r < 95 && s2r > 115 && s2r < 125)) {
-//                result = "膝蓋夾書深蹲";
-//            }
-//        } else if (posture == "LegRaises0") {
-//            double llrl = getAngle(leftShoulder, leftHip, leftAnkle);//仰臥抬腿左
-//            double llrr = getAngle(rightShoulder, rightHip, rightAnkle);//仰臥抬腿右
-//            if ((llrl < 5) || (llrr < 5)) {
-//                result = "仰臥抬腿0";
-//            }
-//        } else if (posture == "LegRaises10") {
-//            double llrl = getAngle(leftShoulder, leftHip, leftAnkle);//仰臥抬腿左
-//            double llrr = getAngle(rightShoulder, rightHip, rightAnkle);//仰臥抬腿右
-//            if ((llrl < 15 && llrl > 5) || (llrr < 15 && llrr > 5)) {
-//                result = "仰臥抬腿10";
-//            }
-//        } else if (posture == "LegRaises30") {
-//            double llrl = getAngle(leftShoulder, leftHip, leftAnkle);//仰臥抬腿左
-//            double llrr = getAngle(rightShoulder, rightHip, rightAnkle);//仰臥抬腿右
-//            if ((llrl < 65 && llrl > 55) || (llrr < 65 && llrr > 55)) {
-//                result = "仰臥抬腿60";
-//            }
-//        } else if (posture == "LegRaises60") {
-//            double llrl = getAngle(leftShoulder, leftHip, leftAnkle);//仰臥抬腿左
-//            double llrr = getAngle(rightShoulder, rightHip, rightAnkle);//仰臥抬腿右
-//            if ((llrl < 65 && llrl > 55) || (llrr < 65 && llrr > 55)) {
-//                result = "仰臥抬腿60";
-//            }
-//        } else if (posture == "LegRaises90") {
-//            double llrl = getAngle(leftShoulder, leftHip, leftAnkle);//仰臥抬腿左
-//            double llrr = getAngle(rightShoulder, rightHip, rightAnkle);//仰臥抬腿右
-//            if ((llrl < 95 && llrl > 85) || (llrr < 95 && llrr > 85)) {
-//                result = "仰臥抬腿90";
-//            }
-//        } else if (posture == " Boat Pose") {
-//            double bpl = getAngle(leftShoulder, leftHip, leftAnkle);//船式左
-//            double bpr = getAngle(rightShoulder, rightHip, rightAnkle);//船式右
-//            if ((bpl > 70 && bpl < 80) || (bpr > 70 && bpr < 80)) {
-//                result = "船式";
-//            }
-//        }
+        if (posture == "Upper Trapezius Stretch") {
+            double utsl1 = getAngle(leftElbow, leftShoulder, leftWrist);//斜方肌拉伸左
+            double utsl2 = getAngle(leftHip, leftShoulder, leftElbow);//斜方肌拉伸左
+            double utsr1 = getAngle(rightElbow, rightShoulder, rightWrist);//斜方肌拉伸右
+            double utsr2 = getAngle(rightHip, rightShoulder, rightElbow);//斜方肌拉伸右
+            if ((utsl1 < 70 && utsl2 > 115 && utsl2 < 125) || (utsr1 < 70 && utsr2 > 115 && utsr2 < 125)) {
+                result = "斜方肌拉伸";
+            }
+        } else if (posture == "Deltoid Muscle Stretch") {
+            double dms1 = getAngle(leftElbow, leftShoulder, rightShoulder);//三角肌拉伸左
+            double dms2 = getAngle(rightElbow, rightShoulder, leftShoulder);//三角肌拉伸右
+            if (dms1 < 30 && dms2 < 30) {
+                result = "三角肌拉伸";
+            }
+        } else if (posture == "Triceps Stretch") {
+            double tsl = getAngle(leftShoulder, leftElbow, rightElbow);//肱三頭肌拉伸左
+            double tsr = getAngle(rightShoulder, rightElbow, leftElbow);//肱三頭肌拉伸右
+            if ((tsl < 100 && tsl > 80) || (tsr < 100 && tsr > 80)) {
+                result = "肱三頭肌拉伸";
+            }
+        } else if (posture == "Reverse Prayer Pose") {
+            double rpp1 = getAngle(leftHip, leftShoulder, leftElbow);//反向祈禱式
+            double rpp2 = getAngle(rightHip, rightShoulder, rightElbow);//反向祈禱式
+            if (rpp1 < 30 && rpp2 < 30) {
+                result = "反向祈禱式";
+            }
+        } else if (posture == "Cat Cow Pose") {
+            double ccpl = getAngle(leftHip, leftShoulder, nose);//貓牛式左
+            double ccpr = getAngle(rightHip, rightShoulder, nose);//貓牛式右
+            if (ccpl < 150 || ccpr < 150) {
+                result = "貓牛式";
+            }
+        } else if (posture == "Cobra Pose") {
+            double copl = getAngle(leftKnee, leftHip, leftShoulder);//眼鏡蛇式左
+            double copr = getAngle(rightKnee, rightHip, rightShoulder);//眼鏡蛇式右
+            if (copl > 60 || copr > 60) {
+                result = "眼鏡蛇式";
+            }
+        } else if (posture == "Child Pose") {
+            double chpl = getAngle(leftHip, leftShoulder, leftElbow);//嬰兒式左
+            double chpr = getAngle(rightHip, rightShoulder, rightElbow);//嬰兒式右
+            if (chpl > 160 || chpr > 160) {
+                result = "嬰兒式";
+            }
+        } else if (posture == "Locust Pose") {
+            double lpl = getAngle(leftWrist, leftShoulder, leftHip);//蝗蟲式左
+            double lpr = getAngle(rightWrist, rightShoulder, rightHip);//蝗蟲式右
+            if (lpl < 20 || lpr < 20) {
+                result = "蝗蟲式";
+            }
+        } else if (posture == "Superman Pose") {
+            double supl = getAngle(leftKnee, leftHip, leftShoulder);//超人式左
+            double supr = getAngle(rightKnee, rightHip, rightShoulder);//超人式右
+            if (supl < 170 || supr < 170) {
+                result = "超人式";
+            }
+        } else if (posture == "Camel Pose") {
+            double cpl1 = getAngle(leftWrist, leftShoulder, leftHip);//駱駝式左
+            double cpl2 = getAngle(leftAnkle, leftKnee, leftHip);
+            double cpr1 = getAngle(rightWrist, rightShoulder, rightHip);//駱駝式右
+            double cpr2 = getAngle(rightAnkle, rightKnee, rightHip);
+            if ((cpl1 < 80 && (cpl2 > 80 || cpl2 < 100)) || (cpr1 < 80 && (cpr2 > 80 || cpr2 < 100))) {
+                result = "駱駝式";
+            }
+        } else if (posture == "Seated Side Bend") {
+            double ssbl = getAngle(leftWrist, leftShoulder, leftHip);//盤腿側腰伸展左
+            double ssbr = getAngle(rightWrist, rightShoulder, rightHip);//盤腿側腰伸展右
+            if (ssbl < 100 || ssbr < 100) {
+                result = "盤腿側腰伸展";
+            }
+        } else if (posture == "Cross Leg Forward Bend") {
+            double clfl = getAngle(leftHip, leftShoulder, leftWrist);//盤腿前彎式左
+            double clfr = getAngle(rightHip, rightShoulder, rightWrist);//盤腿前彎式右
+            if (clfl > 150 || clfr > 150) {
+                result = "盤腿前彎式";
+            }
+        } else if (posture == "Iliopsoas Muscle Stretch") {
+            double lmsl1 = getAngle(leftHip, leftKnee, leftWrist);//髂腰肌伸展左
+            double lmsl2 = getAngle(rightHip, rightKnee, rightAnkle);
+            double lmsr1 = getAngle(rightHip, rightKnee, rightWrist);//髂腰肌伸展右
+            double lmsr2 = getAngle(leftHip, leftKnee, leftAnkle);
+            if (((lmsl1 > 85 && lmsl1 < 95) && lmsl2 > 120) || ((lmsr1 > 85 && lmsr1 < 95) && lmsr2 > 120)) {
+                result = "髂腰肌伸展";
+            }
+        } else if (posture == "Downward-Facing Dog Pose") {
+            double dfdpl = getAngle(leftAnkle, leftHip, leftWrist);//下犬式左
+            double dfdpr = getAngle(rightAnkle, rightHip, rightWrist);//下犬式右
+            if ((dfdpl > 75 && dfdpl < 85) || (dfdpr > 75 && dfdpr < 85)) {
+                result = "下犬式";
+            }
+        } else if (posture == "Bent Knee Crunch") {
+            double bkcl = getAngle(leftHip, leftKnee, leftAnkle);//屈膝捲腹左
+            double bkcr = getAngle(rightHip, rightKnee, rightAnkle);//屈膝捲腹右
+            if ((bkcl > 85 && bkcl < 95) || (bkcr > 85 && bkcr < 95)) {
+                result = "屈膝捲腹";
+            }
+        } else if (posture == "Raise Leg Crunch") {
+            double rlcl = getAngle(leftHip, leftKnee, leftAnkle);//抬腿捲腹左
+            double rlcr = getAngle(rightHip, rightKnee, rightAnkle);//抬腿捲腹右
+            if ((rlcl > 85 && rlcl < 95) || (rlcr > 85 && rlcr < 95)) {
+                result = "抬腿捲腹";
+            }
+        } else if (posture == "Side Plank") {
+            double sidepl = getAngle(leftAnkle, leftShoulder, leftElbow);//側平板左
+            double sidepr = getAngle(rightAnkle, rightShoulder, rightElbow);//側平板右
+            if ((sidepl > 85 && sidepl < 95) || (sidepr > 85 && sidepr < 95)) {
+                result = "側平板";
+            }
+        } else if (posture == "Plank") {
+            double pl = getAngle(leftShoulder, leftHip, leftKnee);//平板撐左
+            double pr = getAngle(rightShoulder, rightHip, rightKnee);//平板撐右
+            if ((pl > 170) || (pr > 170)) {
+                result = "平板撐";
+            }
+        } else if (posture == "Bridge") {
+            double b11l = getAngle(leftAnkle, leftKnee, leftHip);//臀橋左
+            double b11r = getAngle(rightAnkle, rightKnee, rightHip);//臀橋右
+            if ((b11l > 25 && b11l < 35) || (b11r > 85 && b11r < 95) || (b11l > 55 && b11l < 65) || (b11r > 55 && b11r < 65)) {
+                result = "臀橋";
+            }
+        } else if (posture == "Lunge") {
+            double l11l = getAngle(leftKnee, leftHip, rightKnee);//弓步蹲左
+            double l11r = getAngle(rightKnee, rightHip, leftKnee);//弓步蹲右
+            double l21 = getAngle(leftAnkle, leftKnee, leftHip);
+            double l22 = getAngle(rightAnkle, rightKnee, rightHip);
+            if ((l11l > 55 && l11l < 65) || (l11r > 55 && l11r < 65) || (l21 > 85 && l21 < 95 && l22 > 85 && l22 < 95)) {
+                result = "弓步蹲";
+            }
+        } else if (posture == "Pigeon Pose") {
+            double ppl = getAngle(leftKnee, leftShoulder, leftWrist);//鴿子式
+            double ppr = getAngle(rightKnee, rightShoulder, rightWrist);
+            if ((ppl > 85 && ppl < 95) || (ppr > 85 && ppr < 95)) {
+                result = "鴿子式";
+            }
+        } else if (posture == "Frog Pose") {
+            double fp1l = getAngle(leftKnee, leftHip, leftAnkle);//青蛙式左
+            double fp2l = getAngle(leftShoulder, leftElbow, leftWrist);
+            double fp1r = getAngle(rightKnee, rightHip, rightAnkle);//青蛙式右
+            double fp2r = getAngle(rightShoulder, rightElbow, rightWrist);
+            if ((fp1l > 115 && fp1l < 135 && fp2l > 115 && fp2l < 135) || (fp1r > 115 && fp1r < 135 && fp2r > 115 && fp2r < 135)) {
+                result = "青蛙式";
+            }
+        } else if (posture == "Bicycle Crunch") {
+            double bcl = getAngle(nose, leftShoulder, leftHip);//交叉捲腹左
+            double bcr = getAngle(nose, rightShoulder, rightHip);//交叉捲腹右
+            if ((bcl > 150 && bcl < 160) || (bcr > 150 && bcr < 160)) {
+                result = "交叉捲腹";
+            }
+        } else if (posture == "Clamshell Exercise") {
+            double cel = getAngle(leftHip, leftKnee, rightKnee);//蚌式開合左
+            double cer = getAngle(rightHip, rightKnee, leftKnee);//蚌式開合右
+            if ((cel > 25 && cel < 35) || (cer > 25 && cer < 35) || (cel > 40 && cel < 50) || (cer > 40 && cer < 50)) {
+                result = "蚌式開合";
+            }
+        } else if (posture == "Inner Thigh Lift") {
+            double itl1l = getAngle(leftHip, leftKnee, leftAnkle);//側臥內抬腿左
+            double itl2l = getAngle(leftHip, leftKnee, leftWrist);
+            double itl1r = getAngle(rightHip, rightKnee, rightAnkle);//側臥內抬腿右
+            double itl2r = getAngle(rightHip, rightKnee, rightWrist);
+            if ((itl1l > 40 && itl1l < 50) || (itl1r > 40 && itl1r < 50) || (itl2l > 170) || (itl2r > 170)) {
+                result = "側臥內抬腿";
+            }
+        } else if (posture == "Bound Angle Pose") {
+            double bap1 = getAngle(leftKnee, leftWrist, leftShoulder);//束角式
+            double bap2 = getAngle(rightKnee, rightWrist, rightShoulder);
+            if ((bap1 > 85 && bap1 < 95) || (bap2 > 85 && bap2 < 95)) {
+                result = "束角式";
+            }
+        } else if (posture == "Standing Forward Bend") {
+            double sfbl = getAngle(leftElbow, leftShoulder, leftHip);//立姿前彎式左
+            double sfbr = getAngle(rightElbow, rightShoulder, rightHip);//立姿前彎式右
+            if ((sfbl < 45) || (sfbr < 45)) {
+                result = "立姿前彎式";
+            }
+        } else if (posture == "Squat") {
+            double s1l = getAngle(leftShoulder, leftHip, leftKnee);//膝蓋夾書深蹲左
+            double s2l = getAngle(leftHip, leftKnee, leftAnkle);
+            double s1r = getAngle(rightShoulder, rightHip, rightKnee);//膝蓋夾書深蹲右
+            double s2r = getAngle(rightHip, rightKnee, rightAnkle);
+            if ((s1l > 85 && s1l < 95 && s2l > 115 && s2l < 125) || (s1r > 85 && s1r < 95 && s2r > 115 && s2r < 125)) {
+                result = "膝蓋夾書深蹲";
+            }
+        } else if (posture == "LegRaises0") {
+            double llrl = getAngle(leftShoulder, leftHip, leftAnkle);//仰臥抬腿左
+            double llrr = getAngle(rightShoulder, rightHip, rightAnkle);//仰臥抬腿右
+            if ((llrl < 5) || (llrr < 5)) {
+                result = "仰臥抬腿0";
+            }
+        } else if (posture == "LegRaises10") {
+            double llrl = getAngle(leftShoulder, leftHip, leftAnkle);//仰臥抬腿左
+            double llrr = getAngle(rightShoulder, rightHip, rightAnkle);//仰臥抬腿右
+            if ((llrl < 15 && llrl > 5) || (llrr < 15 && llrr > 5)) {
+                result = "仰臥抬腿10";
+            }
+        } else if (posture == "LegRaises30") {
+            double llrl = getAngle(leftShoulder, leftHip, leftAnkle);//仰臥抬腿左
+            double llrr = getAngle(rightShoulder, rightHip, rightAnkle);//仰臥抬腿右
+            if ((llrl < 65 && llrl > 55) || (llrr < 65 && llrr > 55)) {
+                result = "仰臥抬腿60";
+            }
+        } else if (posture == "LegRaises60") {
+            double llrl = getAngle(leftShoulder, leftHip, leftAnkle);//仰臥抬腿左
+            double llrr = getAngle(rightShoulder, rightHip, rightAnkle);//仰臥抬腿右
+            if ((llrl < 65 && llrl > 55) || (llrr < 65 && llrr > 55)) {
+                result = "仰臥抬腿60";
+            }
+        } else if (posture == "LegRaises90") {
+            double llrl = getAngle(leftShoulder, leftHip, leftAnkle);//仰臥抬腿左
+            double llrr = getAngle(rightShoulder, rightHip, rightAnkle);//仰臥抬腿右
+            if ((llrl < 95 && llrl > 85) || (llrr < 95 && llrr > 85)) {
+                result = "仰臥抬腿90";
+            }
+        } else if (posture == " Boat Pose") {
+            double bpl = getAngle(leftShoulder, leftHip, leftAnkle);//船式左
+            double bpr = getAngle(rightShoulder, rightHip, rightAnkle);//船式右
+            if ((bpl > 70 && bpl < 80) || (bpr > 70 && bpr < 80)) {
+                result = "船式";
+            }
+        }
 //        if ((utsl1 < 70 && utsl2>115 && utsl2 < 125) || (utsr1 < 70 && utsr2 > 115 && utsr2 < 125)) {
 //            result = "斜方肌拉伸";
 //        } else if (dms1 < 30 && dms2 < 30) {

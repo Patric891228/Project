@@ -561,7 +561,6 @@ public class DetectorActivity extends CameraActivity
         final int deviceIndex = deviceView.getCheckedItemPosition();
         String threads = threadsTextView.getText().toString().trim();
         final int numThreads = Integer.parseInt(threads);
-
         handler.post(() -> {
             if (modelIndex == currentModel && deviceIndex == currentDevice
                     && numThreads == currentNumThreads) {
@@ -662,7 +661,7 @@ public class DetectorActivity extends CameraActivity
                         lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
 
                         Log.e("CHECK", "run: " + results.size());
-
+                        Log.d("get",YoloV5Classifier.result);
                         cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
                         final Canvas canvas = new Canvas(cropCopyBitmap);
                         final Paint paint = new Paint();

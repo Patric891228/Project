@@ -54,7 +54,7 @@ import java.util.Vector;
  * - https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_on_mobile_tensorflowlite.md#running-our-model-on-android
  */
 public class YoloV5Classifier implements Classifier {
-
+    public static String result="Upper Trapezius Stretch";
     /**
      * Initializes a native TensorFlow session for classifying images.
      *
@@ -448,6 +448,7 @@ public class YoloV5Classifier implements Classifier {
                 detections.add(new Recognition("" + offset, labels.get(detectedClass),
                         confidenceInClass, rect, detectedClass));
                 Log.d("class",labels.get(detectedClass));
+                result=labels.get(detectedClass);
             }
         }
 
