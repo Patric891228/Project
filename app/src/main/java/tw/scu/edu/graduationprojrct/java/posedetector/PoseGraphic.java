@@ -16,10 +16,6 @@
 
 package tw.scu.edu.graduationprojrct.java.posedetector;
 
-import static java.lang.Math.atan2;
-import static java.lang.Math.max;
-import static java.lang.Math.min;
-
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -27,13 +23,18 @@ import android.util.Log;
 
 import com.google.common.primitives.Ints;
 import com.google.mlkit.vision.common.PointF3D;
-import tw.scu.edu.graduationprojrct.GraphicOverlay;
-import tw.scu.edu.graduationprojrct.GraphicOverlay.Graphic;
 import com.google.mlkit.vision.pose.Pose;
 import com.google.mlkit.vision.pose.PoseLandmark;
 
 import java.util.List;
 import java.util.Locale;
+
+import tw.scu.edu.graduationprojrct.GraphicOverlay;
+import tw.scu.edu.graduationprojrct.GraphicOverlay.Graphic;
+
+import static java.lang.Math.atan2;
+import static java.lang.Math.max;
+import static java.lang.Math.min;
 
 /**
  * Draw the detected pose in preview.
@@ -258,7 +259,9 @@ public class PoseGraphic extends Graphic {
             }
         }
     }
-
+    public void TEST(){
+        Log.d("測試訊息1","呦齁齁齁齁齁齁");
+    }
     String determine() {
         String result = "偵測中";
         PoseLandmark nose = pose.getPoseLandmark(PoseLandmark.NOSE);

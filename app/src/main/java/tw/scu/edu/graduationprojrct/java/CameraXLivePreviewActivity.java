@@ -399,6 +399,10 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                 });
 
         cameraProvider.bindToLifecycle(/* lifecycleOwner= */ this, cameraSelector, analysisUseCase);
+
+
+
+
     }
 
     private void InitalUI() {//一開始為休息狀態

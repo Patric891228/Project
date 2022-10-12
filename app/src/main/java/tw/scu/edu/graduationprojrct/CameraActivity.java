@@ -51,7 +51,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
@@ -142,7 +141,8 @@ public abstract class CameraActivity extends AppCompatActivity
             new AdapterView.OnItemClickListener() {
               @Override
               public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                updateActiveModel();
+//                updateActiveModel();
+                Log.d("UseAdpater","YES");
               }
             });
 
@@ -164,7 +164,8 @@ public abstract class CameraActivity extends AppCompatActivity
             new AdapterView.OnItemClickListener() {
               @Override
               public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                updateActiveModel();
+//                updateActiveModel();
+                Log.d("UseAdpater","YES");
               }
             });
 
@@ -180,8 +181,8 @@ public abstract class CameraActivity extends AppCompatActivity
             }
             //                int width = bottomSheetLayout.getMeasuredWidth();
             int height = gestureLayout.getMeasuredHeight();
-
-            sheetBehavior.setPeekHeight(height);
+            Log.d("下列框高度", String.valueOf(height));
+            sheetBehavior.setPeekHeight(1);
           }
         });
     sheetBehavior.setHideable(false);

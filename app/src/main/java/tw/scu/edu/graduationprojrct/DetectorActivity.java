@@ -70,6 +70,7 @@ import tw.scu.edu.graduationprojrct.env.BorderedText;
 import tw.scu.edu.graduationprojrct.env.ImageUtils;
 import tw.scu.edu.graduationprojrct.env.Logger;
 import tw.scu.edu.graduationprojrct.java.posedetector.PoseDetectorProcessor;
+import tw.scu.edu.graduationprojrct.java.posedetector.PoseGraphic;
 import tw.scu.edu.graduationprojrct.preference.PreferenceUtils;
 import tw.scu.edu.graduationprojrct.preference.SettingsActivity;
 import tw.scu.edu.graduationprojrct.scene.SportResultScene;
@@ -149,6 +150,8 @@ public class DetectorActivity extends CameraActivity
     int Order = -1;
     int ImgOrder;
     SportType ST;
+
+    public PoseGraphic PG;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
