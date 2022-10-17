@@ -150,8 +150,10 @@ public class DetectorActivity extends CameraActivity
     int Order = -1;
     int ImgOrder;
     SportType ST;
+    int Success,Fail=0;
 
     public PoseGraphic PG;
+    public String CurrentPose = "";
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -209,6 +211,10 @@ public class DetectorActivity extends CameraActivity
         ST = new SportType(SportType_String);
         Log.d("ChooseSport", SportType_String);
         ST.LoadSportData();
+        for(int i =0;i<ST.SportContent.length;i++){
+            Log.d("該做動作",ST.SportContent[i]);
+        }
+
 //        初始化
         Current_SportTime = ST.SportContentTime[0];
         CurrentTime = RestTime;
@@ -221,15 +227,17 @@ public class DetectorActivity extends CameraActivity
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        CurrentTime--;//時間倒數
+                        CurrentTime-=10;//時間倒數
                         Time_Word.setText(CurrentTime + "");
                         //if判斷示裡面放置在時間結束後想要完成的事件
                         if (CurrentTime < 1) {
-                            if (Order < ST.SportContentTime.length - 1) {
+                            if (Order < ST.SportContentTime.length) {
                                 if (isSport) {//進入休息狀態
                                     isSport = false;
                                     Next_Sport_Word.setImageDrawable(null);
                                     Next_Sport_Word.setImageResource(ST.SportImgID[ImgOrder]);
+                                    CurrentPose = ST.SportContent[ImgOrder];
+                                    Log.d("目前應該有的動作", CurrentPose);
                                     EnterRestState();
                                     CurrentTime = RestTime;
                                 } else {
@@ -240,11 +248,20 @@ public class DetectorActivity extends CameraActivity
                                     Order++; //讓時間執行緒保持輪迴
                                     ImgOrder++;
                                     CurrentTime = ST.SportContentTime[Order];
+                                    CurrentPose = ST.SportContent[ImgOrder];
                                 }
                             } else {
                                 timer.cancel();
                                 startActivity(new Intent(DetectorActivity.this, SportResultScene.class));
                             }
+
+                        }
+                        if (CurrentPose.equals(YoloV5Classifier.result)) {
+                            Log.d("辨識結果", "成功");
+                            Success++;
+                        } else {
+                            Log.d("辨識結果", "失敗");
+                            Fail++;
                         }
                     }
                 });
@@ -661,7 +678,7 @@ public class DetectorActivity extends CameraActivity
                         lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
 
                         Log.e("CHECK", "run: " + results.size());
-                        Log.d("get",YoloV5Classifier.result);
+                        Log.d("get", YoloV5Classifier.result);
                         cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
                         final Canvas canvas = new Canvas(cropCopyBitmap);
                         final Paint paint = new Paint();

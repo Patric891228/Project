@@ -23,9 +23,6 @@ import android.util.Log;
 
 import org.tensorflow.lite.Interpreter;
 import org.tensorflow.lite.Tensor;
-import tw.scu.edu.graduationprojrct.MainActivity;
-import tw.scu.edu.graduationprojrct.env.Logger;
-import tw.scu.edu.graduationprojrct.env.Utils;
 import org.tensorflow.lite.gpu.GpuDelegate;
 import org.tensorflow.lite.nnapi.NnApiDelegate;
 
@@ -42,6 +39,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Vector;
+
+import tw.scu.edu.graduationprojrct.MainActivity;
+import tw.scu.edu.graduationprojrct.env.Logger;
+import tw.scu.edu.graduationprojrct.env.Utils;
 
 
 /**
@@ -448,6 +449,8 @@ public class YoloV5Classifier implements Classifier {
                 detections.add(new Recognition("" + offset, labels.get(detectedClass),
                         confidenceInClass, rect, detectedClass));
                 Log.d("class",labels.get(detectedClass));
+
+
                 result=labels.get(detectedClass);
             }
         }

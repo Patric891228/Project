@@ -14,10 +14,10 @@ public class SportType {
     public SportType(String Type){
         switch(Type){
             case"Belly":this.ST = "Belly";break;
-            case"Oxleg":this.ST = "Oxleg";
-            case"Pelvic":this.ST = "Pelvic";
-            case"Saddlebag":this.ST = "Saddlebag";
-            case"Slouch":this.ST = "Slouch";
+            case"Oxleg":this.ST = "Oxleg";break;
+            case"Pelvic":this.ST = "Pelvic";break;
+            case"Saddlebag":this.ST = "Saddlebag";break;
+            case"Slouch":this.ST = "Slouch";break;
         }
         Log.d("Structure",Type);
     }

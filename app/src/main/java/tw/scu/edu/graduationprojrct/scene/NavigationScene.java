@@ -20,20 +20,19 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import tw.scu.edu.graduationprojrct.BuildConfig;
+import tw.scu.edu.graduationprojrct.DetectorActivity;
 import tw.scu.edu.graduationprojrct.R;
 import tw.scu.edu.graduationprojrct.java.CameraXLivePreviewActivity;
 
 public class NavigationScene extends AppCompatActivity implements AdapterView.OnItemClickListener{
     private static final String TAG = "ChooserActivity";
     ImageView BG;
+    String SportType;
+    SharedPreferences shared ;
+    int Func;
+    Button GO;
     @SuppressWarnings("NewApi") // CameraX is only available on API 21+
-    private static final Class<?>[] CLASSES =
-            Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP
-                    ? new Class<?>[] {
-            }///////////
-                    : new Class<?>[] {
-                    CameraXLivePreviewActivity.class,
-            };
+    private static  Class<?>[] CLASSES;
     private static final int[] DESCRIPTION_IDS =
             Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP
                     ? new int[] {
@@ -42,9 +41,7 @@ public class NavigationScene extends AppCompatActivity implements AdapterView.On
                     : new int[] {
                     R.string.desc_camerax_live_preview_activity
             };
-    String SportType;
-    SharedPreferences shared;
-    Button GO;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (BuildConfig.DEBUG) {
@@ -63,6 +60,14 @@ public class NavigationScene extends AppCompatActivity implements AdapterView.On
         Log.d(TAG, "onCreate");
         setContentView(R.layout.activity_navigation_scene);
         shared = getSharedPreferences("data",MODE_PRIVATE);
+        CLASSES =
+                Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP
+                        ? new Class<?>[] {
+                }///////////
+                        : new Class<?>[] {
+                        CameraXLivePreviewActivity.class,
+                };
+        Func = shared.getInt("ChooseFunc",0);
         SportType = shared.getString("SportType","Belly");
         BG = findViewById(R.id.view);
         Log.d("SportType",SportType);
@@ -89,8 +94,12 @@ public class NavigationScene extends AppCompatActivity implements AdapterView.On
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Class<?> clicked = CLASSES[i];
-        startActivity(new Intent(this, clicked));
+        if(Func == 1){
+            startActivity(new Intent(this,DetectorActivity.class)); // YOLO
+        }else{
+            startActivity(new Intent(this,CameraXLivePreviewActivity.class)); //PoseDetector
+        }
+
     }
     private static class MyArrayAdapter extends ArrayAdapter<Class<?>> {
 

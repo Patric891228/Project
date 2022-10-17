@@ -105,6 +105,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
     int Order = -1;
     int ImgOrder;
     SportType ST;
+    String CurrentPose = "";
 
     @RequiresApi(api = VERSION_CODES.M)
     @Override
@@ -161,6 +162,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
 //        建立物件
         ST = new SportType(SportType_String);
         Log.d("ChooseSport", SportType_String);
+
         ST.LoadSportData();
 //        初始化
         Current_SportTime = ST.SportContentTime[0];
@@ -189,10 +191,12 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                                     isSport = true;
                                     Now_Sport_Word.setImageDrawable(null);
                                     Now_Sport_Word.setImageResource(ST.SportImgID[ImgOrder]);
+                                    CurrentPose = ST.SportContent[ImgOrder];
                                     EnterSportState();
                                     Order++; //讓時間執行緒保持輪迴
                                     ImgOrder++;
                                     CurrentTime = ST.SportContentTime[Order];
+                                    Log.d("現在取得動作",CurrentPose);
                                 }
                             } else {
                                 timer.cancel();

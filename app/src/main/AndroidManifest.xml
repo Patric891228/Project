@@ -28,11 +28,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GraduationProjrct.NoActionBar">
+        <activity android:name=".scene.ChooseFunctionScene"></activity>
         <activity
             android:name=".scene.SelfDetection"
             android:screenOrientation="landscape" />
-        <activity android:name=".scene.ProfileUI"
-            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".scene.ProfileUI"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".scene.PokedexProveScene"
             android:screenOrientation="landscape" />
@@ -78,9 +80,7 @@
         <activity
             android:name=".DetectorActivity"
             android:label="@string/tfe_od_app_name"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".CameraActivity"
             android:screenOrientation="landscape" />

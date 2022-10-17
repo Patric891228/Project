@@ -111,7 +111,7 @@ public class SportSelectScene extends AppCompatActivity {
         Tie_Click1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SportSelectScene.this,NavigationScene.class));
+                startActivity(new Intent(SportSelectScene.this,ChooseFunctionScene.class));
             }
         });
         Tie2.setOnClickListener(new View.OnClickListener() {
@@ -129,7 +129,7 @@ public class SportSelectScene extends AppCompatActivity {
         Tie_Click2.setOnClickListener(new View.OnClickListener()    {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SportSelectScene.this,NavigationScene.class));
+                startActivity(new Intent(SportSelectScene.this,ChooseFunctionScene.class));
             }
         });
         Tie3.setOnClickListener(new View.OnClickListener() {
@@ -147,7 +147,7 @@ public class SportSelectScene extends AppCompatActivity {
         Tie_Click3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SportSelectScene.this,NavigationScene.class));
+                startActivity(new Intent(SportSelectScene.this,ChooseFunctionScene.class));
             }
         });
         Tie4.setOnClickListener(new View.OnClickListener() {
@@ -165,7 +165,7 @@ public class SportSelectScene extends AppCompatActivity {
         Tie_Click4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SportSelectScene.this,NavigationScene.class));
+                startActivity(new Intent(SportSelectScene.this,ChooseFunctionScene.class));
             }
         });
         Tie5.setOnClickListener(new View.OnClickListener() {
@@ -185,7 +185,7 @@ public class SportSelectScene extends AppCompatActivity {
         Tie_Click5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SportSelectScene.this,NavigationScene.class));
+                startActivity(new Intent(SportSelectScene.this,ChooseFunctionScene.class));
             }
         });
         Tie6.setOnClickListener(new View.OnClickListener() {
