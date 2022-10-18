@@ -199,6 +199,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                                     Log.d("現在取得動作",CurrentPose);
                                 }
                             } else {
+                                Log.d("運動狀態","結束");
                                 timer.cancel();
                                 startActivity(new Intent(CameraXLivePreviewActivity.this, SportResultScene.class));
                             }

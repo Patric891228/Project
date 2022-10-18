@@ -231,7 +231,7 @@ public class DetectorActivity extends CameraActivity
                         Time_Word.setText(CurrentTime + "");
                         //if判斷示裡面放置在時間結束後想要完成的事件
                         if (CurrentTime < 1) {
-                            if (Order < ST.SportContentTime.length) {
+                            if (Order < ST.SportContentTime.length-1) {
                                 if (isSport) {//進入休息狀態
                                     isSport = false;
                                     Next_Sport_Word.setImageDrawable(null);
@@ -244,17 +244,17 @@ public class DetectorActivity extends CameraActivity
                                     isSport = true;
                                     Now_Sport_Word.setImageDrawable(null);
                                     Now_Sport_Word.setImageResource(ST.SportImgID[ImgOrder]);
+                                    CurrentPose = ST.SportContent[ImgOrder];
                                     EnterSportState();
                                     Order++; //讓時間執行緒保持輪迴
                                     ImgOrder++;
                                     CurrentTime = ST.SportContentTime[Order];
-                                    CurrentPose = ST.SportContent[ImgOrder];
+
                                 }
                             } else {
                                 timer.cancel();
                                 startActivity(new Intent(DetectorActivity.this, SportResultScene.class));
                             }
-
                         }
                         if (CurrentPose.equals(YoloV5Classifier.result)) {
                             Log.d("辨識結果", "成功");
@@ -263,6 +263,7 @@ public class DetectorActivity extends CameraActivity
                             Log.d("辨識結果", "失敗");
                             Fail++;
                         }
+                        Log.d("Order:", String.valueOf(Order));
                     }
                 });
             }
