@@ -22,7 +22,7 @@ public class MainScene extends AppCompatActivity {
     ImageView tiecabinet,Setting,Logout,Setting_Click,Logout_Click;
     ImageButton mirror,counter,magazine;
     ImageView Navigate,Navigate_Click,MainNavigate,Exit;
-    int BGMList[] = {R.raw.donigen,R.raw.m1,R.raw.m2,R.raw.m3,R.raw.m4};
+    int BGMList[] = {R.raw.m0,R.raw.m1,R.raw.m2,R.raw.m3,R.raw.m4};
     boolean isEdit;
 
     @Override

@@ -29,8 +29,8 @@ public class OtherSettingScene extends AppCompatActivity implements View.OnClick
     SharedPreferences shared;
     MediaPlayer mysong;
 
-    String BGMName[] = {"擋一根","音樂1","音樂2","音樂3","音樂4"};
-    int BGMList[] = {R.raw.donigen,R.raw.m1,R.raw.m2,R.raw.m3,R.raw.m4};
+    String BGMName[] = {"音樂0","音樂1","音樂2","音樂3","音樂4"};
+    int BGMList[] = {R.raw.m0,R.raw.m1,R.raw.m2,R.raw.m3,R.raw.m4};
     int i = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
