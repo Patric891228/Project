@@ -47,7 +47,7 @@ public class OtherSettingScene extends AppCompatActivity implements View.OnClick
         UserName = shared.getString("UserName","admin");
         isEdit = shared.getBoolean("isEdit",false);
 
-
+        mysong = MediaPlayer.create(OtherSettingScene.this, BGMList[BGMNumber]);
         if(isEnter){
             time.setText(DB.getRemindTime(shared.getString("UserName","Nan")));
         }else{

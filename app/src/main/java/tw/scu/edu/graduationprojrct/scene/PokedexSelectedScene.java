@@ -8,7 +8,6 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import tw.scu.edu.graduationprojrct.DetectorActivity;
 import tw.scu.edu.graduationprojrct.R;
 
 public class PokedexSelectedScene extends AppCompatActivity {
@@ -76,12 +75,6 @@ public class PokedexSelectedScene extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(PokedexSelectedScene.this,PokedexPartScene.class));
-            }
-        });
-        Center_Magazine_Move.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(PokedexSelectedScene.this, DetectorActivity.class));
             }
         });
         Back_From_Magazine.setOnClickListener(new View.OnClickListener() {

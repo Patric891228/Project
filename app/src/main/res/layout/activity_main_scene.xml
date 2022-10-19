@@ -30,7 +30,6 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.62" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/title_guideline_bottom_for_mirror"
         android:layout_width="0dp"
@@ -283,9 +282,113 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="1.0" />
-
-
-
+<!--Navigate-->
+    <ImageView
+        android:id="@+id/Navigate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/guide_originalbutton"
+        app:layout_constraintBottom_toBottomOf="@id/Navigate_Bottom"
+        app:layout_constraintLeft_toLeftOf="@id/Navigate_Left"
+        app:layout_constraintRight_toRightOf="@id/Navigate_Right"
+        app:layout_constraintTop_toTopOf="@id/Navigate_Top" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Navigate_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Navigate_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.575" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Navigate_Bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Navigate_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.83" />
+<!--Navigate_Click-->
+    <ImageView
+        android:id="@+id/Navigate_Click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/guide_clickedbutton"
+        app:layout_constraintBottom_toBottomOf="@id/Navigate_Click_Bottom"
+        app:layout_constraintLeft_toLeftOf="@id/Navigate_Click_Left"
+        app:layout_constraintRight_toRightOf="@id/Navigate_Click_Right"
+        app:layout_constraintTop_toTopOf="@id/Navigate_Click_Top" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Navigate_Click_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.41" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Navigate_Click_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.615" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Navigate_Click_Bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Navigate_Click_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72" />
+<!--MainNavigate    -->
+    <ImageView
+        android:id="@+id/MainNavigate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/guide"/>
+    <ImageView
+        android:id="@+id/Exit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/guide_exit_button"
+        app:layout_constraintTop_toTopOf="@id/Exit_Top"
+        app:layout_constraintBottom_toBottomOf="@id/Exit_Bottom"
+        app:layout_constraintLeft_toLeftOf="@id/Exit_Left"
+        app:layout_constraintRight_toRightOf="@id/Exit_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Exit_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Exit_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.152" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Exit_Bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Exit_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0" />
 
 
 

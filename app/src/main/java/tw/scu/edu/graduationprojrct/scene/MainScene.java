@@ -21,6 +21,7 @@ public class MainScene extends AppCompatActivity {
     int BGMNumber;
     ImageView tiecabinet,Setting,Logout,Setting_Click,Logout_Click;
     ImageButton mirror,counter,magazine;
+    ImageView Navigate,Navigate_Click,MainNavigate,Exit;
     int BGMList[] = {R.raw.donigen,R.raw.m1,R.raw.m2,R.raw.m3,R.raw.m4};
     boolean isEdit;
 
@@ -42,6 +43,15 @@ public class MainScene extends AppCompatActivity {
         Setting_Click = findViewById(R.id.Setting_Click);
         Logout_Click = findViewById(R.id.Logout_Click);
 
+        Navigate = findViewById(R.id.Navigate);
+        Navigate_Click = findViewById(R.id.Navigate_Click);
+        MainNavigate = findViewById(R.id.MainNavigate);
+        Exit = findViewById(R.id.Exit);
+
+        Navigate_Click.setVisibility(View.GONE);
+        MainNavigate.setVisibility(View.GONE);
+        Exit.setVisibility(View.GONE);
+
         BGMNumber = shared.getInt("BGMNumber",0);
         isEdit = shared.getBoolean("isEdit",true);
         Log.d("撥放音樂", String.valueOf(isEdit));
@@ -51,7 +61,24 @@ public class MainScene extends AppCompatActivity {
             mysong.setLooping(true);
 
         }
-
+        Navigate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigate.setVisibility(View.GONE);
+                Navigate_Click.setVisibility(View.VISIBLE);
+                MainNavigate.setVisibility(View.VISIBLE);
+                Exit.setVisibility(View.VISIBLE);
+            }
+        });
+        Exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Exit.setVisibility(View.GONE);
+                Navigate.setVisibility(View.VISIBLE);
+                Navigate_Click.setVisibility(View.GONE);
+                MainNavigate.setVisibility(View.GONE);
+            }
+        });
         initButton();
         mirror.setOnClickListener(new View.OnClickListener() {
             @Override
