@@ -477,7 +477,7 @@
         android:id="@+id/B2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/part_button_small_shoulder"
+        android:background="@drawable/part_button_original_back"
         app:layout_constraintTop_toTopOf="@id/B2_Top"
         app:layout_constraintBottom_toBottomOf="@id/B2_Bottom"
         app:layout_constraintLeft_toLeftOf="@id/B2_Left"

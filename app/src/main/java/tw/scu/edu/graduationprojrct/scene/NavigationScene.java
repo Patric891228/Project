@@ -26,7 +26,7 @@ import tw.scu.edu.graduationprojrct.java.CameraXLivePreviewActivity;
 
 public class NavigationScene extends AppCompatActivity implements AdapterView.OnItemClickListener{
     private static final String TAG = "ChooserActivity";
-    ImageView BG;
+    ImageView BG,B;
     String SportType;
     SharedPreferences shared ;
     int Func;
@@ -70,6 +70,7 @@ public class NavigationScene extends AppCompatActivity implements AdapterView.On
         Func = shared.getInt("ChooseFunc",0);
         SportType = shared.getString("SportType","Belly");
         BG = findViewById(R.id.view);
+        B = findViewById(R.id.B);
         Log.d("SportType",SportType);
         if(SportType.equals("Belly")){
             BG.setImageResource(R.drawable.startexercise_belly);
@@ -90,6 +91,13 @@ public class NavigationScene extends AppCompatActivity implements AdapterView.On
 
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
+
+        B.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(NavigationScene.this,ChooseFunctionScene.class));
+            }
+        });
     }
 
     @Override

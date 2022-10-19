@@ -85,7 +85,7 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
             public void onClick(View view) {
                 SetPart("Back");
                 ImageVisibilitySet();
-                B5.setImageResource(R.drawable.part_button_clicked_shoulder);
+                B5.setImageResource(R.drawable.part_button_clicked_back);
                 Log.d("SelectPokedexPart","Back");
                 Log.d("Number", String.valueOf(ImageNumber));
                 reset(1);
@@ -157,13 +157,13 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         B5.setVisibility(View.GONE);
     }
     private void reset(int i ){
-        int ImageID [] = {R.drawable.part_button_clicked_arm,R.drawable.part_button_clicked_shoulder,R.drawable.part_button_clicked_belly,
+        int ImageID [] = {R.drawable.part_button_clicked_arm,R.drawable.part_button_clicked_back,R.drawable.part_button_clicked_belly,
                 R.drawable.part_button_clicked_bottom,R.drawable.part_button_clicked_leg};
         SelectButton.setVisibility(View.VISIBLE);
         SelectButton_Clicked.setVisibility(View.GONE);
         B1.setImageResource(R.drawable.part_button_small_arm);
         B1.setVisibility(View.GONE);
-        B2.setImageResource(R.drawable.part_button_small_shoulder);
+        B2.setImageResource(R.drawable.part_button_original_back);
         B2.setVisibility(View.GONE);
         B3.setImageResource(R.drawable.part_button_small_belly);
         B3.setVisibility(View.GONE);
