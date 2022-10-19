@@ -18,6 +18,7 @@ package tw.scu.edu.graduationprojrct.java;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.util.Log;
@@ -108,9 +109,10 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
     int ImgOrder;
     SportType ST;
     String CurrentPose = "";
-
+    MediaPlayer mysong;
     int Success, Fail = 0;
-
+    int BGMList[] = {R.raw.m0,R.raw.m1,R.raw.m2,R.raw.m3,R.raw.m4};
+    int BGMNumber = 0;
     @RequiresApi(api = VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,6 +150,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
 
         shared = getSharedPreferences("data", MODE_PRIVATE);
         SportType_String = shared.getString("SportType", "Belly");
+        BGMNumber = shared.getInt("BGMNumber",0);
 //        綁定物件
         Time_BG = findViewById(R.id.Time_BG);
         Time_Word = findViewById(R.id.Time_Word);
@@ -173,6 +176,9 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
         CurrentTime = RestTime;
 //
         InitalUI();
+        mysong = MediaPlayer.create(CameraXLivePreviewActivity.this, BGMList[BGMNumber]);
+        mysong.start();
+        mysong.setLooping(true);
 
         final TimerTask timertask = new TimerTask() {
             @Override
@@ -180,7 +186,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        CurrentTime-=10;//時間倒數
+                        CurrentTime--;//時間倒數
                         Time_Word.setText(CurrentTime + "");
                         //if判斷示裡面放置在時間結束後想要完成的事件
                         if (CurrentTime < 1) {
@@ -206,6 +212,8 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                             } else {
                                 Log.d("運動狀態","結束");
                                 timer.cancel();
+                                mysong.release();
+                                mysong = null;
                                 startActivity(new Intent(CameraXLivePreviewActivity.this, SportResultScene.class));
                             }
                         }

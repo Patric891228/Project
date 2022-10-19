@@ -5,6 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".scene.ChooseFunctionScene">
+    <ImageView
+        android:background="@drawable/choosefunction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Top"
         android:layout_width="0dp"
@@ -16,7 +20,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8"/>
+        app:layout_constraintGuide_percent="0.915"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Left"
         android:layout_width="0dp"
@@ -28,35 +32,74 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9"/>
+        app:layout_constraintGuide_percent="0.925"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Middle_1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.45"/>
+        app:layout_constraintGuide_percent="0.484"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Middle_2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.55"/>
+        app:layout_constraintGuide_percent="0.495"/>
+
+
     <ImageView
         android:id="@+id/ToPostDetector"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/check_back"
-        app:layout_constraintTop_toTopOf="@id/Top"
+        android:background="@drawable/choosefuntion_bone"
         app:layout_constraintBottom_toBottomOf="@id/Bottom"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@id/Left"
-        app:layout_constraintRight_toRightOf="@id/Middle_1"/>
+        app:layout_constraintRight_toRightOf="@id/Middle_1"
+        app:layout_constraintTop_toTopOf="@id/Top"
+        app:layout_constraintVertical_bias="0.0" />
+
     <ImageView
         android:id="@+id/ToYOLO"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/book_for_regist"
+        android:background="@drawable/choosefunction_shape"
         app:layout_constraintTop_toTopOf="@id/Top"
         app:layout_constraintBottom_toBottomOf="@id/Bottom"
         app:layout_constraintLeft_toLeftOf="@id/Middle_2"
         app:layout_constraintRight_toRightOf="@id/Right"/>
+
+    <ImageView
+        android:id="@+id/BackChoose"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/choosefunction_back"
+        app:layout_constraintTop_toTopOf="@id/BackChoose_Top"
+        app:layout_constraintBottom_toBottomOf="@id/BackChoose_Bottom"
+        app:layout_constraintLeft_toLeftOf="@id/BackChoose_Left"
+        app:layout_constraintRight_toRightOf="@id/BackChoose_Right"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BackChoose_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.012"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BackChoose_Bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.19"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BackChoose_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BackChoose_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.205"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

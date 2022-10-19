@@ -28,6 +28,7 @@ import android.graphics.Paint.Style;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.media.ImageReader.OnImageAvailableListener;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -115,12 +116,17 @@ public class DetectorActivity extends CameraActivity
     public PoseGraphic PG;
     public String CurrentPose = "";
 
+    int BGMList[] = {R.raw.m0,R.raw.m1,R.raw.m2,R.raw.m3,R.raw.m4};
+    int BGMNumber = 0;
+    MediaPlayer mysong;
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         shared = getSharedPreferences("data", MODE_PRIVATE);
         SportType_String = shared.getString("SportType", "Belly");
+        BGMNumber = shared.getInt("BGMNumber",0);
 //        綁定物件
         Time_BG = findViewById(R.id.Time_BG);
         Time_Word = findViewById(R.id.Time_Word);
@@ -149,6 +155,9 @@ public class DetectorActivity extends CameraActivity
         CurrentTime = RestTime;
 //
         InitalUI();
+        mysong = MediaPlayer.create(DetectorActivity.this, BGMList[BGMNumber]);
+        mysong.start();
+        mysong.setLooping(true);
 
         final TimerTask timertask = new TimerTask() {
             @Override
@@ -156,7 +165,7 @@ public class DetectorActivity extends CameraActivity
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        CurrentTime -= 10;//時間倒數
+                        CurrentTime --;//時間倒數
                         Time_Word.setText(CurrentTime + "");
                         //if判斷示裡面放置在時間結束後想要完成的事件
                         if (CurrentTime < 1) {
@@ -181,6 +190,8 @@ public class DetectorActivity extends CameraActivity
                                 }
                             } else {
                                 timer.cancel();
+                                mysong.release();
+                                mysong = null;
                                 startActivity(new Intent(DetectorActivity.this, SportResultScene.class));
                             }
                         }

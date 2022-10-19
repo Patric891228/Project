@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import tw.scu.edu.graduationprojrct.R;
 
 public class ChooseFunctionScene extends AppCompatActivity {
-    ImageView Back,ToPoseDetector,ToYOLO;
+    ImageView Back,ToPoseDetector,ToYOLO,BackChoose;
     SharedPreferences shared;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +20,16 @@ public class ChooseFunctionScene extends AppCompatActivity {
 
         ToPoseDetector = findViewById(R.id.ToPostDetector);
         ToYOLO = findViewById(R.id.ToYOLO);
+        BackChoose = findViewById(R.id.BackChoose);
 
         shared = getSharedPreferences("data",MODE_PRIVATE);
+        BackChoose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChooseFunctionScene.this,SportSelectScene.class));
+            }
+        });
+
 
         ToPoseDetector.setOnClickListener(new View.OnClickListener() {
             @Override

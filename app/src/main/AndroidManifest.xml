@@ -28,7 +28,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GraduationProjrct.NoActionBar">
-        <activity android:name=".scene.ChooseFunctionScene"></activity>
+        <activity android:name=".scene.ChooseFunctionScene"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".scene.SelfDetection"
             android:screenOrientation="landscape" />
