@@ -42,6 +42,8 @@ import static java.lang.Math.min;
  */
 public class PoseGraphic extends Graphic {
 
+    public static String result="偵測中";
+
     private static final float DOT_RADIUS = 8.0f;
     private static final float IN_FRAME_LIKELIHOOD_TEXT_SIZE = 30.0f;
     private static final float STROKE_WIDTH = 10.0f;
@@ -201,7 +203,7 @@ public class PoseGraphic extends Graphic {
         Log.d("test", "angle" + test);
         String posture=YoloV5Classifier.result;
 //        String result = determine(posture);
-        String result = determine();
+        result = determine();
         canvas.drawText(result, POSE_CLASSIFICATION_TEXT_SIZE * 1.0f, POSE_CLASSIFICATION_TEXT_SIZE * 5.5f, classificationTextPaint);
         // Draw inFrameLikelihood for all points
         if (showInFrameLikelihood) {

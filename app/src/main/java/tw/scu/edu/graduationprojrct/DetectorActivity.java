@@ -192,6 +192,11 @@ public class DetectorActivity extends CameraActivity
                             Fail++;
                         }
                         Log.d("Order:", String.valueOf(Order));
+                        SharedPreferences.Editor editor=shared.edit();
+                        int total=Success+Fail;
+                        float supercent=Success/total;
+                        editor.putFloat("Pro",supercent);
+                        editor.commit();
                     }
                 });
             }

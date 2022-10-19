@@ -58,6 +58,7 @@ import tw.scu.edu.graduationprojrct.R;
 import tw.scu.edu.graduationprojrct.Setting.SportType;
 import tw.scu.edu.graduationprojrct.VisionImageProcessor;
 import tw.scu.edu.graduationprojrct.java.posedetector.PoseDetectorProcessor;
+import tw.scu.edu.graduationprojrct.java.posedetector.PoseGraphic;
 import tw.scu.edu.graduationprojrct.preference.PreferenceUtils;
 import tw.scu.edu.graduationprojrct.preference.SettingsActivity;
 import tw.scu.edu.graduationprojrct.scene.SportResultScene;
@@ -176,7 +177,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        CurrentTime--;//時間倒數
+                        CurrentTime-=10;//時間倒數
                         Time_Word.setText(CurrentTime + "");
                         //if判斷示裡面放置在時間結束後想要完成的事件
                         if (CurrentTime < 1) {
@@ -197,6 +198,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                                     ImgOrder++;
                                     CurrentTime = ST.SportContentTime[Order];
                                     Log.d("現在取得動作",CurrentPose);
+                                    Log.d("辨識動作", PoseGraphic.result);
                                 }
                             } else {
                                 Log.d("運動狀態","結束");
