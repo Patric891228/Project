@@ -193,8 +193,11 @@ public class DetectorActivity extends CameraActivity
                         }
                         Log.d("Order:", String.valueOf(Order));
                         SharedPreferences.Editor editor=shared.edit();
-                        int total=Success+Fail;
-                        float supercent=Success/total;
+                        float total=(float)(Success)+(float)(Fail);
+                        Log.d("成功", String.valueOf(Success));
+                        Log.d("失敗", String.valueOf(Fail));
+                        float supercent=Math.round((Success/total*1000.0)/1000.0);
+                        Log.d("成功率", String.valueOf(supercent));
                         editor.putFloat("Pro",supercent);
                         editor.commit();
                     }

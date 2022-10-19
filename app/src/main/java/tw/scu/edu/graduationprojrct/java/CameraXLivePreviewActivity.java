@@ -62,6 +62,7 @@ import tw.scu.edu.graduationprojrct.java.posedetector.PoseGraphic;
 import tw.scu.edu.graduationprojrct.preference.PreferenceUtils;
 import tw.scu.edu.graduationprojrct.preference.SettingsActivity;
 import tw.scu.edu.graduationprojrct.scene.SportResultScene;
+import tw.scu.edu.graduationprojrct.tflite.YoloV5Classifier;
 
 /**
  * Live preview demo app for ML Kit APIs using CameraX.
@@ -107,6 +108,8 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
     int ImgOrder;
     SportType ST;
     String CurrentPose = "";
+
+    int Success, Fail = 0;
 
     @RequiresApi(api = VERSION_CODES.M)
     @Override
@@ -206,6 +209,22 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                                 startActivity(new Intent(CameraXLivePreviewActivity.this, SportResultScene.class));
                             }
                         }
+                        if (CurrentPose.equals(YoloV5Classifier.result)) {
+                            Log.d("辨識結果", "成功");
+                            Success++;
+                        } else {
+                            Log.d("辨識結果", "失敗");
+                            Fail++;
+                        }
+                        Log.d("Order:", String.valueOf(Order));
+                        SharedPreferences.Editor editor=shared.edit();
+                        float total=(float)(Success)+(float)(Fail);
+                        Log.d("成功", String.valueOf(Success));
+                        Log.d("失敗", String.valueOf(Fail));
+                        float supercent=Math.round((Success/total*1000.0)/1000.0);
+                        Log.d("成功率", String.valueOf(supercent));
+                        editor.putFloat("Pro",supercent);
+                        editor.commit();
                     }
                 });
             }

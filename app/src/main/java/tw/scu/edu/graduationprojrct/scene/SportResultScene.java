@@ -1,6 +1,7 @@
 package tw.scu.edu.graduationprojrct.scene;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,8 @@ import tw.scu.edu.graduationprojrct.R;
 public class SportResultScene extends AppCompatActivity {
     ImageView BackHome;
     TextView Probaibility;
+    SharedPreferences shared;
+    Float P;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +24,7 @@ public class SportResultScene extends AppCompatActivity {
         Log.d("EnterScene","SportResultScene");
         BackHome = findViewById(R.id.BackHome);
         Probaibility = findViewById(R.id.Probaibility);
+        shared = getSharedPreferences("data", MODE_PRIVATE);
 
         BackHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,7 +32,7 @@ public class SportResultScene extends AppCompatActivity {
                 startActivity(new Intent(SportResultScene.this,MainScene.class));
             }
         });
-
-        Probaibility.setText("0.0");
+        P = shared.getFloat("Pro", (float) 0.0);
+        Probaibility.setText(P.toString());
     }
 }
