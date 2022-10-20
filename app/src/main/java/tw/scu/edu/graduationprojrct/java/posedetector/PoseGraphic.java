@@ -237,40 +237,42 @@ public class PoseGraphic extends Graphic {
         PoseLandmark rightAnkle = pose.getPoseLandmark(PoseLandmark.RIGHT_ANKLE);
 
 //        if (posture == "Upper Trapezius Stretch") {
-            double utsl1 = getAngle(leftElbow, leftShoulder, leftWrist);//斜方肌拉伸左
-            double utsl2 = getAngle(leftHip, leftShoulder, leftElbow);//斜方肌拉伸左
-            double utsr1 = getAngle(rightElbow, rightShoulder, rightWrist);//斜方肌拉伸右
-            double utsr2 = getAngle(rightHip, rightShoulder, rightElbow);//斜方肌拉伸右
+        double utsl1 = getAngle(leftElbow, leftShoulder, leftWrist);//斜方肌拉伸左
+        double utsl2 = getAngle(leftHip, leftShoulder, leftElbow);//斜方肌拉伸左
+        double utsr1 = getAngle(rightElbow, rightShoulder, rightWrist);//斜方肌拉伸右
+        double utsr2 = getAngle(rightHip, rightShoulder, rightElbow);//斜方肌拉伸右
 //            if ((utsl1 < 70 && utsl2 > 115 && utsl2 < 125) || (utsr1 < 70 && utsr2 > 115 && utsr2 < 125)) {
 //                result = "斜方肌拉伸";
 //            }
 //        } else if (posture == "Deltoid Muscle Stretch") {
-            double dms1 = getAngle(leftElbow, leftShoulder, rightShoulder);//三角肌拉伸左
-            double dms2 = getAngle(rightElbow, rightShoulder, leftShoulder);//三角肌拉伸右
+        double dms1 = getAngle(leftElbow, leftShoulder, rightShoulder);//三角肌拉伸左
+        double dms2 = getAngle(rightElbow, rightShoulder, leftShoulder);//三角肌拉伸右
 //            if (dms1 < 30 && dms2 < 30) {
 //                result = "三角肌拉伸";
 //            }
 //        } else if (posture == "Triceps Stretch") {
-            double tsl = getAngle(leftShoulder, leftElbow, rightElbow);//肱三頭肌拉伸左
-            double tsr = getAngle(rightShoulder, rightElbow, leftElbow);//肱三頭肌拉伸右
+        double tsl = getAngle(leftHip, leftShoulder, leftElbow);//肱三頭肌拉伸左
+        double tsr = getAngle(rightHip, rightShoulder, rightElbow);//肱三頭肌拉伸左
 //            if ((tsl < 100 && tsl > 80) || (tsr < 100 && tsr > 80)) {
 //                result = "肱三頭肌拉伸";
 //            }
 //        } else if (posture == "Reverse Prayer Pose") {
-            double rpp1 = getAngle(leftHip, leftShoulder, leftElbow);//反向祈禱式
-            double rpp2 = getAngle(rightHip, rightShoulder, rightElbow);//反向祈禱式
+        double rpp1 = getAngle(leftShoulder,  leftElbow ,leftWrist);//反向祈禱式
+        double rpp2 = getAngle(rightShoulder,  rightElbow ,rightWrist);//反向祈禱式
 //            if (rpp1 < 30 && rpp2 < 30) {
 //                result = "反向祈禱式";
 //            }
 //        } else if (posture == "Cat Cow Pose") {
-            double ccpl = getAngle(leftHip, leftShoulder, nose);//貓牛式左
-            double ccpr = getAngle(rightHip, rightShoulder, nose);//貓牛式右
+        double ccpl = getAngle(leftHip, leftShoulder, nose);//貓牛式左
+        double ccpr = getAngle(rightHip, rightShoulder, nose);//貓牛式右
 //            if (ccpl < 150 || ccpr < 150) {
 //                result = "貓牛式";
 //            }
 //        } else if (posture == "Cobra Pose") {
-            double copl = getAngle(leftKnee, leftHip, leftShoulder);//眼鏡蛇式左
-            double copr = getAngle(rightKnee, rightHip, rightShoulder);//眼鏡蛇式右
+        double copl1 = getAngle(leftKnee, leftHip, leftShoulder);//眼鏡蛇式左
+        double copl2 = getAngle(leftWrist, leftElbow, leftShoulder);
+        double copr1 = getAngle(rightKnee, rightHip, rightShoulder);//眼鏡蛇式右
+        double copr2 = getAngle(rightWrist, rightElbow, rightShoulder);
 //            if (copl > 60 || copr > 60) {
 //                result = "眼鏡蛇式";
 //            }
@@ -301,8 +303,10 @@ public class PoseGraphic extends Graphic {
 //                result = "駱駝式";
 //            }
 //        } else if (posture == "Seated Side Bend") {
-            double ssbl = getAngle(leftWrist, leftShoulder, leftHip);//盤腿側腰伸展左
-            double ssbr = getAngle(rightWrist, rightShoulder, rightHip);//盤腿側腰伸展右
+        double ssbl1 = getAngle(rightShoulder, leftShoulder, leftElbow);//盤腿側腰伸展左
+        double ssbl2 = getAngle(leftShoulder, leftElbow, leftWrist);//盤腿側腰伸展左
+        double ssbr1 = getAngle(leftShoulder, rightShoulder, rightElbow);//盤腿側腰伸展右
+        double ssbr2 = getAngle(rightShoulder, rightElbow, rightWrist);//盤腿側腰伸展左
 //            if (ssbl < 100 || ssbr < 100) {
 //                result = "盤腿側腰伸展";
 //            }
@@ -455,17 +459,17 @@ public class PoseGraphic extends Graphic {
 //                result = "船式";
 //            }
 //        }
-        if ((utsl1 < 70 && utsl2>115 && utsl2 < 125) || (utsr1 < 70 && utsr2 > 115 && utsr2 < 125)) {
+        if ((utsl1 > 58 && utsl1 < 68 && utsl2>172 && utsl2 < 179) || (utsr1 > 58 && utsr1 < 68 && utsr2 > 172 && utsr2 < 179)) {
             result = "斜方肌拉伸";
-        } else if (dms1 < 30 && dms2 < 30) {
-            result = "三角肌拉伸";
-        } else if ((tsl < 100 && tsl > 80) || (tsr < 100 && tsr > 80)) {
+//        } else if (dms1 > 87 && dms1 < 93 || dms2 > 87 && dms2 < 93) {
+//            result = "三角肌拉伸";
+        } else if ((tsl < 180 && tsl > 175) && (tsr < 180 && tsr > 175 )) {
             result = "肱三頭肌拉伸";
-        } else if (rpp1 < 30 && rpp2 < 30) {
+        } else if (rpp1 < 170 && rpp2 < 170 && rpp1 > 150 && rpp2 > 150) {
             result = "反向祈禱式";
-        } else if (ccpl < 150 || ccpr < 150) {
-            result = "貓牛式";
-        } else if (copl > 60 || copr > 60) {
+//        } else if (ccpl < 150 || ccpr < 150) {
+//            result = "貓牛式";
+        } else if ((copl1 > 150 && copl2 > 170) || (copr1 > 150 || copr2 > 170)) {
             result = "眼鏡蛇式";
         } else if (chpl > 160 || chpr > 160) {
             result = "嬰兒式";
@@ -475,7 +479,8 @@ public class PoseGraphic extends Graphic {
             result = "超人式";
         } else if ((cpl1 < 80 && (cpl2 > 80 || cpl2 < 100)) || (cpr1 < 80 && (cpr2 > 80 || cpr2 < 100))) {
             result = "駱駝式";
-        } else if (ssbl < 100 || ssbr < 100) {
+        } else if ((ssbl1 >90 && ssbl1 < 100 && ssbl2 > 155 && ssbl2 < 165)
+                ||(ssbr1 >90 && ssbr1 < 100 && ssbr2 > 155 && ssbr2 < 165)) {
             result = "盤腿側腰伸展";
         } else if (clfl > 150 || clfr > 150) {
             result = "盤腿前彎式";
