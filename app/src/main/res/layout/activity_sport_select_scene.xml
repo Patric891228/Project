@@ -589,4 +589,40 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.19" />
+<!--    說明-->
+    <ImageView
+        android:id="@+id/intro"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/exercise_color"
+        app:layout_constraintBottom_toBottomOf="@id/Intro_Buttom"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@id/Intro_Left"
+        app:layout_constraintRight_toRightOf="@id/Intro_Right"
+        app:layout_constraintTop_toTopOf="@id/Intro_Top"
+        app:layout_constraintVertical_bias="0.0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Intro_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Intro_Buttom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Intro_Left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Intro_Right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
