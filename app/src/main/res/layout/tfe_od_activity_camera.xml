@@ -396,7 +396,7 @@
         android:gravity="center"
         android:text="10"
         android:textColor="@color/white"
-        android:textSize="60sp"
+        android:textSize="60dp"
         app:layout_constraintBottom_toBottomOf="@id/Time_Word_Bottom"
         app:layout_constraintLeft_toLeftOf="@id/Time_Word_Left"
         app:layout_constraintRight_toRightOf="@id/Time_Word_Right"
