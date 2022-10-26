@@ -23,6 +23,7 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
     PokedexObject PO;
     int CurrentProve, CurrentBarNum, CurrentNum, initImageNum = 0; // 預設為Slouch // 左邊尚餘頁數
     int ImageNumber;
+    int CurrentButton = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +73,7 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
                 EnglishName.setText("英文名稱:"+PO.EnglishName[PO.PokedexContent[initImageNum]-1]);
                 Prove.setText("改善部位:"+PO.ImprovePart[PO.PokedexContent[initImageNum]-1]);
                 Introduce.setText("改善部位:"+PO.Introduce[PO.PokedexContent[initImageNum]-1]);
+                CurrentButton = -1;
                 Log.d("現在改善部位", ProveType[CurrentProve]);
                 Log.d("個數", String.valueOf(ImageNumber));
             }
@@ -90,6 +92,8 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
                     initImageNum -= 5;
                     SetIndex();
                 }
+                CurrentButton = -1;
+                Log.d("上個點擊", String.valueOf(CurrentButton));
                 Log.d("應有頁數",String.valueOf(CurrentBarNum+1));
                 Log.d("當前頁數(含0頁)", String.valueOf(CurrentNum));
             }
@@ -102,6 +106,8 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
                     CurrentNum +=1;
                     SetIndex();
                 }
+                CurrentButton = -1;
+                Log.d("上個點擊", String.valueOf(CurrentButton));
                 Log.d("應有頁數",String.valueOf(CurrentBarNum+1));
                 Log.d("當前頁數(含0頁)", String.valueOf(CurrentNum));
             }
@@ -131,6 +137,7 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
                 }
                 Image_array[i].setImageResource(PO.SportImgID[DataNum-1]);
                 Log.d("圖片載入","已載入");
+                Log.d("會顯示的號碼", String.valueOf((DataNum)));
             }
 //
         }
@@ -142,40 +149,50 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
             PO.PokedexContent[initImageNum+i]-=2;
         }
         Log.d("更改後編號", String.valueOf(PO.PokedexContent[initImageNum+i]));
+
         CenterImage.setImageResource(PO.SportImgID[PO.PokedexContent[initImageNum+i]-1]);
         ChineseName.setText("中文名稱:"+PO.ChineseName[PO.PokedexContent[initImageNum+i]-1]);
         EnglishName.setText("英文名稱:"+PO.EnglishName[PO.PokedexContent[initImageNum+i]-1]);
         Prove.setText("改善部位:"+PO.ImprovePart[PO.PokedexContent[initImageNum+i]-1]);
         Introduce.setText("改善部位:"+PO.Introduce[PO.PokedexContent[initImageNum+i]-1]);
-//        int DataNum = PO.PokedexContent[i-1];
-//        Log.d("DataNum", String.valueOf(DataNum));
-//        if(DataNum>4){ //沒有ID5 6
-//            DataNum-=2;
-//        }
-//        String ChineseName = PO.ChineseName[DataNum-1];
-//        String EnglishName = PO.EnglishName[DataNum-1];
-//        String ImprovePart = PO.ImprovePart[DataNum-1];
-//        String Introduce = PO.Introduce[DataNum-1];
-//        Log.d("ImageData",ChineseName+" "+EnglishName+" "+ImprovePart);
-//        Log.d("ImageIntrduce",Introduce);
     }
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.I1:
-                CatchData(0);
+                if(CurrentButton!=0) {
+                    CatchData(0);
+                    CurrentButton = 0;
+                }
+                Log.d("上個點擊", String.valueOf(CurrentButton));
                 break;
             case R.id.I2:
-                CatchData(1);
+                if(CurrentButton!=1){
+                    CatchData(1);
+                    CurrentButton = 1;
+                }
+                Log.d("上個點擊", String.valueOf(CurrentButton));
                 break;
             case R.id.I3:
-                CatchData(2);
+                if(CurrentButton!=2){
+                    CatchData(2);
+                    CurrentButton = 2;
+                }
+                Log.d("上個點擊", String.valueOf(CurrentButton));
                 break;
             case R.id.I4:
-                CatchData(3);
+                if(CurrentButton!=3){
+                    CatchData(3);
+                    CurrentButton = 3;
+                }
+                Log.d("上個點擊", String.valueOf(CurrentButton));
                 break;
             case R.id.I5:
-                CatchData(4);
+                if(CurrentButton!=4){
+                    CatchData(4);
+                    CurrentButton = 4;
+                }
+                Log.d("上個點擊", String.valueOf(CurrentButton));
         }
     }
     public void init(){
