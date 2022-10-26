@@ -257,8 +257,8 @@ public class PoseGraphic extends Graphic {
 //                result = "肱三頭肌拉伸";
 //            }
 //        } else if (posture == "Reverse Prayer Pose") {
-        double rpp1 = getAngle(leftShoulder,  leftElbow ,leftWrist);//反向祈禱式
-        double rpp2 = getAngle(rightShoulder,  rightElbow ,rightWrist);//反向祈禱式
+        double rpp1 = getAngle(leftShoulder, leftElbow, leftWrist);//反向祈禱式
+        double rpp2 = getAngle(rightShoulder, rightElbow, rightWrist);//反向祈禱式
 //            if (rpp1 < 30 && rpp2 < 30) {
 //                result = "反向祈禱式";
 //            }
@@ -317,10 +317,10 @@ public class PoseGraphic extends Graphic {
 //                result = "盤腿前彎式";
 //            }
 //        } else if (posture == "Iliopsoas Muscle Stretch") {
-        double lmsl1 = getAngle(leftHip, leftKnee, leftWrist);//髂腰肌伸展左
-        double lmsl2 = getAngle(rightHip, rightKnee, rightAnkle);
-        double lmsr1 = getAngle(rightHip, rightKnee, rightWrist);//髂腰肌伸展右
-        double lmsr2 = getAngle(leftHip, leftKnee, leftAnkle);
+//        double lmsl1 = getAngle(leftHip, leftKnee, leftWrist);
+        double lmsl1 = getAngle(rightHip, rightKnee, rightAnkle);//髂腰肌伸展左
+//        double lmsr1 = getAngle(rightHip, rightKnee, rightWrist);
+        double lmsr1 = getAngle(leftHip, leftKnee, leftAnkle);//髂腰肌伸展右
 //            if (((lmsl1 > 85 && lmsl1 < 95) && lmsl2 > 120) || ((lmsr1 > 85 && lmsr1 < 95) && lmsr2 > 120)) {
 //                result = "髂腰肌伸展";
 //            }
@@ -339,6 +339,8 @@ public class PoseGraphic extends Graphic {
 //        } else if (posture == "Raise Leg Crunch") {
         double rlcl = getAngle(leftHip, leftKnee, leftAnkle);//抬腿捲腹左
         double rlcr = getAngle(rightHip, rightKnee, rightAnkle);//抬腿捲腹右
+        double rlcl1 = getAngle(leftShoulder, leftHip, leftKnee);
+        double rlcr1 = getAngle(rightShoulder, rightHip, rightKnee);
 //            if ((rlcl > 85 && rlcl < 95) || (rlcr > 85 && rlcr < 95)) {
 //                result = "抬腿捲腹";
 //            }
@@ -449,6 +451,8 @@ public class PoseGraphic extends Graphic {
 //        } else if (posture == "LegRaises90") {
         double llrl = getAngle(leftShoulder, leftHip, leftAnkle);//仰臥抬腿左
         double llrr = getAngle(rightShoulder, rightHip, rightAnkle);//仰臥抬腿右
+        double llrl1 = getAngle(leftHip, leftKnee, leftAnkle);
+        double llrr1 = getAngle(rightHip, rightKnee, rightAnkle);
 //            if ((llrl < 95 && llrl > 85) || (llrr < 95 && llrr > 85)) {
 //                result = "仰臥抬腿90";
 //            }
@@ -456,7 +460,7 @@ public class PoseGraphic extends Graphic {
         double bpl = getAngle(leftShoulder, leftHip, leftAnkle);//船式左
         double bpr = getAngle(rightShoulder, rightHip, rightAnkle);//船式右
         double bpl2 = getAngle(leftElbow, leftShoulder, leftHip);//船式右
-        double bpr2 =  getAngle(rightElbow, rightShoulder, rightHip);//船式右
+        double bpr2 = getAngle(rightElbow, rightShoulder, rightHip);//船式右
 //            if ((bpl > 70 && bpl < 80) || (bpr > 70 && bpr < 80)) {
 //                result = "船式";
 //            }
@@ -477,14 +481,14 @@ public class PoseGraphic extends Graphic {
 //        Log.d("盤腿側彎左2", String.valueOf(ssbl2));
 //        Log.d("盤腿側彎右1", String.valueOf(ssbr1));
 //        Log.d("盤腿側彎右2", String.valueOf(ssbr2));
-//          Log.d("平板支撐1", String.valueOf(pl));
-//          Log.d("平板支撐2", String.valueOf(pr));
+//        Log.d("平板支撐1", String.valueOf(pl));
+//        Log.d("平板支撐2", String.valueOf(pr));
 //        Log.d("側平板支撐1", String.valueOf(sidepl));
 //        Log.d("側平板支撐2", String.valueOf(sidepr));
-        //Log.d("弓步蹲", String.valueOf(l11l));
-        //Log.d("弓步蹲", String.valueOf(l11r));
-        //Log.d("弓步蹲", String.valueOf(l21));
-        //Log.d("弓步蹲", String.valueOf(l22));
+//        Log.d("弓步蹲", String.valueOf(l11l));
+//        Log.d("弓步蹲", String.valueOf(l11r));
+//        Log.d("弓步蹲", String.valueOf(l21));
+//        Log.d("弓步蹲", String.valueOf(l22));
 //        Log.d("立姿前彎", String.valueOf(sfbl));
 //        Log.d("立姿前彎", String.valueOf(sfbr));
 //        Log.d("嬰兒式", String.valueOf(chpl));
@@ -499,60 +503,87 @@ public class PoseGraphic extends Graphic {
 //        Log.d("下犬式R", String.valueOf(dfdpr));
 //        Log.d("束角式L", String.valueOf(bap1));
 //        Log.d("束角式R", String.valueOf(bap2));
-        Log.d("側臥內抬腿L", String.valueOf(itl));
-        Log.d("側臥內抬腿R", String.valueOf(itr));
-        if ((utsl1 > 58 && utsl1 < 68 && utsl2>172 && utsl2 < 179) || (utsr1 > 58 && utsr1 < 68 && utsr2 > 172 && utsr2 < 179)) {
+//        Log.d("蝗蟲式", String.valueOf(lpl));
+//        Log.d("蝗蟲式", String.valueOf(fp2l));
+//        Log.d("蝗蟲式", String.valueOf(fp2r));
+//        Log.d("膝蓋夾書深蹲", String.valueOf(s1l));
+//        Log.d("膝蓋夾書深蹲", String.valueOf(s2l));
+//        Log.d("膝蓋夾書深蹲", String.valueOf(s1r));
+//        Log.d("膝蓋夾書深蹲", String.valueOf(s2r));
+//        Log.d("抬腿捲腹", String.valueOf(rlcl));
+//        Log.d("抬腿捲腹", String.valueOf(rlcr));
+//        Log.d("抬腿捲腹", String.valueOf(rlcl1));
+//        Log.d("抬腿捲腹", String.valueOf(rlcr1));
+//        Log.d("眼鏡蛇式1", String.valueOf(copl1));
+//        Log.d("眼鏡蛇式2", String.valueOf(copl2));
+//        Log.d("眼鏡蛇式3", String.valueOf(copr1));
+//        Log.d("眼鏡蛇式4", String.valueOf(copr2));
+        Log.d("髂腰肌伸展1", String.valueOf(lmsl1));
+        Log.d("髂腰肌伸展2", String.valueOf(lmsr1));
+//        Log.d("臀橋", String.valueOf(b11l));
+//        Log.d("臀橋", String.valueOf(b11r));
+//        Log.d("駱駝式", String.valueOf(cpl1));
+//        Log.d("駱駝式", String.valueOf(cpl2));
+//        Log.d("駱駝式", String.valueOf(cpr1));
+//        Log.d("駱駝式", String.valueOf(cpr2));
+//        Log.d("側臥內抬腿L", String.valueOf(itl));
+//        Log.d("側臥內抬腿R", String.valueOf(itr));
+//        Log.d("側臥內抬腿L", String.valueOf(itl));
+//        Log.d("側臥內抬腿R", String.valueOf(itr));
+//        Log.d("側臥內抬腿L", String.valueOf(itl));
+//        Log.d("側臥內抬腿R", String.valueOf(itr));
+        if ((utsl1 > 58 && utsl1 < 68 && utsl2 > 172 && utsl2 < 179) || (utsr1 > 58 && utsr1 < 68 && utsr2 > 172 && utsr2 < 179)) {
             result = "斜方肌拉伸";
 //        } else if (dms1 > 87 && dms1 < 93 || dms2 > 87 && dms2 < 93) {
 //            result = "三角肌拉伸";
-        }
-        else if (((bpl > 15 && bpl < 30) && (bpl2 > 45 && bpl2 < 55)) || ((bpr > 15 && bpr < 30)&& (bpr2 > 45 && bpr2 < 55))) {
+        } else if (((bpl > 15 && bpl < 30) && (bpl2 > 45 && bpl2 < 55)) || ((bpr > 15 && bpr < 30) && (bpr2 > 45 && bpr2 < 55))) {
             result = "船式";
         } else if ((itl > 110 && itl < 130) || (itr > 110 && itr < 130)) {
             result = "側臥內抬腿";
-        }else if ((llrl < 15 && llrl > 5) || (llrr < 15 && llrr > 5)) {
+        } else if ((llrl < 15 && llrl > 5) || (llrr < 15 && llrr > 5) && llrl1 > 170 && llrl1 < 180 && llrr1 > 170 && llrr1 < 180) {
             result = "仰臥抬腿90";
-        } else if ((llrl < 20 && llrl > 0) || (llrr < 20 && llrr > 0)) {
+        } else if ((llrl < 100 && llrl > 80) || (llrr < 100 && llrr > 80) && llrl1 > 170 && llrl1 < 180 && llrr1 > 170 && llrr1 < 180) {
             result = "仰臥抬腿60";
-        } else if ((llrl < 70 && llrl > 50) || (llrr < 70 && llrr > 50)) {
+        } else if ((llrl < 130 && llrl > 110) || (llrr < 130 && llrr > 110) && llrl1 > 170 && llrl1 < 180 && llrr1 > 170 && llrr1 < 180) {
             result = "仰臥抬腿30";
-        } else if ((llrl < 100 && llrl > 80) || (llrr < 100 && llrr > 80)) {
+        } else if ((llrl < 160 && llrl > 140) || (llrr < 160 && llrr > 140) && llrl1 > 170 && llrl1 < 180 && llrr1 > 170 && llrr1 < 180) {
             result = "仰臥抬腿10";
-        } else if ((tsl < 180 && tsl > 175) && (tsr < 180 && tsr > 175 )) {
+        } else if ((tsl < 180 && tsl > 175) && (tsr < 180 && tsr > 175)) {
             result = "肱三頭肌拉伸";
         } else if (rpp1 < 170 && rpp2 < 170 && rpp1 > 150 && rpp2 > 150) {
             result = "反向祈禱式";
 //        } else if (ccpl < 150 || ccpr < 150) {
 //            result = "貓牛式";
-//        } else if ((copl1 > 150 && copl2 > 170) || (copr1 > 150 || copr2 > 170)) {
-//            result = "眼鏡蛇式";
-        } else if ((chpl < 90 && chpl > 80) ||( chpr > 80 && chpr < 90 )) {
+        } else if ((copl1 > 100 && copl1 < 110 && copl2 > 144 && copl2 < 150) || (copr1 > 100 && copr1 < 110 && copr2 > 144 && copr2 < 150)) {
+            result = "眼鏡蛇式";
+        } else if ((chpl < 90 && chpl > 80) || (chpr > 80 && chpr < 90)) {
             result = "嬰兒式";
-//        } else if (lpl < 20 || lpr < 20) {
-//            result = "蝗蟲式";
+        } else if ((lpl > 95 && lpl < 105) || (lpr > 95 && lpr < 105)) {
+            result = "蝗蟲式";
 //        } else if (supl < 170 || supr < 170) {
 //            result = "超人式";
-//        } else if ((cpl1 < 80 && (cpl2 > 80 || cpl2 < 100)) || (cpr1 < 80 && (cpr2 > 80 || cpr2 < 100))) {
-//            result = "駱駝式";
-        } else if ((ssbl1 >90 && ssbl1 < 100 && ssbl2 > 155 && ssbl2 < 165)
-                ||(ssbr1 >90 && ssbr1 < 100 && ssbr2 > 155 && ssbr2 < 165)) {
+
+        } else if ((ssbl1 > 90 && ssbl1 < 100 && ssbl2 > 155 && ssbl2 < 165)
+                || (ssbr1 > 90 && ssbr1 < 100 && ssbr2 > 155 && ssbr2 < 165)) {
             result = "盤腿側腰伸展";
 //        } else if (clfl > 150 || clfr > 150) {
 //            result = "盤腿前彎式";
-//        } else if (((lmsl1 > 85 && lmsl1 < 95) && lmsl2 > 120) || ((lmsr1 > 85 && lmsr1 < 95) && lmsr2 > 120)) {
-//            result = "髂腰肌伸展";
+        } else if ((lmsl1 > 120 && lmsl1 < 130 && lmsr1 > 85 && lmsr1 < 100) || (lmsr1 > 120 && lmsr1 < 130 && lmsl1 > 85 && lmsl1 < 100)) {
+            result = "髂腰肌伸展";
         } else if ((dfdpl > 33 && dfdpl < 43) || (dfdpr > 33 && dfdpr < 43)) {
             result = "下犬式";
-//        } else if ((bkcl > 85 && bkcl < 95) || (bkcr > 85 && bkcr < 95)) {
-//            result = "屈膝捲腹";
-//        } else if ((rlcl > 85 && rlcl < 95) || (rlcr > 85 && rlcr < 95)) {
-//            result = "抬腿捲腹";
+        } else if ((bkcl > 0 && bkcl < 7) || (bkcr > 0 && bkcr < 7)) {
+            result = "屈膝捲腹";
+        } else if ((rlcl > 170 && rlcl < 180) || (rlcr > 170 && rlcr < 180) && rlcl1 > 60 && rlcl1 < 70 && rlcr1 > 60 && rlcr1 < 70) {
+            result = "抬腿捲腹";
         } else if ((sidepl > 75 && sidepl < 90) || (sidepr > 75 && sidepr < 90)) {
             result = "側平板";
-        } else if ((pl<100 && pl > 90) || (pr > 90 && pl < 100)) {
+        } else if ((pl < 100 && pl > 90) || (pr > 90 && pl < 100)) {
             result = "平板撐";
-//        } else if ((b11l > 25 && b11l < 35) || (b11r > 85 && b11r < 95) || (b11l > 55 && b11l < 65) || (b11r > 55 && b11r < 65)) {
-//            result = "臀橋";
+        } else if ((b11l > 10 && b11l < 20) || (b11r > 10 && b11r < 20)) {
+            result = "臀橋";
+        } else if ((s1l > 90 && s1l < 100 && s2l > 150 && s2l < 157) || (s1r > 90 && s1r < 100 && s2r > 150 && s2r < 157)) {
+            result = "膝蓋夾書深蹲";
         } else if ((l11l > 80 && l11l < 90) || (l11r > 80 && l11r < 90) || (l21 > 165 && l21 < 180 && l22 > 165 && l22 < 180)) {
             result = "弓步蹲";
 //        } else if ((ppl > 85 && ppl < 95) || (ppr > 85 && ppr < 95)) {
@@ -563,14 +594,14 @@ public class PoseGraphic extends Graphic {
 //            result = "交叉捲腹";
 //        } else if ((cel > 25 && cel < 35) || (cer > 25 && cer < 35) || (cel > 40 && cel < 50) || (cer > 40 && cer < 50)) {
 //            result = "蚌式開合";
-
+        } else if ((cpl1 < 80 && (cpl2 > 80 || cpl2 < 100)) || (cpr1 < 80 && (cpr2 > 80 || cpr2 < 100))) {
+            result = "駱駝式";
         } else if ((bap1 > 50 && bap1 < 60) || (bap2 > 50 && bap2 < 60)) {
             result = "束角式";
         } else if ((sfbl > 20 && sfbl < 30) || (sfbr > 20 && sfbr < 30)) {
             result = "立姿前彎式";
-//        } else if ((s1l > 85 && s1l < 95 && s2l > 115 && s2l < 125) || (s1r > 85 && s1r < 95 && s2r > 115 && s2r < 125)) {
-//            result = "膝蓋夾書深蹲";
-//        } else if ((llrl < 5) || (llrr < 5)) {
+
+//        } else if ((llrl < 5) || (llrr < 5)&& llrl1 > 170 && llrl1 < 180 && llrr1 > 170 && llrr1 < 180) {
 //            result = "仰臥抬腿0";
 
         }
