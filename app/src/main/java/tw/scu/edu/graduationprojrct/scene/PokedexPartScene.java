@@ -150,6 +150,8 @@ public class PokedexPartScene extends AppCompatActivity implements View.OnClickL
         ImageVisibilitySet();
         SelectButton.setVisibility(View.VISIBLE);
         SelectButton_Clicked.setVisibility(View.GONE);
+        SelectButton.setImageResource(R.drawable.part_button_clicked_arm);
+
         B1.setVisibility(View.GONE);
         B2.setVisibility(View.GONE);
         B3.setVisibility(View.GONE);
