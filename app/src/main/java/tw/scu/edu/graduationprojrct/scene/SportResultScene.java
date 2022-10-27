@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import tw.scu.edu.graduationprojrct.DetectorActivity;
 import tw.scu.edu.graduationprojrct.R;
 
 public class SportResultScene extends AppCompatActivity {
@@ -33,6 +34,13 @@ public class SportResultScene extends AppCompatActivity {
             }
         });
         P = shared.getFloat("Pro", (float) 0.0);
+        SharedPreferences.Editor editor = shared.edit();
+        editor.remove("Pro");
+        editor.commit();
+        for (int i = 0; i<DetectorActivity.strike.size();i++){
+            Log.d("準確率", String.valueOf(DetectorActivity.strike.get(i)));
+        }
+        DetectorActivity.strike.clear();
         Probaibility.setText(P.toString());
     }
 }

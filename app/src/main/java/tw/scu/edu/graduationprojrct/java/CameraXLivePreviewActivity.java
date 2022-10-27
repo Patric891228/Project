@@ -50,6 +50,7 @@ import com.google.android.gms.common.annotation.KeepName;
 import com.google.mlkit.common.MlKitException;
 import com.google.mlkit.vision.pose.PoseDetectorOptionsBase;
 
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -111,8 +112,14 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
     String CurrentPose = "";
     MediaPlayer mysong;
     int Success, Fail = 0;
-    int BGMList[] = {R.raw.m0,R.raw.m1,R.raw.m2,R.raw.m3,R.raw.m4};
+    int BGMList[] = {R.raw.m0, R.raw.m1, R.raw.m2, R.raw.m3, R.raw.m4};
     int BGMNumber = 0;
+    public static ArrayList<Float> strike = new ArrayList<Float>();
+    String temp = "";
+    int individualsuccess = 0;
+    int individualfail = 0;
+    float individualtotal;
+
     @RequiresApi(api = VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,7 +157,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
 
         shared = getSharedPreferences("data", MODE_PRIVATE);
         SportType_String = shared.getString("SportType", "Belly");
-        BGMNumber = shared.getInt("BGMNumber",0);
+        BGMNumber = shared.getInt("BGMNumber", 0);
 //        綁定物件
         Time_BG = findViewById(R.id.Time_BG);
         Time_Word = findViewById(R.id.Time_Word);
@@ -206,15 +213,33 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                                     Order++; //讓時間執行緒保持輪迴
                                     ImgOrder++;
                                     CurrentTime = ST.SportContentTime[Order];
-                                    Log.d("現在取得動作",CurrentPose);
+                                    Log.d("現在取得動作", CurrentPose);
                                     Log.d("辨識動作", PoseGraphic.result);
                                 }
                             } else {
-                                Log.d("運動狀態","結束");
+                                Log.d("運動狀態", "結束");
                                 timer.cancel();
                                 mysong.release();
                                 mysong = null;
                                 startActivity(new Intent(CameraXLivePreviewActivity.this, SportResultScene.class));
+                            }
+                        }
+                        if (temp.equals("")) {
+                            temp = CurrentPose;
+                        } else if (!temp.equals(CurrentPose)) {
+                            temp = CurrentPose;
+                            individualtotal = individualsuccess + individualfail;
+                            float indivisualpercent = (float) (Math.round(individualsuccess / individualtotal * 1000.0) / 10.0);
+                            strike.add(indivisualpercent);
+                            individualsuccess = 0;
+                            individualfail = 0;
+                        } else if (temp.equals(CurrentPose)) {
+                            if (temp.equals(YoloV5Classifier.result)) {
+                                Log.d("個別辨識結果", "成功");
+                                individualsuccess++;
+                            } else {
+                                Log.d("個別辨識結果", "失敗");
+                                individualfail++;
                             }
                         }
                         if (CurrentPose.equals(YoloV5Classifier.result)) {
@@ -224,17 +249,18 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                             Log.d("辨識結果", "失敗");
                             Fail++;
                         }
-                        Log.d("Order:", String.valueOf(Order));
-                        SharedPreferences.Editor editor=shared.edit();
-                        float total=(float)(Success)+(float)(Fail);
-                        Log.d("成功", String.valueOf(Success));
-                        Log.d("失敗", String.valueOf(Fail));
-                        float supercent=Math.round((Success/total*1000.0)/1000.0);
-                        Log.d("成功率", String.valueOf(supercent));
-                        editor.putFloat("Pro",supercent);
-                        editor.commit();
+
                     }
                 });
+                Log.d("Order:", String.valueOf(Order));
+                SharedPreferences.Editor editor = shared.edit();
+                float total = (float) (Success) + (float) (Fail);
+                Log.d("成功", String.valueOf(Success));
+                Log.d("失敗", String.valueOf(Fail));
+                float supercent = (float) (Math.round(Success / total * 1000.0) / 10.0);
+                Log.d("成功率", String.valueOf(supercent));
+                editor.putFloat("Pro", supercent);
+                editor.commit();
             }
         };
         timer.schedule(timertask, 1000, 1000);
@@ -433,8 +459,6 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                 });
 
         cameraProvider.bindToLifecycle(/* lifecycleOwner= */ this, cameraSelector, analysisUseCase);
-
-
 
 
     }

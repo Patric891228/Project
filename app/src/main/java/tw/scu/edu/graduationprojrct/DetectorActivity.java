@@ -43,6 +43,7 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Timer;
@@ -115,8 +116,12 @@ public class DetectorActivity extends CameraActivity
 
     public PoseGraphic PG;
     public String CurrentPose = "";
-
-    int BGMList[] = {R.raw.m0,R.raw.m1,R.raw.m2,R.raw.m3,R.raw.m4};
+    public static ArrayList<Float> strike = new ArrayList<Float>();
+    String temp = "";
+    int individualsuccess = 0;
+    int individualfail = 0;
+    float individualtotal;
+    int BGMList[] = {R.raw.m0, R.raw.m1, R.raw.m2, R.raw.m3, R.raw.m4};
     int BGMNumber = 0;
     MediaPlayer mysong;
 
@@ -126,7 +131,7 @@ public class DetectorActivity extends CameraActivity
         super.onCreate(savedInstanceState);
         shared = getSharedPreferences("data", MODE_PRIVATE);
         SportType_String = shared.getString("SportType", "Belly");
-        BGMNumber = shared.getInt("BGMNumber",0);
+        BGMNumber = shared.getInt("BGMNumber", 0);
 //        綁定物件
         Time_BG = findViewById(R.id.Time_BG);
         Time_Word = findViewById(R.id.Time_Word);
@@ -165,7 +170,7 @@ public class DetectorActivity extends CameraActivity
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        CurrentTime --;//時間倒數
+                        CurrentTime -= 10;//時間倒數
                         Time_Word.setText(CurrentTime + "");
                         //if判斷示裡面放置在時間結束後想要完成的事件
                         if (CurrentTime < 1) {
@@ -195,6 +200,24 @@ public class DetectorActivity extends CameraActivity
                                 startActivity(new Intent(DetectorActivity.this, SportResultScene.class));
                             }
                         }
+                        if (temp.equals("")) {
+                            temp = CurrentPose;
+                        } else if (!temp.equals(CurrentPose)) {
+                            temp = CurrentPose;
+                            individualtotal = individualsuccess + individualfail;
+                            float indivisualpercent = (float) (Math.round(individualsuccess / individualtotal * 1000.0) / 10.0);
+                            strike.add(indivisualpercent);
+                            individualsuccess = 0;
+                            individualfail = 0;
+                        } else if (temp.equals(CurrentPose)) {
+                            if (temp.equals(YoloV5Classifier.result)) {
+                                Log.d("個別辨識結果", "成功");
+                                individualsuccess++;
+                            } else {
+                                Log.d("個別辨識結果", "失敗");
+                                individualfail++;
+                            }
+                        }
                         if (CurrentPose.equals(YoloV5Classifier.result)) {
                             Log.d("辨識結果", "成功");
                             Success++;
@@ -202,17 +225,18 @@ public class DetectorActivity extends CameraActivity
                             Log.d("辨識結果", "失敗");
                             Fail++;
                         }
-                        Log.d("Order:", String.valueOf(Order));
-                        SharedPreferences.Editor editor=shared.edit();
-                        float total=(float)(Success)+(float)(Fail);
-                        Log.d("成功", String.valueOf(Success));
-                        Log.d("失敗", String.valueOf(Fail));
-                        float supercent=Math.round((Success/total*1000.0)/1000.0);
-                        Log.d("成功率", String.valueOf(supercent));
-                        editor.putFloat("Pro",supercent);
-                        editor.commit();
+
                     }
                 });
+                Log.d("Order:", String.valueOf(Order));
+                SharedPreferences.Editor editor = shared.edit();
+                float total = (float) (Success) + (float) (Fail);
+                Log.d("成功", String.valueOf(Success));
+                Log.d("失敗", String.valueOf(Fail));
+                float supercent = (float) (Math.round(Success / total * 1000.0) / 10.0);
+                Log.d("成功率", String.valueOf(supercent));
+                editor.putFloat("Pro", supercent);
+                editor.commit();
             }
         };
         timer.schedule(timertask, 1000, 1000);
