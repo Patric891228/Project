@@ -45,7 +45,7 @@ public class ProfileUI extends AppCompatActivity {
         Text.setText(PassChineseName);
         ChineseName.setText("運動中文名稱："+PassChineseName);
         EnglishName.setText("運動英文名稱："+PassEnglishName);
-        Prove.setText("動作解說："+PassImprovePart);
-        Introduce.setText("改善部位："+PassIntroduce);
+        Prove.setText("改善部位："+PassImprovePart);
+        Introduce.setText("動作講解："+PassIntroduce);
     }
 }
