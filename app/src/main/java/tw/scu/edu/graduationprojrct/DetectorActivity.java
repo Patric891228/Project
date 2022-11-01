@@ -170,7 +170,7 @@ public class DetectorActivity extends CameraActivity
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        CurrentTime -= 10;//時間倒數
+                        CurrentTime --;//時間倒數
                         Time_Word.setText(CurrentTime + "");
                         //if判斷示裡面放置在時間結束後想要完成的事件
                         if (CurrentTime < 1) {

@@ -1,13 +1,18 @@
 package tw.scu.edu.graduationprojrct.scene;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.jetbrains.annotations.NotNull;
 
 import tw.scu.edu.graduationprojrct.R;
 import tw.scu.edu.graduationprojrct.Setting.PokedexObject;
@@ -227,5 +232,24 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
         Introduce.setText("改善部位:" + PO.Introduce[PO.PokedexContent[initImageNum] - 1]);
         Log.d("現在改善部位", ProveType[CurrentProve]);
 
+    }
+
+    @Override
+    public Resources getResources() {
+        Resources resources = super.getResources();
+        if (resources.getConfiguration().fontScale != 1) { //fontScale不為1，需要強制設置1
+            Configuration newConfig = new Configuration();
+            newConfig.setToDefaults();//設置成默認值，即fontScale為1
+            resources.updateConfiguration(newConfig, resources.getDisplayMetrics());
+        }
+        return resources;
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull @NotNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (newConfig.fontScale !=1){
+            getResources();
+        }
     }
 }
