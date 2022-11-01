@@ -234,7 +234,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                             individualsuccess = 0;
                             individualfail = 0;
                         } else if (temp.equals(CurrentPose)) {
-                            if (temp.equals(YoloV5Classifier.result)) {
+                            if (temp.equals(PoseGraphic.result)) {
                                 Log.d("個別辨識結果", "成功");
                                 individualsuccess++;
                             } else {
@@ -242,7 +242,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
                                 individualfail++;
                             }
                         }
-                        if (CurrentPose.equals(YoloV5Classifier.result)) {
+                        if (CurrentPose.equals(PoseGraphic.result)) {
                             Log.d("辨識結果", "成功");
                             Success++;
                         } else {

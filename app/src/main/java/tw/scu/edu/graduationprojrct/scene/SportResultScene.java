@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import tw.scu.edu.graduationprojrct.DetectorActivity;
 import tw.scu.edu.graduationprojrct.R;
+import tw.scu.edu.graduationprojrct.java.CameraXLivePreviewActivity;
 
 public class SportResultScene extends AppCompatActivity {
     ImageView BackHome;
@@ -37,9 +38,16 @@ public class SportResultScene extends AppCompatActivity {
         SharedPreferences.Editor editor = shared.edit();
         editor.remove("Pro");
         editor.commit();
-        for (int i = 0; i<DetectorActivity.strike.size();i++){
-            Log.d("準確率", String.valueOf(DetectorActivity.strike.get(i)));
+        if (DetectorActivity.strike.size()>0){
+            for (int i = 0; i<DetectorActivity.strike.size();i++){
+                Log.d("準確率", String.valueOf(DetectorActivity.strike.get(i)));
+            }
+        }else if(CameraXLivePreviewActivity.strike.size()>0){
+            for (int i = 0; i<CameraXLivePreviewActivity.strike.size();i++){
+                Log.d("準確率", String.valueOf(CameraXLivePreviewActivity.strike.get(i)));
+            }
         }
+
         DetectorActivity.strike.clear();
         Probaibility.setText(P.toString());
     }
