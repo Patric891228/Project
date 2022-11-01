@@ -28,8 +28,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".scene.ChooseFunctionScene"
-            android:screenOrientation="landscape"/>
+        <activity android:name=".scene.ProFileMuscle"></activity>
+        <activity android:name=".scene.MuscleDownScene" />
+        <activity android:name=".scene.MuscleLowBackScene" />
+        <activity android:name=".scene.MuscleUpScene" />
+        <activity android:name=".scene.MuscleHipScene" />
+        <activity android:name=".scene.MuscleSideScene" />
+        <activity android:name=".scene.MuscleShoulderScene" />
+        <activity android:name=".scene.PokedexMuscleScene" />
+        <activity
+            android:name=".scene.ChooseFunctionScene"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".scene.SelfDetection"
             android:screenOrientation="landscape" />
@@ -81,7 +90,7 @@
         <activity
             android:name=".DetectorActivity"
             android:label="@string/tfe_od_app_name"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".CameraActivity"
             android:screenOrientation="landscape" />

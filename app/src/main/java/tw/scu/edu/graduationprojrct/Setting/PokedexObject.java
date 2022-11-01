@@ -16,6 +16,7 @@ public class PokedexObject {
     public int SportImgID[];
     public PokedexObject(String Type){
         switch(Type){
+            case"All":this.PokedexAll = "All";break;
             case"Belly":this.PokedexAll = "Belly";break;
             case"Oxleg":this.PokedexAll= "Oxleg";break;
             case"Pelvic":this.PokedexAll = "Pelvic";break;
@@ -128,7 +129,9 @@ public class PokedexObject {
                         "Step3：找到平衡後伸直雙腿，並將手往前延伸"};
     }
     public void CreativePokedex(){
-        if(PokedexAll.equals("Belly")){
+        if(PokedexAll.equals("All")){
+            this.PokedexContent = new int[]{1,2,3,4,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36};
+        }else if(PokedexAll.equals("Belly")){
             this.PokedexContent = new int[]{8,9,10,11,18,19,20,21,25,32,33,34,35,36};
         }else if (PokedexAll.equals("Oxleg")){
             this.PokedexContent = new int[]{9,15,21,23,24,26,27,28,29,30};

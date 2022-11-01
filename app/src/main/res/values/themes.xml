@@ -22,12 +22,22 @@
     <style name="Theme.GraduationProjrct.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.GraduationProjrct.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="Theme.GraduationProjrct.NoActionBar.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="Theme.GraduationProjrct.NoActionBar.AppBarOverlay"
-        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="Theme.GraduationProjrct.NoActionBar.PopupOverlay"
-        parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.GraduationProjrct.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.GraduationProjrct.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
