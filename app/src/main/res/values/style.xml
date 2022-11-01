@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="APPTheme" parent='android:Theme.Material'>
+    <style name="APPTheme" parent='Theme.AppCompat.Light.NoActionBar'>
         <item name="android:windowActivityTransitions">true</item>
         <item name="android:windowExitAnimation">@anim/fade_in</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 </resources>
