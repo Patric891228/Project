@@ -31,14 +31,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/APPTheme">
-        <activity android:name=".scene.ProFileMuscle"></activity>
-        <activity android:name=".scene.MuscleDownScene" />
-        <activity android:name=".scene.MuscleLowBackScene" />
-        <activity android:name=".scene.MuscleUpScene" />
-        <activity android:name=".scene.MuscleHipScene" />
-        <activity android:name=".scene.MuscleSideScene" />
-        <activity android:name=".scene.MuscleShoulderScene" />
-        <activity android:name=".scene.PokedexMuscleScene" />
+        <activity
+            android:name=".scene.ProFileMuscle"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.MuscleDownScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.MuscleLowBackScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.MuscleUpScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.MuscleHipScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.MuscleSideScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.MuscleShoulderScene"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".scene.PokedexMuscleScene"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".scene.ChooseFunctionScene"
             android:screenOrientation="landscape" />
