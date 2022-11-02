@@ -4,76 +4,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".scene.ProFileMuscle"
     android:background="@color/graylight"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    tools:context=".scene.ProFileMuscle">
+
     <ImageView
         android:id="@+id/BlueBG"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/gray"
-        app:layout_constraintTop_toTopOf="@id/Blue_Top"
         app:layout_constraintBottom_toBottomOf="@id/Blue_Buttom"
         app:layout_constraintLeft_toLeftOf="@id/Blue_Left"
-        app:layout_constraintRight_toRightOf="@id/Blue_Right"/>
+        app:layout_constraintRight_toRightOf="@id/Blue_Right"
+        app:layout_constraintTop_toTopOf="@id/Blue_Top" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Blue_Top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0"/>
+        app:layout_constraintGuide_percent="0" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Blue_Buttom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="1"/>
+        app:layout_constraintGuide_percent="1" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Blue_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0"/>
+        app:layout_constraintGuide_percent="0" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Blue_Right"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4"/>
+        app:layout_constraintGuide_percent="0.4" />
 
     <ImageView
         android:id="@+id/Image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/Image_Top"
         app:layout_constraintBottom_toBottomOf="@id/Image_Buttom"
         app:layout_constraintLeft_toLeftOf="@id/Image_Left"
-        app:layout_constraintRight_toRightOf="@id/Image_Right"/>
+        app:layout_constraintRight_toRightOf="@id/Image_Right"
+        app:layout_constraintTop_toTopOf="@id/Image_Top" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Image_Top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2"/>
+        app:layout_constraintGuide_percent="0.2" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Image_Buttom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6"/>
+        app:layout_constraintGuide_percent="0.6" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Image_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1"/>
+        app:layout_constraintGuide_percent="0.1" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Image_Right"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3"/>
+        app:layout_constraintGuide_percent="0.3" />
     <!--            放圖片-->
     <TextView
         android:id="@+id/Text"
@@ -97,61 +105,68 @@
         android:shadowColor="#886363"
         android:text="Return"
         android:textColor="@color/black"
-        app:rippleColor="@color/colorPrimary"
-        app:strokeColor="#9C27B0"
         app:layout_constraintBottom_toBottomOf="@id/BTN_Buttom"
         app:layout_constraintLeft_toLeftOf="@id/BTN_Left"
         app:layout_constraintRight_toRightOf="@id/BTN_Right"
-        app:layout_constraintTop_toTopOf="@id/BTN_Top" />
+        app:layout_constraintTop_toTopOf="@id/BTN_Top"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="#9C27B0" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/BTN_Top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85"/>
+        app:layout_constraintGuide_percent="0.85" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/BTN_Buttom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9"/>
+        app:layout_constraintGuide_percent="0.9" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/BTN_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1"/>
+        app:layout_constraintGuide_percent="0.1" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/BTN_Right"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3"/>
+        app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Text_Top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65"/>
+        app:layout_constraintGuide_percent="0.65" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Text_Buttom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75"/>
+        app:layout_constraintGuide_percent="0.75" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Text_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1"/>
+        app:layout_constraintGuide_percent="0.1" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Text_Right"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3"/>
+        app:layout_constraintGuide_percent="0.3" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -159,27 +174,29 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2"/>
+        app:layout_constraintGuide_percent="0.2" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Linear_Buttom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8"/>
+        app:layout_constraintGuide_percent="0.8" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Linear_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"/>
+        app:layout_constraintGuide_percent="0.5" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Linear_Right"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9"/>
+        app:layout_constraintGuide_percent="0.9" />
     <!--            放圖片-->
-
 
 
     <LinearLayout
@@ -188,10 +205,10 @@
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="@id/Linear_Top"
         app:layout_constraintBottom_toBottomOf="@id/Linear_Buttom"
         app:layout_constraintLeft_toLeftOf="@id/Linear_Left"
-        app:layout_constraintRight_toRightOf="@id/Linear_Right">
+        app:layout_constraintRight_toRightOf="@id/Linear_Right"
+        app:layout_constraintTop_toTopOf="@id/Linear_Top">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -229,11 +246,12 @@
             <TextView
                 android:id="@+id/EnglishName"
                 android:layout_width="wrap_content"
-
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
                 android:text="運動英文名稱："
+                android:scrollbars="vertical"
+                android:singleLine="false"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -275,10 +293,11 @@
             <TextView
                 android:id="@+id/Introduce"
                 android:layout_width="wrap_content"
-
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
+                android:scrollbars="vertical"
+                android:singleLine="false"
                 android:text="動作解說："
                 android:textStyle="bold" />
         </LinearLayout>

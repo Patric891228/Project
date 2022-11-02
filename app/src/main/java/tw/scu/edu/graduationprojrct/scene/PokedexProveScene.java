@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -60,6 +61,8 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
         EnglishName = findViewById(R.id.EnglishName2);
         Prove = findViewById(R.id.Prove2);
         Introduce = findViewById(R.id.Introduce2);
+        EnglishName.setMovementMethod(ScrollingMovementMethod.getInstance());
+        Introduce.setMovementMethod(ScrollingMovementMethod.getInstance());
 
         init();
 
@@ -67,7 +70,7 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
             @Override
             public void onClick(View view) {
                 CurrentProve = (CurrentProve + 1) % 5;
-                Select_Button.setImageResource(SelectProveImage[CurrentProve]);
+                Select_Button.setBackground(getResources().getDrawable(SelectProveImage[CurrentProve]));
                 SetPart(ProveType[CurrentProve]);
                 ImageNumber = PO.PokedexContent.length;
                 CurrentBarNum = ImageNumber % 5 == 0 ? ImageNumber / 5 - 1 : ImageNumber / 5;
@@ -78,11 +81,11 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
                 if (NewImageNum > 4) {
                     NewImageNum -= 2;
                 }
-                CenterImage.setImageResource(PO.SportImgID[ NewImageNum- 1]);
-                ChineseName.setText("中文名稱:" + PO.ChineseName[ NewImageNum- 1]);
-                EnglishName.setText("英文名稱:" + PO.EnglishName[ NewImageNum- 1]);
-                Prove.setText("改善部位:" + PO.ImprovePart[ NewImageNum- 1]);
-                Introduce.setText("改善部位:" + PO.Introduce[ NewImageNum- 1]);
+                CenterImage.setImageResource(PO.SportImgID[NewImageNum - 1]);
+                ChineseName.setText("中文名稱:" + PO.ChineseName[NewImageNum - 1]);
+                EnglishName.setText("英文名稱:" + PO.EnglishName[NewImageNum - 1]);
+                Prove.setText("改善部位:" + PO.ImprovePart[NewImageNum - 1]);
+                Introduce.setText("動作解說:" + PO.Introduce[NewImageNum - 1]);
                 CurrentButton = -1;
                 Log.d("現在改善部位", ProveType[CurrentProve]);
                 Log.d("個數", String.valueOf(ImageNumber));
@@ -148,7 +151,6 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
                 Image_array[i].setVisibility(View.GONE);
             } else {
                 Image_array[i].setVisibility(View.VISIBLE);
-                //TODO
                 DataNum = PO.PokedexContent[Image_array_int[i]];
                 Log.d("本頁動作編號", String.valueOf(DataNum));
                 if (DataNum > 4) { //沒有ID5 6
@@ -173,7 +175,7 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
         ChineseName.setText("中文名稱:" + PO.ChineseName[NewImageNum - 1]);
         EnglishName.setText("英文名稱:" + PO.EnglishName[NewImageNum - 1]);
         Prove.setText("改善部位:" + PO.ImprovePart[NewImageNum - 1]);
-        Introduce.setText("改善部位:" + PO.Introduce[NewImageNum - 1]);
+        Introduce.setText("動作解說:" + PO.Introduce[NewImageNum - 1]);
     }
 
     @Override
@@ -218,7 +220,7 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
 
     public void init() {
         CurrentProve = (CurrentProve) % 5;
-        Select_Button.setImageResource(SelectProveImage[CurrentProve]);
+        Select_Button.setBackground(getResources().getDrawable(SelectProveImage[CurrentProve]));
         SetPart(ProveType[CurrentProve]);
         ImageNumber = PO.PokedexContent.length;
         CurrentBarNum = ImageNumber % 5 == 0 ? ImageNumber / 5 - 1 : ImageNumber / 5;
@@ -229,27 +231,8 @@ public class PokedexProveScene extends AppCompatActivity implements View.OnClick
         ChineseName.setText("中文名稱:" + PO.ChineseName[PO.PokedexContent[initImageNum] - 1]);
         EnglishName.setText("英文名稱:" + PO.EnglishName[PO.PokedexContent[initImageNum] - 1]);
         Prove.setText("改善部位:" + PO.ImprovePart[PO.PokedexContent[initImageNum] - 1]);
-        Introduce.setText("改善部位:" + PO.Introduce[PO.PokedexContent[initImageNum] - 1]);
+        Introduce.setText("動作解說:" + PO.Introduce[PO.PokedexContent[initImageNum] - 1]);
         Log.d("現在改善部位", ProveType[CurrentProve]);
 
-    }
-
-    @Override
-    public Resources getResources() {
-        Resources resources = super.getResources();
-        if (resources.getConfiguration().fontScale != 1) { //fontScale不為1，需要強制設置1
-            Configuration newConfig = new Configuration();
-            newConfig.setToDefaults();//設置成默認值，即fontScale為1
-            resources.updateConfiguration(newConfig, resources.getDisplayMetrics());
-        }
-        return resources;
-    }
-
-    @Override
-    public void onConfigurationChanged(@NonNull @NotNull Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        if (newConfig.fontScale !=1){
-            getResources();
-        }
     }
 }
