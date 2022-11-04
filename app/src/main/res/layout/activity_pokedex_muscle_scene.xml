@@ -19,7 +19,6 @@
         android:id="@+id/B1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/magazine_muscle_shoulder"
         app:layout_constraintTop_toTopOf="@id/B1_Top"
         app:layout_constraintBottom_toBottomOf="@id/B1_Bottom"
         app:layout_constraintLeft_toLeftOf="@id/B1_Left"
@@ -52,7 +51,6 @@
         android:id="@+id/B2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/magazine_muscle_side"
         app:layout_constraintTop_toTopOf="@id/B2_Top"
         app:layout_constraintBottom_toBottomOf="@id/B2_Bottom"
         app:layout_constraintLeft_toLeftOf="@id/B2_Left"
@@ -85,7 +83,7 @@
         android:id="@+id/B3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/magazine_muscle_hip"
+
         app:layout_constraintTop_toTopOf="@id/B3_Top"
         app:layout_constraintBottom_toBottomOf="@id/B3_Bottom"
         app:layout_constraintLeft_toLeftOf="@id/B3_Left"
@@ -95,25 +93,25 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.517"/>
+        app:layout_constraintGuide_percent="0.518"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/B3_Bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.625"/>
+        app:layout_constraintGuide_percent="0.626"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/B3_Left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.0826"/>
+        app:layout_constraintGuide_percent="0.082"/>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/B3_Right"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.216"/>
+        app:layout_constraintGuide_percent="0.2172"/>
     <ImageView
         android:id="@+id/B4"
         android:layout_width="0dp"
